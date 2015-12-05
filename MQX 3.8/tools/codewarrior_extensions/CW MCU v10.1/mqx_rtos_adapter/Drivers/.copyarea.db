@@ -1,0 +1,9 @@
+ClearCase CopyAreaDB|4
+MSGSW\MQX\src\tools\codewarrior_extensions\CW MCU v10.1\mqx_rtos_adapter\Drivers
+2
+5
+7:MQX.src|1|135bcfb7aa5|22|d4660bf9|8d342dcd8c6e44ca931bef791cbb2cfd|0
+2:sw|2|0|0|0|aa8240dad2074bd5a7588a46cc7512e4|0
+1a:PACKAGE_Common_5000100.pak|1|135bcfb7a86|1c90|ab4035cc|dbdf5d5409fb421389bac62f930f80ee|0
+20:PACKAGE_Common_5000100.pak.Index|1|135bcfb7a96|175|fe7d734e|49e0654203954539961e9e76a0f045e1|0
+6:Common|2|0|0|0|c58535a44598475980ce8c5e04b1188d|0

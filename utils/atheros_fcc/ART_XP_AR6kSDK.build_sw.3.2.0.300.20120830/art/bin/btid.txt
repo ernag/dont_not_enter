@@ -1,0 +1,9 @@
+# BT Address values file
+#
+# NOTE: The BT ADDR LAP is pulled from the calsetup.txt
+#
+# Values read in hex
+BT_ADDRESS_LAP=FFF37F; # BT address LAP in hex
+start=ABC123;
+limit=b0002c;
+current=b00025;  

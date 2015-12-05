@@ -1,0 +1,13 @@
+ClearCase CopyAreaDB|4
+MSGSW\MQX\src\tools\codewarrior_extensions\CW MCU v10.2\mqx_p2_repository\plugins
+2
+9
+35:com.freescale.mqx.jfreechart.libs_1.1.11.201202081528|2|0|0|0|a32d5c3d2efa4a2d8e5a2898c1223b5a|0
+32:com.freescale.mqx.perftool_1.1.11.201202081528.jar|1|135bcfe48b8|1262a|19714274|64cfae43f21546a0902a795be042704e|0
+2a:com.freescale.dom4j.lib_1.1.0.201202081528|2|0|0|0|278eac51736a4013b41b1163bcb7cc4c|0
+31:com.freescale.buildtoolbar_1.0.1.201202081528.jar|1|135bcfe3cc1|52dc|ee1ab5f7|3f72dfb28247494fa0ac1226a9c314ea|0
+36:com.freescale.projectofprojects_1.1.3.201202081528.jar|1|135bcfe4b57|1719d|9a05ebf3|5034adb191544e38b5713ffd939ee646|0
+3f:com.freescale.debugger.kernel.aware.mqx_1.1.11.201202081528.jar|1|135bcfe424f|2bf27|d0a83c5b|2930043d17a041fabaf4d3a1afb0efa9|0
+3d:com.freescale.mqx.configuration.editor_1.1.5.201202081528.jar|1|135bcfe46c4|1ab7f|bef2797|f3317d2055c248d7bc5f1996eab6b015|0
+42:com.freescale.mcu.mqxprojectwizard1.mqx3.8_1.1.41.201202081528.jar|1|135bcfe43b6|c16b|b4e21a27|ef180868bb7d421a854cb497526ae6db|0
+45:com.freescale.debugger.kernel.aware.mqx.corba_1.1.11.201202081528.jar|1|135bcfe3d9c|2ee8|78926ede|6955059076e647eabd1bf78041adb740|0

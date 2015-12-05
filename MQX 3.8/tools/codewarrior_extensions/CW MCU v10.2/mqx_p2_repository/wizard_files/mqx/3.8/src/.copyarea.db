@@ -1,0 +1,36 @@
+ClearCase CopyAreaDB|4
+MSGSW\MQX\src\tools\codewarrior_extensions\CW MCU v10.2\mqx_p2_repository\wizard_files\mqx\3.8\src
+2
+20
+16:mcf52235_Int_Flash.ttf|1|135bcfe382d|770|5962896e|dfb3f9038bbf4d8fb9d0866b4986b676|0
+16:mcf54418_Ext_Flash.ttf|1|135bcfe3937|77a|83808aeb|7ea776f9d9694fa086ea04727c0cd984|0
+15:k53n512_Int_Flash.ttf|1|135bcfe3781|766|93d48874|19b84b801a9e4ad79a839e2969099503|0
+17:mcf54455_Ext_Flash0.ttf|1|135bcfe3946|c36|c2ba2af5|8d6e431ab3fc49e4890d8ff5b3681bf1|0
+b:usbh_init.c|1|135bcfe3a9e|2f26|294381cf|065ec4e97f3e474dbe2a28029621af95|0
+18:main_basic_application.c|1|135bcfe37a0|97f|2b9a6b1a|d9e63304f7d6490dad2c467bd0851bd3|0
+18:main_empty_application.c|1|135bcfe37b0|4de|764f474e|06d2edb0745847ac82a16b2ea6b0fea7|0
+18:main_basic_application.h|1|135bcfe37b0|54a|1c69ad3f|5551d5cd5d1c4a7bbe756e267cc5b31e|0
+18:main_empty_application.h|1|135bcfe37df|3b3|1931a96|aaeb7709e4d44449bf85ad2e2d3a6374|0
+12:usbh_hid_handler.c|1|135bcfe3a31|1f69|b9f7da0|2a7efa5dda0d4f2ba7b9226663f2b307|0
+16:mcf53015_Ext_Flash.ttf|1|135bcfe385c|771|660d8967|2c6033bd25bd4d31bcb11252ee168867|0
+16:mcf52223_Int_Flash.ttf|1|135bcfe37fe|770|515f8969|233a7b181b394a799e89136987ebfcc1|0
+b:rtcs_init.c|1|135bcfe3975|1ce5|6301291c|660d0c8d91a645c782ca3d1f2087b622|0
+b:usbd_init.c|1|135bcfe39b4|657c|9d5f2e29|90d7734cf8294245a89be32668efcb4e|0
+12:usbh_hub_handler.c|1|135bcfe3a60|71|310a24b6|f67ea116d2e14fe883cad9317fc96104|0
+1d:kwikstikk40x256_Int_Flash.ttf|1|135bcfe3b79|cd4|76e75d7e|5032db5e9ee54c5b8de74a743393b245|0
+15:k40x256_Int_Flash.ttf|1|135bcfe3781|cc9|81e15d16|34d82e31afbd489eabbd172a8709d153|0
+16:k70f120m_Int_Flash.ttf|1|135bcfe3b5a|767|4ace88d3|d631f6a562c8455984fac8a8a08be31f|0
+15:mcf5329_Ext_Flash.ttf|1|135bcfe386c|771|774c88d8|c214a0585cd641ebb456c5bf3ad0b66c|0
+16:mcf52277_Ext_Flash.ttf|1|135bcfe384c|76e|96c288ea|337ab259a5634038999f786821a4197a|0
+1b:usbh_mass_storage_handler.c|1|135bcfe3b0b|1ca9|3fb8d840|198bd73fa9614d239cf3abc8363e1761|0
+a:mfs_init.c|1|135bcfe3966|bc5|65812566|481f9a21a1544445b6cdab3d8d27188f|0
+15:mcf5208_Ext_Flash.ttf|1|135bcfe37ef|75e|7711838f|06a6c376bcca4230bd9c4416d72e7e0c|0
+c:shell_init.c|1|135bcfe3994|7a|d9c227b6|42aa6bdac0a74d3eb16d849e4202db66|0
+15:k60n512_Int_Flash.ttf|1|135bcfe3791|766|86ef8872|42d6f795c933428a97d38ba5ec09777e|0
+d:usb_classes.h|1|135bcfe39a4|7c1|cdd31bd4|dbe07c0eac954937893e526990371ffc|0
+16:usbh_printer_handler.c|1|135bcfe3b1b|1427|406b76b2|299221f759b24a218321236e45341e17|0
+17:mcf54455_Ext_Flash1.ttf|1|135bcfe3956|c17|a22c2470|c7cb531b4e304b63a9cd6cc93f0b1f48|0
+16:mcf52233_Int_Flash.ttf|1|135bcfe381d|770|63cb896d|aa9d4a824dd14fc3acadbc6494d4f562|0
+16:k60f120m_Int_Flash.ttf|1|135bcfe3b88|767|445988d2|7fa7c3c455834aeb93e8221c68960c91|0
+16:mcf52259_Int_Flash.ttf|1|135bcfe383d|77c|6c548ce0|f794ce5a6c1641819668e0e84147e38e|0
+12:usbh_cdc_handler.c|1|135bcfe3a11|3200|7f8a01bb|d6f9eaedf2f54867bce261a15de213ff|0

@@ -1,0 +1,67 @@
+<CodeGenerationInfo>
+  <ToolchainSettings>
+    <option>
+      <name>PE_G_4PEx_ToolChain_Compiler_SearchUserPaths</name>
+      <values lines_count="4">
+        <Line>"${ProcessorExpertPath}/lib/Kinetis/iofiles"</Line>
+        <Line>"${ProcessorExpertPath}/lib/Kinetis/pdd/inc"</Line>
+        <Line>"${ProjDirPath}/Sources"</Line>
+        <Line>"${ProjDirPath}/Generated_Code"</Line>
+      </values>
+    </option>
+  </ToolchainSettings>
+  <GeneratedFilesList>
+    <GeneratedByPE>
+      <File Name="Generated_Code\BT_PWDN_B.h" FileDate="2013-02-07, 11:30:21" FileAge="1360265421730" FileType="4411" CompNumb="50" />
+      <File Name="Generated_Code\PORTA_GPIO.h" FileDate="2013-02-07, 11:30:21" FileAge="1360265421785" FileType="4411" CompNumb="17" />
+      <File Name="Generated_Code\SPI0_WIFI.h" FileDate="2013-02-07, 11:30:21" FileAge="1360265421763" FileType="4411" CompNumb="32" />
+      <File Name="Generated_Code\PE_Const.h" FileDate="2013-02-07, 11:30:21" FileAge="1360265421695" FileType="4411" />
+      <File Name="Generated_Code\BT_PWDN_B.c" FileDate="2013-02-07, 11:30:21" FileAge="1360265421726" FileType="4411" CompNumb="50" />
+      <File Name="Generated_Code\PE_Types.h" FileDate="2013-02-07, 11:30:21" FileAge="1360265421699" FileType="4411" />
+      <File Name="Generated_Code\PORTA_GPIO.c" FileDate="2013-02-07, 11:30:21" FileAge="1360265421783" FileType="4411" CompNumb="17" />
+      <File Name="Project_Settings\Linker_Files\ProcessorExpert.lcf" FileDate="2013-02-05, 10:22:55" FileAge="1360088575602" FileType="4" CompNumb="2" />
+      <File Name="Generated_Code\SPI0_WIFI.c" FileDate="2013-02-07, 11:30:21" FileAge="1360265421758" FileType="4411" CompNumb="32" />
+      <File Name="Generated_Code\PE_Error.h" FileDate="2013-02-07, 11:30:21" FileAge="1360265421697" FileType="4411" />
+      <File Name="Generated_Code\PORTB_GPIO.h" FileDate="2013-02-07, 11:30:21" FileAge="1360265421704" FileType="4411" CompNumb="63" />
+      <File Name="Generated_Code\PORTB_GPIO.c" FileDate="2013-02-07, 11:30:21" FileAge="1360265421702" FileType="4411" CompNumb="63" />
+      <File Name="Generated_Code\Cpu.h" FileDate="2013-02-19, 09:35:40" FileAge="1361295340779" FileType="4411" CompNumb="2" />
+      <File Name="Generated_Code\PORTC_GPIO.h" FileDate="2013-02-19, 09:35:40" FileAge="1361295340740" FileType="4411" CompNumb="15" />
+      <File Name="Generated_Code\WIFI_PD_B.h" FileDate="2013-02-07, 11:30:21" FileAge="1360265421723" FileType="4411" CompNumb="57" />
+      <File Name="Project_Settings\Debugger\MK20DN512.mem" FileDate="2013-02-05, 10:22:55" FileAge="1360088575596" FileType="4411" CompNumb="2" />
+      <File Name="Generated_Code\Cpu.c" FileDate="2013-02-19, 09:35:40" FileAge="1361295340796" FileType="4411" CompNumb="2" />
+      <File Name="Generated_Code\PORTC_GPIO.c" FileDate="2013-02-19, 09:35:40" FileAge="1361295340758" FileType="4411" CompNumb="15" />
+      <File Name="Generated_Code\PORTD_GPIO.h" FileDate="2013-02-07, 11:30:21" FileAge="1360265421805" FileType="4411" CompNumb="11" />
+      <File Name="Generated_Code\WIFI_PD_B.c" FileDate="2013-02-07, 11:30:21" FileAge="1360265421720" FileType="4411" CompNumb="57" />
+      <File Name="Generated_Code\ADC0_Vsense.h" FileDate="2013-02-15, 14:03:08" FileAge="1360965788875" FileType="4411" CompNumb="58" />
+      <File Name="Documentation\ProcessorExpert.txt" FileDate="2013-02-15, 14:03:09" FileAge="1360965789145" FileType="3072" />
+      <File Name="Generated_Code\PORTD_GPIO.c" FileDate="2013-02-07, 11:30:21" FileAge="1360265421800" FileType="4411" CompNumb="11" />
+      <File Name="Generated_Code\ADC0_Vsense.c" FileDate="2013-02-15, 14:03:08" FileAge="1360965788896" FileType="4411" CompNumb="58" />
+      <File Name="Generated_Code\PORTE_GPIO.h" FileDate="2013-02-18, 13:46:05" FileAge="1361223965503" FileType="4411" CompNumb="16" />
+      <File Name="Generated_Code\I2C_Display.h" FileDate="2013-02-07, 11:30:21" FileAge="1360265421754" FileType="4411" CompNumb="36" />
+      <File Name="Generated_Code\PE_LDD.h" FileDate="2013-02-19, 09:35:40" FileAge="1361295340837" FileType="4411" CompNumb="2" />
+      <File Name="Generated_Code\PORTE_GPIO.c" FileDate="2013-02-18, 13:46:05" FileAge="1361223965507" FileType="4411" CompNumb="16" />
+      <File Name="Generated_Code\I2C_Display.c" FileDate="2013-02-07, 11:30:21" FileAge="1360265421750" FileType="4411" CompNumb="36" />
+      <File Name="Generated_Code\UART5_DBG.h" FileDate="2013-02-11, 11:38:50" FileAge="1360611530227" FileType="4411" CompNumb="28" />
+      <File Name="Generated_Code\PE_LDD.c" FileDate="2013-02-07, 11:30:21" FileAge="1360265421681" FileType="4411" CompNumb="2" />
+      <File Name="Generated_Code\TU1.h" FileDate="2013-02-07, 11:30:21" FileAge="1360265421747" FileType="4411" CompNumb="44" />
+      <File Name="Generated_Code\UART5_DBG.c" FileDate="2013-02-11, 11:38:50" FileAge="1360611530277" FileType="4411" CompNumb="28" />
+      <File Name="Generated_Code\Vectors.c" FileDate="2013-02-19, 09:35:40" FileAge="1361295340855" FileType="4411" CompNumb="2" />
+      <File Name="Documentation\ProcessorExpert_Settings.xml" FileDate="2013-02-19, 09:35:41" FileAge="1361295341116" FileType="3072" />
+      <File Name="Generated_Code\TU1.c" FileDate="2013-02-07, 11:30:21" FileAge="1360265421744" FileType="4411" CompNumb="44" />
+      <File Name="Generated_Code\SPI2_Flash.h" FileDate="2013-02-18, 11:10:56" FileAge="1361214656758" FileType="4411" CompNumb="62" />
+      <File Name="Generated_Code\SPI2_Flash.c" FileDate="2013-02-18, 11:10:56" FileAge="1361214656874" FileType="4411" CompNumb="62" />
+      <File Name="Sources\Events.h" FileDate="2013-02-11, 11:38:52" FileAge="1360611532428" FileType="16896" />
+      <File Name="Generated_Code\SPI1_Accel.h" FileDate="2013-02-07, 11:30:21" FileAge="1360265421780" FileType="4411" CompNumb="18" />
+      <File Name="Sources\Events.c" FileDate="2013-02-13, 17:08:35" FileAge="1360804115009" FileType="16896" />
+      <File Name="Generated_Code\SPI1_Accel.c" FileDate="2013-02-14, 10:06:43" FileAge="1360865203936" FileType="4411" CompNumb="18" />
+      <File Name="Documentation\ProcessorExpert_SIGNALS.txt" FileDate="2013-02-19, 09:35:41" FileAge="1361295341044" FileType="3072" />
+      <File Name="Generated_Code\Sleep_Timer_LDD.h" FileDate="2013-02-07, 11:30:21" FileAge="1360265421741" FileType="4411" CompNumb="43" />
+      <File Name="Generated_Code\Sleep_Timer_LDD.c" FileDate="2013-02-07, 11:30:21" FileAge="1360265421739" FileType="4411" CompNumb="43" />
+      <File Name="Generated_Code\UART2_BT_UART.h" FileDate="2013-02-07, 11:30:21" FileAge="1360265421736" FileType="4411" CompNumb="46" />
+      <File Name="Sources\ProcessorExpert.c" FileDate="2013-02-19, 09:29:58" FileAge="1361294998932" FileType="128" />
+      <File Name="Generated_Code\UART2_BT_UART.c" FileDate="2013-02-07, 11:30:21" FileAge="1360265421733" FileType="4411" CompNumb="46" />
+      <File Name="Generated_Code\IO_Map.h" FileDate="2013-02-07, 11:30:21" FileAge="1360265421693" FileType="4411" />
+    </GeneratedByPE>
+  </GeneratedFilesList>
+  <CodeGenReference>69</CodeGenReference>
+</CodeGenerationInfo>

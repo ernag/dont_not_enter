@@ -1,0 +1,12 @@
+ClearCase CopyAreaDB|4
+MSGSW\MQX\src\tools\codewarrior_extensions\CW MCU v10.2\mqx_p2_repository\plugins\com.freescale.mqx.jfreechart.libs_1.1.11.201202081528
+2
+8
+22:jfreechart-1.0.13-experimental.jar|1|135bcfe626a|346f|2b4b860e|b5aa27a46aa04c33a7a650b6e1a66c7a|0
+8:META-INF|2|0|0|0|e80e8cd9d3cf49a38cafdb43138d4abf|0
+10:licence-LGPL.txt|1|135bcfe9254|673e|89dc232e|fa9af747076e47148eda5997c4591cae|0
+12:jcommon-1.0.16.jar|1|135bcfe621c|4b82d|ddda44da|24757795397a4f6d9a66607242f9a0e1|0
+3:src|2|0|0|0|3a4118aa24f5448e9e7467080e9b10dd|0
+15:jfreechart-1.0.13.jar|1|135bcfe912b|15c150|86ae4dbc|e940602ba7064054b57007c149652744|0
+11:swtgraphics2d.jar|1|135bcfe9264|3ce0|6d83d29e|8b2abc3652194f5daccd43a098a184c8|0
+19:jfreechart-1.0.13-swt.jar|1|135bcfe650a|11bd3|a77c86a2|8ae517798ffb46d19c216a79b5a5f695|0

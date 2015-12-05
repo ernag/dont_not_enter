@@ -1,0 +1,48 @@
+#!/bin/sh
+
+# expect forward slash paths
+ROOTDIR="${1}"
+OUTPUTDIR="${2}"
+TOOL="${3}"
+
+[%  IF tools.size -%]
+[%      FOREACH tool IN tools.keys -%]
+[%          IF tools.$tool.pepath -%]
+# remove processor expert files if exists
+rm -rf "${OUTPUTDIR}/Generated_Code"
+rm -rf "${OUTPUTDIR}/Sources"
+[%          LAST %]
+[%          END -%]
+[%      END -%]
+[%  END -%]
+
+# copy common files
+mkdir -p "${OUTPUTDIR}"
+[%  IF common.size -%]
+[%      FOREACH directory IN common.dirs -%]
+mkdir -p "${OUTPUTDIR}/[% directory %]"
+[%      END -%]
+[%      FOREACH file IN common.files -%]
+cp -f "${ROOTDIR}/[% file.source %]" "${OUTPUTDIR}/[% file.batch %]"
+[%      END -%]
+[%  END -%]
+
+
+[%  FOREACH tool IN tools.keys -%]
+# [% tool %] files
+if [ "${TOOL}" = "[% tool %]" ]; then
+[%      FOREACH directory IN tools.$tool.dirs -%]
+mkdir -p "${OUTPUTDIR}/[% directory %]"
+[%      END -%]
+[%      FOREACH file IN tools.$tool.files -%]
+cp -f "${ROOTDIR}/[% file.source %]" "${OUTPUTDIR}/[% file.batch %]"
+[%      END -%]
+[%      IF force_pedir -%]
+mkdir -p "${OUTPUTDIR}/Generated_Code"
+mkdir -p "${OUTPUTDIR}/Sources"
+[%      END -%]
+:
+fi
+
+[%  END -%]
+

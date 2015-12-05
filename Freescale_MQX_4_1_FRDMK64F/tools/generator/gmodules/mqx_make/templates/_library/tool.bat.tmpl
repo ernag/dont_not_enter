@@ -1,0 +1,11 @@
+@echo OFF
+set NOPAUSE=%1
+[%  FOREACH command IN commands %]
+[%      command %]
+if errorlevel 1 (
+set NOPAUSE=0
+pause
+)
+[%  END-%]
+
+if not "%1" == "nopause" (pause)

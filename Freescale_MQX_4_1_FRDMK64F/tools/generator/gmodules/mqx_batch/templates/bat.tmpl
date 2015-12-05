@@ -1,0 +1,62 @@
+@echo off
+
+rem convert path to backslash format
+set ROOTDIR=%1
+set ROOTDIR=%ROOTDIR:/=\%
+set OUTPUTDIR=%2
+set OUTPUTDIR=%OUTPUTDIR:/=\%
+set TOOL=%3
+
+
+[%  IF tools.size -%]
+[%      FOREACH tool IN tools.keys -%]
+[%          IF tools.$tool.pepath -%]
+rem remove processor expert files if exists
+IF EXIST "%OUTPUTDIR%\Generated_Code" rd /S /Q "%OUTPUTDIR%\Generated_Code"
+IF EXIST "%OUTPUTDIR%\Sources" rd /S /Q "%OUTPUTDIR%\Sources"
+[%          LAST %]
+[%          END -%]
+[%      END -%]
+[%  END -%]
+
+rem copy common files
+[%  IF common.size -%]
+[%      FOREACH directory IN common.dirs -%]
+IF NOT EXIST "%OUTPUTDIR%\[% directory | replace('/', '\\') %]" mkdir "%OUTPUTDIR%\[% directory | replace('/', '\\') %]"
+[%      END -%]
+[%      FOREACH file IN common.files -%]
+copy "%ROOTDIR%\[% file.source | replace('/', '\\') %]" "%OUTPUTDIR%\[% file.batch | replace('/', '\\') %]" /Y
+[%      END -%]
+[%  END -%]
+
+
+[%  IF tools.size -%]
+goto tool_%TOOL%
+
+[%      FOREACH tool IN tools.keys -%]
+rem [% tool %] files
+:tool_[% tool %]
+[%          FOREACH directory IN tools.$tool.dirs -%]
+IF NOT EXIST "%OUTPUTDIR%\[% directory | replace('/', '\\') %]" mkdir "%OUTPUTDIR%\[% directory | replace('/', '\\') %]"
+[%          END -%]
+[%#
+    I have no IDEA how to add ProcessorExpert files in clear way
+    so I'm using just another IF ...
+#-%]
+[%          IF force_pedir -%]
+IF NOT EXIST "%OUTPUTDIR%\Generated_Code" mkdir "%OUTPUTDIR%\Generated_Code"
+IF NOT EXIST "%OUTPUTDIR%\Sources" mkdir "%OUTPUTDIR%\Sources"
+[%          END -%]
+[%          IF tools.$tool.pepath -%]
+for /R "%ROOTDIR%\[% tools.$tool.pepath | replace('/', '\\') %]\Generated_Code" %%f in (*.h) do copy %%f "%OUTPUTDIR%\Generated_Code\"
+for /R "%ROOTDIR%\[% tools.$tool.pepath | replace('/', '\\') %]\Sources" %%f in (*.h) do copy %%f "%OUTPUTDIR%\Sources\"
+[%          END -%]
+[%          FOREACH file IN tools.$tool.files -%]
+copy "%ROOTDIR%\[% file.source | replace('/', '\\') %]" "%OUTPUTDIR%\[% file.batch | replace('/', '\\') %]" /Y
+[%          END -%]
+goto copy_end
+
+[%      END -%]
+[%  END -%]
+:copy_end
+

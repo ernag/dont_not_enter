@@ -1,0 +1,135 @@
+#   cardName  chipID    productID    subsystemID    numEthMacs    numWlanMacs
+    CB32 0xffffffff 0 0x1031 0 1 
+    CB31 0xffffffff 1 0x1030 0 1                                         
+    MB32 0xffffffff 3 0x2031 0 1                                         
+    MB31 0xffffffff 4 0x2030 0 1                                         
+    AP30 0xffffffff 6 0xa034 1 2                                         
+    AP31 0xffffffff 7 0xa033 1 1                                         
+    AP33 0xffffffff 8 0xa037 1 1                                         
+    AP36 0xffffffff 9 0xa038 1 1                                         
+    AP38 0xffffffff 10 0xa035 1 1                                        
+    AP39 0xffffffff 11 0xa036 1 1                                        
+    CB42 0xffffffff 26 0x1042 0 1                                        
+    CB41 0xffffffff 27 0x1041 0 1                                        
+    CB43 0xffffffff 28 0x1043 0 1                                        
+    MB42 0xffffffff 29 0x2042 0 1                                        
+    MB41 0xffffffff 30 0x2041 0 1                                        
+    AP43 0xffffffff 31 0xa043 1 1                                        
+    AP48 0xffffffff 32 0xa048 1 1                                        
+    AP41 0xffffffff 33 0xa041 1 1                                        
+    MB43 0xffffffff 36 0x2043 0 1                                        
+    MB44 0xffffffff 37 0x2044 0 1                                        
+    TB91 0xffffffff 38 0x2049 0 1                                        
+    AV10 0xffffffff 42 0x2056 3 1                                          
+    CB63 0xffffffff 59 0x2057 0 1                                          
+    CB60 0xffffffff 64 0x1056 0 1                                          
+    UB51 0xffffffff 44 0xb051 0 1                                        
+    UB52 0xffffffff 43 0xb052 0 1                                        
+    AV10 0xffffffff 42 0x2052 0 1                                        
+    CB51 4 40 0x1051 0 1    //griffin                                            
+    CB51 9 54 0x1051 0 1    //griffin                                            
+    CB51 0 46 0x1052 0 1    //griffin lite                                       
+    CB53 4 45 0x1053 0 1    //griffin                                            
+    CB53 0 47 0x1054 0 1    //griffin lite                                       
+    CB53 2 48 0x1055 0 1    //lion                                               
+    MB51 4 41 0x2051 0 1    //griffin                                            
+    MB51 9 53 0x2051 0 1    //griffin                                            
+    MB51 0 49 0x2052 0 1    //griffin lite                                       
+    MB53 4 50 0x2053 0 1    //griffin                                            
+    MB53 0 51 0x2054 0 1    //griffin lite                                       
+    MB55 0 52 0x2055 0 1	  //nala                                                   
+    CU63 0xffffffff 66 0xb063 0 1                                        
+    MB62 9 55 0x2062 0 1    //eagle                                              
+    MB62 4 58 0x2062 0 1    //eagle                                              
+    CB62 4 57 0x1062 0 1    //eagle                                              
+    MB62 0 60 0x2063 0 1    //eagle-lite                                         
+    CB62 0 61 0x1063 0 1    //eagle-lite                                         
+    AP51 4 56 0xa051 1 1    //cobra                                              
+    AP51 0 62 0xa052 1 1    //cobra-lite                                         
+    XB62 0 68 0x3063 1 1    //condor-lite                                        
+    XB62 4 67 0x3062 1 1    //condor                                             
+    QQ85  0 65 0x4051 0 1   //griffin lite - apple board                        
+    TB11 0xffffffff 99 0x6022 0 1                                        
+    AP61 4 74 0xa061 1 1    //spider                                             
+    AP61 0 75 0xa062 1 1    //spider - lite                                      
+    CB71 0 90 0x1071 0 1    //owl                                                  
+    CB72 0 91 0x1072 0 1    //owl                                                  
+    MB71 0 92 0x2071 0 1    //owl                                                  
+    MB72 0 93 0x2072 0 1    //owl                                                  
+    XB71 0 94 0x3071 0 1    //owl                                                  
+    XB72 0 95 0x3072 0 1    //owl                                                  
+    AP71 0 96 0xa071 2 1    //owl                                                  
+    AP72 0 97 0xa072 2 1    //owl                                                  
+    AP83 0 100 0xa083 2 1    //howl AP 3x3                                         
+    AP83 1 100 0xa084 2 1    //howl AP 2x2                                         
+    AP83 2 100 0xa084 2 1    //howl AP 2x2                                         
+    AP81 0 101 0xa081 2 1    //howl AP 3x3                                         
+    AP81 1 101 0xa082 2 1    //howl AP 2x2                                         
+    AP81 2 101 0xa082 2 1    //howl AP 2x2                                         
+    CU97 0 101 0xa085 2 1    //howl AP 3x3                                         
+    CU97 1 101 0xa086 2 1    //howl AP 2x2                                         
+    CU97 2 101 0xa086 2 1    //howl AP 2x2                                         
+    MB81 0 102 0x2081 0 1    //sowl                                                
+    MB82 0 103 0x2082 0 1    //sowl                                                
+    DB92 0 135 0x309b 0 1    //2x2 SiGe FEM for specific customer                
+    HB92 2 120 0x3092 0 1    //2x2 Hitachi FEM                                   
+    HB92 0 132 0x309a 0 1    //2x2 SiGe FEM                                      
+    HB92 1 121 0x3094 0 1    //1x2                                               
+    XB92 2 122 0x3096 0 1    //2x2 Hitachi FEM                                     
+    XB92 0 130 0x3099 0 1    //2x2 SiGe FEM                                        
+    XB92 1 123 0x3098 0 1    //1x2                                               
+    HB91 2 124 0x3093 0 1    //2x2                                               
+    HB91 1 125 0x3091 0 1    //1x2                                               
+    XB91 2 126 0x3095 0 1    //2x2                                                 
+    XB91 1 127 0x3097 0 1    //1x2                                               
+    MB92 0 128 0x2092 0 1    //2x2 SiGe FEM                                      
+    MB92 1 133 0x2096 0 1    //2x2 SiGe FEM, xtalregulator off                   
+    MB92 2 131 0x2094 0 1    //2x2 Hitachi FEM                                   
+    MB92 3 134 0x2098 0 1    //2x2 Hitachi FEM, xtalregulator off                
+    MB91 2 129 0x2091 0 1    //2x2                                               
+    MB93 0 137 0x2093 0 1    //2x3                                               
+    AP94 0 136 0xa094 2 2    // AP with hydra + 2 merlin radios                  
+    AP95 0 136 0xa095 2 2    // AP with hydra + 2 merlin radios                  
+    CU07 0 138 0x309c 0 1    //cus107 board                                      
+    TB93 0 139 0x309d 0 1    //tb312 board                                       
+    CU19 0 141 0x309e 0 1    //cus119 board                                      
+    AP93 0 143 0xa093 2 1    // AP python+merlin                                  
+    AP91 0 144 0xa091 2 1    // AP python+kite                                    
+    HB95 0 125 0x30a1 0 1    //1x1                                               
+    TB280 0 104 0xe082 0 1                                                       
+    TB411 0 30  0x6301 0 1   //AR6003 emulation & TB                             
+    SD32 0 32  0x6302 0 1    //AR6003 1x1 SD32,XPA for 5G only                                   
+    WB31 0 31  0x6303 0 1    //AR6003 1x1 WB31 for Sony                          
+    WB31 1 31  0x6303 0 1    //AR6003 1x1 WB31 for Sony, with XPA                
+    SD31 2 33  0x6305 0 1    //AR6003 1x1 SD31, wifi standalone, no XPA          
+    SD31 3 33  0x6305 0 1    //AR6003 1x1 SD31, wifi standalone, with XPA        
+    SD35 0 34  0x6310 0 1    // finger board                                     
+    WB35 0 35  0x6307 0 1    // finger board with BT                             
+    WB32 0 36  0x6308 0 1    // SD32 with BT                                     
+    SD37 0 37  0x6311 0 1    // AR6003 1x1 SD37 WiFi standalone, 2G only with FEM
+    WB33 0 38  0x6316 0 1    // Carrier board for Sonia-DA (AR6133DA)            
+    SD33 0 39  0x6309 0 1    // AR6103-QFN 1x1 SD33 WiFi standalone, 2G only     
+    SD39 0 40  0x6312 0 1    // AR6003 1x1 SD39 PMU optional                     
+    WB41 0 41  0x6318 0 1    // AR6003+3002 =>6133 wifi+bt                       
+    WB42 0 42  0x6319 0 1    // AR6003+3002 wifi+bt                              
+    SD41 0 43  0x6313 0 1    // AR6203 wifi                                      
+    WB44 0 44  0x6320 0 1    // AR6233 wifi+bt                                   
+    TB424 0 45 0x6328 0 1    // AR6233 wifi+bt                                  
+    SD32 1 32  0x6329 0 1    // SD32, XPA for both 2G & 5G                       
+    SD32 2 32  0x6330 0 1    // SD32, 5G XPA only, TCXO                        
+    SD32 3 32  0x6331 0 1    // SD32, 5G XPA only, PMU                        
+    WB263 0 32  0x6332 0 1    // WiFi 2G and BT         
+    WB263 1 32  0x6333 0 1    // WiFi 2/5G and BT         
+    WB263 2 32  0x6334 0 1    // WiFi 2G only         
+    WB263 3 32  0x6335 0 1    // WiFi 2/5G only
+    SD46  0 32  0x6336 0 1    // AR6003X+BT, FEM-SE5501L, XPA for both 2G & 5G
+    SD33 1 39  0x6337 0 1    // AR6103-QFN 1x1 SD33 WiFi standalone, 2G only, PMU
+    SD55 0 46  0x6338 0 1    // AR6005, external FEM
+    N6533 0 47 0x6339 0 1    // N6533, AR6003 2/5G CCA for QCT MDM9x15
+    SD57 0 48 0x6340 0 1     // SD57, AR6803 (Venus-QFN) SDIO “finger?board
+    WB43 0 49 0x6341 0 1     // WB43, AR6233 2G only + BT carrier board
+    WB51 0 50 0x6342 0 1     // WB51, AR6003+WCN2243, WiFi+BT, Epcos FEM for WiFi
+    Y0096 0 51 0x6343 0 1    // Y0096, AR6003 2/5G CCA with external switcher + LDO for QCT MDM9x15
+    Y2346 0 52 0x6344 0 1    // Y2346, AR6003 2G CCA with external switcher + LDO for QCT MDM9x15
+    WB42 1 53  0x6345 0 1    // WB42, AR6003 2G low power CCK variant (ob2g_cck=db2g= 0x3)
+    SD48 0 54 0x6346 0 1     // SD48, AR6003 2G/5G  

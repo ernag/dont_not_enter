@@ -1,0 +1,53 @@
+#----------------------------------------------------------
+# setup required variables 
+#----------------------------------------------------------
+MQX_ROOTDIR         = $(abspath [% mqxrootdir %])
+LIBRARY_ROOTDIR     = $(MQX_ROOTDIR)/lib/$(BOARD).$(TOOL)
+APPLICATION_DIR     = [% app_dir %]
+APPLICATION_FILE    = $(APPLICATION_DIR)/$(NAME)_$(BOARD).$(APPLICATION_EXT)
+LINKER_FILE         = $(call GET_BSP_LINKER_FILE)
+TYPE                = application
+NAME                = [% name %]
+BOARD               = [% board %]
+
+
+#-----------------------------------------------------------
+# load tool settings
+#-----------------------------------------------------------
+-include tools/$(TOOL).mak
+
+
+#-----------------------------------------------------------
+# search paths
+#-----------------------------------------------------------
+[%  FOREACH config_key IN include_data.keys -%]
+[%      SET config_data=include_data.$config_key -%]
+ifeq ($(CONFIG),[% config_key %])
+[%      FOREACH data IN config_data -%]
+INCLUDE += [% data.include %]
+[%      END -%]
+endif
+[%  END -%]
+
+
+[%  SET module = '' -%]
+[%  FOREACH data IN sources_data -%]
+[%      IF data.module != module -%]
+
+#-----------------------------------------------------------
+# common '[% data.module %]' sources
+#-----------------------------------------------------------
+[%      SET module = data.module -%]
+[%      END -%]
+SOURCES += [% data.source %]
+[%  END %]
+
+
+#----------------------------------------------------------
+# include partial makefiles
+#----------------------------------------------------------
+include $(MQX_ROOTDIR)/build/common/make/global.mak
+-include $(MQX_ROOTDIR)/build/$(BOARD)/make/tools/$(TOOL).mak
+include $(MQX_ROOTDIR)/build/common/make/verify.mak
+include $(MQX_ROOTDIR)/build/common/make/app-process.mak
+#----------------------------------------------------------

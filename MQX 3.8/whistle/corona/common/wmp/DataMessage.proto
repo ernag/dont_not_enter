@@ -1,0 +1,245 @@
+option java_outer_classname = "DataMessageProto";
+option java_package = "com.whistle.wmp";
+
+////////////////////
+// DATA DUMP
+////////////////////
+// DataDump Message Type
+// This specifies which type of message is contained in the following byte payload.
+// This allows device boot to be in sequence with the data, sleep and proximity messages.
+enum DataEventType {       // DEPRECATED, not necessary to add.
+  ACCEL_DATA    = 1;       //DataDump:AccelData
+  ACCEL_SLEEP   = 2;       //DataDump:AccelSleep
+  BT_PROXIMITY  = 3;       //DataDump:BtProximity
+  BREAD_CRUMB   = 4;       //DataDump:Breadcrumb
+  REBOOT        = 5;       //DataDump:Reboot
+  ERROR         = 6;       //DataDump:Error
+  DEVICE_BOOT   = 99;      //DataDump:DeviceBoot
+}
+
+// DataDump Message
+// This is meant to contain a set of multiple AccelData, AccelSleep and BtProximity
+// events.
+// RelativeTimeSync
+// When the device has not synchronized its clock with realtime it will timestamp
+//   data relative to the time the device started. The purpose of this message is
+//   to send the device's "relative time" value at the begging of data transmission
+//   so that the server can note how it relates to real time and backout the
+//   real time timestamps for the reported data.
+// HEADERS
+// deviceRelativeTime: the "relative time" value right now when the message was
+//   created. When this message is included non of the other data dump fields will be used
+// eventType: Indicates the type of data dump message that was included.  All messages
+//   other than device boot will have a payload of bites associated with them which can be
+//   parsed using their declaration below.
+// PAYLOADS:
+// accelData: set of AccelData objects
+// accelSleep: set of AccelSleep objects
+// btProximity: set of BtProximity objects
+//
+message DataDump {
+  optional uint64 relTimeAtSend = 1;
+//  optional DataEventType eventType = 2;   // DEPRECATED
+  repeated AccelData accelData = 20;        // NEVER Change this '20' value without updating #define ACCEL_DATA_TAG	20
+  repeated AccelSleep accelSleep = 21;
+  repeated BtProximity btProximity = 22;
+//  repeated ServerTimeSync serverTimeSync = 23; // SERVER_ONLY
+  repeated BreadCrumb crumb = 24;
+  repeated Reboot reboot = 25;
+  repeated FwError err = 26;
+  repeated BatteryStatus batteryStatus = 27;
+//  optional bytes payload = 99; // DEPRECATED
+}
+
+// A type of event that we want to know happened.
+//
+enum BreadCrumbEvent {
+  USB_CONNECTED    			 = 1;
+  USB_DISCONNECTED 			 = 2;
+  BATTERY_LOW 				 = 3;
+  WIFI_START 				 = 4;
+  WIFI_DONE 				 = 5;
+  WIFI_FAILED 				 = 6;
+  EVTMGR_RESET      		 = 7;   // EVTMGR_reset() was called.
+  EVTMGR_INIT				 = 8;   // EVTMGR_init() had an invalid magic # or initialized for the first time.
+  EVTMGR_WRAP_INFO  		 = 9;   // EVTMGR info sector has wrapped around (~250 flushes)
+  EXT_FLASH_WIP_AT_BOOT 	 = 10;  // Write in Progress on SPI Flash when we booted up.
+  EXT_FLASH_IN_USE_AT_REBOOT = 11;  // SPI Flash was in use at reboot, but we waited on it.
+  NON_GRACEFUL_ASSERT		 = 12;  // recursive or early-in-boot assert(0) occured.
+  EXITING_SHIP_MODE			 = 13;
+  PERSIST_MEM_RESET			 = 14;
+  DYNAMIC_CFG_DECODE_FAILED  = 15;
+  DYNAMIC_CFG_RESET          = 16;
+  EVTMGR_INVALID_ADDRESS	 = 17;
+  EVTMGR_NO_EVT_BLK_PTRS	 = 18;
+  FWUMGR_DL_COMPLETE         = 19;
+  PMEM_RESET_CRC_INVALID     = 20;
+  PMEM_RESET_MAGIC_INVALID   = 21;
+  DYNAMIC_CFG_DEC_OUT_OF_BOUNDS = 22;  // some index was OOB during decode.
+  DYNAMIC_CFG_ENC_OUT_OF_BOUNDS = 23;  // some index was OOB during encode.
+  DYNAMIC_CFG_ENCODE_FAILED  = 24;
+}
+
+// FwErrorStatusConnectionStatus
+// current connection status to include with FwError
+//
+enum FwErrorStatusConnectionStatus {
+  NO_CONNECTION              = 0x00;
+  WIFI_ON                    = 0x01;
+  BTC_ON                     = 0x02;  
+  BTLE_ON                    = 0x03;
+}
+
+// DataDump:FwErrorFlags
+// bit mask of status and stuff to include with FwError
+//
+enum FwErrorStatus {
+  CONNECTION_STATUS_MASK     = 0x00000003; // FWErrorStatusConnectionStatus encoded in bits 0 and 1
+  // EXAMPLE_FLAG_1          = 0x00000004; // Flag in bit 2
+  // EXAMPLE_FLAG_2          = 0x00000008; // Flag in bit 3
+}
+
+// DataDump:FwError
+// firmware error occured, not necessarily an assert but it could have been.
+//
+message FwError {
+  optional uint64 absoluteTime = 1;
+  optional uint64 relativeTime = 2;
+  optional uint32 fwErrCode = 3;
+  optional bytes description_str = 4;
+  optional bytes file_str = 5;
+  optional bytes function_str = 6;
+  optional uint32 line = 7;
+  optional uint32 status = 8;
+}
+
+// https://whistle.atlassian.net/wiki/display/COR/EVTMGR%3A+Adding+a+New+Event
+// Breadcrumbs are generic events that tell us "this happened at this time", nothing more.
+//
+message BreadCrumb {
+  optional uint64 absoluteTime = 1;
+  optional uint64 relativeTime = 2;
+  optional BreadCrumbEvent eventType = 3;
+}
+
+// DataDump:Reboot
+// Reboot happened.  when, and for what reason.
+//
+message Reboot {
+  optional uint64 absoluteTime = 1;
+  optional uint64 relativeTime = 2;
+  optional uint32 reason = 3;       // corresponds to persist_reboot_reason_t
+  optional uint32 bootingUp = 4;    // 0 if shutting down, non-zero otherwise.
+  optional uint32 thread = 5;       // index of thread causing reboot
+}
+
+// DataDump:AccelSleep
+// Provides accel sleep start and duration
+//
+message AccelSleep {
+  optional uint64 absTimeStart = 1;
+  optional uint64 relTimeStart = 2;
+  optional uint64 duration = 3;
+}
+
+
+// DataDump:AccelData:AccelDataEncoding
+// Differential encoding means that the first number listed is the actual measured
+// data value however subsequent numbers are the difference between the given number
+// and the previous number. E.g., the differential version of [5,6,7,3] is [5,1,1,-10].
+//
+enum AccelDataEncoding {
+  ACCEL_ENC_S8 = 1;             // Signed 8-bit integers
+  ACCEL_ENC_S16 = 2;            // Signed 16-bit integers
+  ACCEL_ENC_DIFF_S8 = 3;        // Differential signed 8-bit integers
+  ACCEL_ENC_DIFF_S16 = 4;       // Differential signed 16-bit integers
+  ACCEL_ENC_DIFF_RICE_K0 = 5; // Differential list encoded using Rice K=0
+  ACCEL_ENC_DIFF_RICE_K1 = 6; // Differential list encoded using Rice K=1
+  ACCEL_ENC_DIFF_RICE_K2 = 7; // Differential list encoded using Rice K=2
+  ACCEL_ENC_DIFF_RICE_K3 = 8; // Differential list encoded using Rice K=3
+  ACCEL_ENC_DIFF_RICE_K4 = 9; // Differential list encoded using Rice K=4
+  ACCEL_ENC_DIFF_RICE_K5 = 10; // Differential list encoded using Rice K=5
+  ACCEL_ENC_DIFF_RICE_K6 = 11; // Differential list encoded using Rice K=6
+  ACCEL_ENC_DIFF_RICE_K7 = 12; // Differential list encoded using Rice K=7
+}
+
+
+// DataDump:AccelData
+// Stores a set of accelerometer sample data
+// absoluteStartTime: time since the Epoch (since 1/1/1970) in UTC in milliseconds (this
+//   will give us well past 2070)
+// relativeStartTime: time since the device last booted. If a WMP message includes
+//   components using relativeStartTimes then it will need to also include a
+//   RelativeTimeSync message so the server can properly synchronize the time.
+//   Top 16 bits are boot count, bottom 48 are millis since power on.
+// sampleFrequency: In hertz (samples / second)
+// encodingType: see AccelDataEncoding
+// resolution: resolution of sample set in bits. Default is 8-bits.
+// range: Upper/lower bounds of sample in Gs. E.g., '8' means +/- 8 Gs. default: 8
+// crc: 8-bit CRC on the AccelData payload
+// payload: byte stream of encoded data (encoded per encodingType)
+//
+message AccelData {
+  optional uint64 absoluteStartTime = 1;
+  optional uint64 relativeStartTime = 2;
+  optional int32 sampleFrequency = 3;
+  optional AccelDataEncoding encodingType = 4;
+  optional int32 resolution = 5 [default = 8];
+  optional int32 range = 6 [default = 8];
+//  optional fixed32 eightBitCRCPrePayload = 7;
+//  optional fixed32 thirtyTwoBitCRCPrePayload = 8;
+  optional bytes payload = 20;
+//  optional uint32 eightBitCRC = 40; // DEPRECATED
+  optional uint32 thirtyTwoBitCRCPostPayload = 41;
+}
+
+// BtProximity
+// absoluteStartTime: time since the Epoch (since 1/1/1970) in UTC in milliseconds (this
+//   will give us well past 2070)
+// relativeStartTime: time since the device last booted. If a WMP message includes
+//   components using relativeStartTimes then it will need to also include a
+//   RelativeTimeSync message so the server can properly synchronize the time.
+// macAddress: BT MAC Address identified device
+//
+message BtProximity {
+  optional uint64 absoluteStartTime = 1;
+  optional uint64 relativeStartTime = 2;
+  optional uint64 macAddress = 3;
+}
+
+// BatteryStatus
+// absoluteStartTime: time since the Epoch (since 1/1/1970) in UTC in milliseconds (this
+//   will give us well past 2070)
+// relativeStartTime: time since the device last booted. If a WMP message includes
+//   components using relativeStartTimes then it will need to also include a
+//   RelativeTimeSync message so the server can properly synchronize the time.
+// batteryCounts: the current battery status counts returned from the adc.
+// batteryPercentage: the current estimates battery percentage calculated by the device.
+// temperatureCounts: the current temperature counts returned from the adc
+// statusFalgs: a flags field made up of the enums definied in BatteryFlags above
+//
+message BatteryStatus {
+  enum StatusFlags {
+    wifi_on = 0x01;
+    bt_on = 0x02;
+  }
+  optional uint64 absoluteTime = 1;
+  optional uint64 relativeTime = 2;
+  optional uint32 batteryCounts = 3;
+  optional uint32 batteryPercentage = 4;
+  optional uint32 temperatureCounts = 5;
+  optional uint32 statusFlags = 6;
+  optional uint32 batteryMillivolts = 7;
+  optional uint32 zeroBattMvThresh = 8;
+}
+
+// DataDump:ServerTimeSync
+// Indicates a sync with the server and the logged the time
+// deviceRelativeTime: time since the device last booted. If a WMP message includes
+//   components using relativeStartTimes then it will need to also include a
+//   RelativeTimeSync message so the server can properly synchronize the time.	
+// DEPRECATED
+//message ServerTimeSync {
+//  optional uint64 deviceRelativeTime = 1;
+//  optional uint64 serverAbsoluteTime = 2;
+//}

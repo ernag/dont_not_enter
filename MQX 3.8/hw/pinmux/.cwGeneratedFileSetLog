@@ -1,0 +1,11 @@
+Sources/main.c
+Project_Settings/Linker_Files/MK20DX256Z_ram.lcf
+Project_Settings/Linker_Files/MK20DX256Z_flash.lcf
+Project_Settings/Debugger/MK20DX256Z.mem
+Project_Settings/Debugger/init_kinetis.tcl
+Project_Settings/Debugger/mass_erase_kinetis.tcl
+Project_Headers/derivative.h
+Project_Headers/MK20DZ10.h
+DeviceInitialization.pe
+.settings/com.freescale.core.ide.newprojectwizard.prefs
+ReferencedRSESystems.xml

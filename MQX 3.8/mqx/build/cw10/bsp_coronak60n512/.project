@@ -1,0 +1,1363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>bsp_coronak60n512</name>
+	<comment>MQX project</comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.cdt.managedbuilder.core.genmakebuilder</name>
+			<arguments>
+				<dictionary>
+					<key>?children?</key>
+					<value>?name?=outputEntries\|?children?=?name?=entry\\\\\\\|\\\|?name?=entry\\\\\\\|\\\|\||</value>
+				</dictionary>
+				<dictionary>
+					<key>?name?</key>
+					<value></value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.append_environment</key>
+					<value>true</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.buildArguments</key>
+					<value>-j8</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.buildCommand</key>
+					<value>${GNU_Make_Install_Dir}mingw32-make</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.buildLocation</key>
+					<value>${ProjDirPath}/Debug UART</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.contents</key>
+					<value>org.eclipse.cdt.make.core.activeConfigSettings</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.enableAutoBuild</key>
+					<value>false</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.enableCleanBuild</key>
+					<value>true</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.enableFullBuild</key>
+					<value>true</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.stopOnError</key>
+					<value>true</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.useDefaultBuildCmd</key>
+					<value>true</value>
+				</dictionary>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.cdt.managedbuilder.core.ScannerConfigBuilder</name>
+			<triggers>full,incremental,</triggers>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.cdt.managedbuilder.core.ScannerConfigNature</nature>
+		<nature>org.eclipse.cdt.managedbuilder.core.managedBuildNature</nature>
+		<nature>org.eclipse.cdt.core.cnature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>.external_binary</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>Generic IO Drivers</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>coronak60n512 BSP Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>coronak60n512 User Config</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>.external_binary/Users</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>Debug/bsp_coronak60n512_d.a</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/lib/coronak60n512.cw10/bsp/bsp_coronak60n512_d.a</locationURI>
+		</link>
+		<link>
+			<name>Debug USB/bsp_coronak60n512_d_usb.a</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/lib/coronak60n512.cw10/bsp/bsp_coronak60n512_d_usb.a</locationURI>
+		</link>
+		<link>
+			<name>Generic IO Drivers/cm</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>Generic IO Drivers/debug</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>Generic IO Drivers/io_dun</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>Generic IO Drivers/io_mem</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>Generic IO Drivers/io_null</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>Generic IO Drivers/lpm</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>Generic IO Drivers/pcb</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>Generic IO Drivers/tfs</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/adc</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/gpio</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/i2c</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/lwgpio</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/rtc</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/serial</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/spi</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/usb</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>Release/bsp_coronak60n512.a</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/lib/coronak60n512.cw10/bsp/bsp_coronak60n512.a</locationURI>
+		</link>
+		<link>
+			<name>coronak60n512 BSP Files/PE_LDD.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/bsp/coronak60n512/PE_LDD.h</locationURI>
+		</link>
+		<link>
+			<name>coronak60n512 BSP Files/bsp.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/bsp/coronak60n512/bsp.h</locationURI>
+		</link>
+		<link>
+			<name>coronak60n512 BSP Files/bsp_cm.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/bsp/coronak60n512/bsp_cm.c</locationURI>
+		</link>
+		<link>
+			<name>coronak60n512 BSP Files/bsp_cm.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/bsp/coronak60n512/bsp_cm.h</locationURI>
+		</link>
+		<link>
+			<name>coronak60n512 BSP Files/bsp_prv.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/bsp/coronak60n512/bsp_prv.h</locationURI>
+		</link>
+		<link>
+			<name>coronak60n512 BSP Files/bsp_rev.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/bsp/coronak60n512/bsp_rev.h</locationURI>
+		</link>
+		<link>
+			<name>coronak60n512 BSP Files/coronak60n512.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/bsp/coronak60n512/coronak60n512.h</locationURI>
+		</link>
+		<link>
+			<name>coronak60n512 BSP Files/cw.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/bsp/coronak60n512/cw/cw.c</locationURI>
+		</link>
+		<link>
+			<name>coronak60n512 BSP Files/get_nsec.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/bsp/coronak60n512/get_nsec.c</locationURI>
+		</link>
+		<link>
+			<name>coronak60n512 BSP Files/get_usec.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/bsp/coronak60n512/get_usec.c</locationURI>
+		</link>
+		<link>
+			<name>coronak60n512 BSP Files/init_adc.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/bsp/coronak60n512/init_adc.c</locationURI>
+		</link>
+		<link>
+			<name>coronak60n512 BSP Files/init_bsp.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/bsp/coronak60n512/init_bsp.c</locationURI>
+		</link>
+		<link>
+			<name>coronak60n512 BSP Files/init_enet.c</name>
+			<type>1</type>
+			<locationURI>mqx/source/bsp/coronak60n512/init_enet.c</locationURI>
+		</link>
+		<link>
+			<name>coronak60n512 BSP Files/init_gpio.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/bsp/coronak60n512/init_gpio.c</locationURI>
+		</link>
+		<link>
+			<name>coronak60n512 BSP Files/init_hw.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/bsp/coronak60n512/init_hw.c</locationURI>
+		</link>
+		<link>
+			<name>coronak60n512 BSP Files/init_i2c.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/bsp/coronak60n512/init_i2c.c</locationURI>
+		</link>
+		<link>
+			<name>coronak60n512 BSP Files/init_iodebug.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/bsp/coronak60n512/init_iodebug.c</locationURI>
+		</link>
+		<link>
+			<name>coronak60n512 BSP Files/init_lpm.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/bsp/coronak60n512/init_lpm.c</locationURI>
+		</link>
+		<link>
+			<name>coronak60n512 BSP Files/init_lpm.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/bsp/coronak60n512/init_lpm.h</locationURI>
+		</link>
+		<link>
+			<name>coronak60n512 BSP Files/init_sci.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/bsp/coronak60n512/init_sci.c</locationURI>
+		</link>
+		<link>
+			<name>coronak60n512 BSP Files/init_spi.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/bsp/coronak60n512/init_spi.c</locationURI>
+		</link>
+		<link>
+			<name>coronak60n512 BSP Files/mqx_init.c</name>
+			<type>1</type>
+			<locationURI>mqx/source/bsp/coronak60n512/mqx_init.c</locationURI>
+		</link>
+		<link>
+			<name>coronak60n512 BSP Files/mqx_main.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/bsp/coronak60n512/mqx_main.c</locationURI>
+		</link>
+		<link>
+			<name>coronak60n512 BSP Files/vectors.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/bsp/coronak60n512/vectors.c</locationURI>
+		</link>
+		<link>
+			<name>coronak60n512 User Config/user_config.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/config/coronak60n512/user_config.h</locationURI>
+		</link>
+		<link>
+			<name>.external_binary/Users/Chris</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>Generic IO Drivers/cm/cm.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/cm/cm.c</locationURI>
+		</link>
+		<link>
+			<name>Generic IO Drivers/cm/cm.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/cm/cm.h</locationURI>
+		</link>
+		<link>
+			<name>Generic IO Drivers/cm/cm_kinetis.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/cm/cm_kinetis.h</locationURI>
+		</link>
+		<link>
+			<name>Generic IO Drivers/debug/iodebug.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/debug/iodebug.c</locationURI>
+		</link>
+		<link>
+			<name>Generic IO Drivers/debug/iodebug.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/debug/iodebug.h</locationURI>
+		</link>
+		<link>
+			<name>Generic IO Drivers/debug/iodebug_asm.s</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/debug/iodebug_asm.s</locationURI>
+		</link>
+		<link>
+			<name>Generic IO Drivers/debug/iodebug_prv.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/debug/iodebug_prv.h</locationURI>
+		</link>
+		<link>
+			<name>Generic IO Drivers/io_dun/io_dun.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/io_dun/io_dun.c</locationURI>
+		</link>
+		<link>
+			<name>Generic IO Drivers/io_dun/io_dun.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/io_dun/io_dun.h</locationURI>
+		</link>
+		<link>
+			<name>Generic IO Drivers/io_mem/io_mem.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/io_mem/io_mem.c</locationURI>
+		</link>
+		<link>
+			<name>Generic IO Drivers/io_mem/io_mem.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/io_mem/io_mem.h</locationURI>
+		</link>
+		<link>
+			<name>Generic IO Drivers/io_mem/iomemprv.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/io_mem/iomemprv.h</locationURI>
+		</link>
+		<link>
+			<name>Generic IO Drivers/io_null/io_null.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/io_null/io_null.c</locationURI>
+		</link>
+		<link>
+			<name>Generic IO Drivers/io_null/io_null.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/io_null/io_null.h</locationURI>
+		</link>
+		<link>
+			<name>Generic IO Drivers/io_null/ionulprv.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/io_null/ionulprv.h</locationURI>
+		</link>
+		<link>
+			<name>Generic IO Drivers/lpm/lpm.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/lpm/lpm.c</locationURI>
+		</link>
+		<link>
+			<name>Generic IO Drivers/lpm/lpm.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/lpm/lpm.h</locationURI>
+		</link>
+		<link>
+			<name>Generic IO Drivers/lpm/lpm_kinetis.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/lpm/lpm_kinetis.c</locationURI>
+		</link>
+		<link>
+			<name>Generic IO Drivers/lpm/lpm_kinetis.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/lpm/lpm_kinetis.h</locationURI>
+		</link>
+		<link>
+			<name>Generic IO Drivers/lpm/lpm_prv.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/lpm/lpm_prv.h</locationURI>
+		</link>
+		<link>
+			<name>Generic IO Drivers/pcb/io_pcb.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/pcb/io_pcb.c</locationURI>
+		</link>
+		<link>
+			<name>Generic IO Drivers/pcb/io_pcb.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/pcb/io_pcb.h</locationURI>
+		</link>
+		<link>
+			<name>Generic IO Drivers/pcb/io_pcb2.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/pcb/io_pcb2.c</locationURI>
+		</link>
+		<link>
+			<name>Generic IO Drivers/pcb/iop_inst.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/pcb/iop_inst.c</locationURI>
+		</link>
+		<link>
+			<name>Generic IO Drivers/pcb/iopcbprv.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/pcb/iopcbprv.h</locationURI>
+		</link>
+		<link>
+			<name>Generic IO Drivers/pcb/pcb_mqxa.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/pcb/mqxa/pcb_mqxa.c</locationURI>
+		</link>
+		<link>
+			<name>Generic IO Drivers/pcb/pcb_mqxa.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/pcb/mqxa/pcb_mqxa.h</locationURI>
+		</link>
+		<link>
+			<name>Generic IO Drivers/pcb/pcbmqxav.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/pcb/mqxa/pcbmqxav.h</locationURI>
+		</link>
+		<link>
+			<name>Generic IO Drivers/pcb/pcbshmv.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/pcb/shmem/pcbshmv.h</locationURI>
+		</link>
+		<link>
+			<name>Generic IO Drivers/tfs/tfs.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/tfs/tfs.c</locationURI>
+		</link>
+		<link>
+			<name>Generic IO Drivers/tfs/tfs.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/tfs/tfs.h</locationURI>
+		</link>
+		<link>
+			<name>Generic IO Drivers/tfs/tfs_prv.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/tfs/tfs_prv.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/adc/adc.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/adc/adc.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/adc/adc.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/adc/adc.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/adc/adc_conf.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/adc/adc_conf.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/adc/adc_prv.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/adc/adc_prv.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/adc/kadc</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_phy.c</name>
+			<type>1</type>
+			<locationURI>mqx/source/io/enet/phy/atheros_phy.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_phy.h</name>
+			<type>1</type>
+			<locationURI>mqx/source/io/enet/phy/atheros_phy.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/enaddr.c</name>
+			<type>1</type>
+			<locationURI>mqx/source/io/enet/enaddr.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/enclose.c</name>
+			<type>1</type>
+			<locationURI>mqx/source/io/enet/enclose.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/eninit.c</name>
+			<type>1</type>
+			<locationURI>mqx/source/io/enet/eninit.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/enmediactl.c</name>
+			<type>1</type>
+			<locationURI>mqx/source/io/enet/enmediactl.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/enopen.c</name>
+			<type>1</type>
+			<locationURI>mqx/source/io/enet/enopen.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/ensend.c</name>
+			<type>1</type>
+			<locationURI>mqx/source/io/enet/ensend.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/enstop.c</name>
+			<type>1</type>
+			<locationURI>mqx/source/io/enet/enstop.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/enutil.c</name>
+			<type>1</type>
+			<locationURI>mqx/source/io/enet/enutil.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/gpio/io_gpio.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/gpio/io_gpio.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/gpio/io_gpio.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/gpio/io_gpio.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/gpio/io_gpio_prv.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/gpio/io_gpio_prv.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/gpio/knxx</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/i2c/i2c.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/i2c/i2c.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/i2c/i2c_ki2c.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/i2c/i2c_ki2c.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/i2c/i2c_ki2c_prv.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/i2c/i2c_ki2c_prv.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/i2c/i2c_mk60.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/i2c/i2c_mk60.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/i2c/int</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/i2c/polled</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/lwgpio/kgpio</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/lwgpio/lwgpio.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/lwgpio/lwgpio.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/lwgpio/lwgpio.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/lwgpio/lwgpio.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/lwgpio/whistle_lwgpio_isr_mux.c</name>
+			<type>1</type>
+			<locationURI>mqx/source/io/lwgpio/whistle_lwgpio_isr_mux.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/lwgpio/whistle_lwgpio_isr_mux.h</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/source/io/lwgpio/whistle_lwgpio_isr_mux.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/rtc/krtc.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/rtc/krtc.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/rtc/krtc.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/rtc/krtc.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/rtc/rtc.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/rtc/rtc.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/serial/int</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/serial/io_sinit.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/serial/io_sinit.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/serial/polled</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/serial/serial.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/serial/serial.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/serial/serl_kuart.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/serial/serl_kuart.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/serial/serl_mk60.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/serial/serl_mk60.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/spi/dma_atheros_wifi</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/spi/int</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/spi/polled</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/spi/spi.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/spi/spi.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/spi/spi_dspi.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/spi/spi_dspi.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/spi/spi_dspi_prv.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/spi/spi_dspi_prv.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/spi/spi_mk60_dspi.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/spi/spi_mk60_dspi.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/usb/usb_bsp.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/usb/usb_bsp.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/usb/usb_mk60.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/usb/usb_mk60.c</locationURI>
+		</link>
+		<link>
+			<name>.external_binary/Users/Chris/Desktop</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/adc/kadc/adc_kadc.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/adc/kadc/adc_kadc.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/adc/kadc/adc_kadc.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/adc/kadc/adc_kadc.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/adc/kadc/adc_kadc_prv.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/adc/kadc/adc_kadc_prv.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/adc/kadc/adc_mk60.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/adc/kadc/adc_mk60.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/adc/kadc/adc_mk60.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/adc/kadc/adc_mk60.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/adc/kadc/adt_kpdb.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/adc/kadc/adt_kpdb.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/atheros_stack_offload.h</name>
+			<type>1</type>
+			<locationURI>mqx/source/io/enet/atheros_wifi/atheros_stack_offload.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/atheros_wifi.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/atheros_wifi.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/atheros_wifi_api.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/atheros_wifi_api.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/atheros_wifi_internal.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/atheros_wifi_internal.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/common_src</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/custom_src</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/include</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/gpio/knxx/io_gpio_kgpio.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/gpio/kgpio/io_gpio_kgpio.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/gpio/knxx/io_gpio_kgpio.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/gpio/kgpio/io_gpio_kgpio.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/gpio/knxx/io_gpio_kgpio_prv.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/gpio/kgpio/io_gpio_kgpio_prv.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/i2c/int/i2c_int.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/i2c/int/i2c_int.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/i2c/int/i2c_int_ki2c.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/i2c/int/i2c_int_ki2c.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/i2c/int/i2c_int_prv.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/i2c/int/i2c_int_prv.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/i2c/polled/i2c_pol.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/i2c/polled/i2c_pol.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/i2c/polled/i2c_pol_ki2c.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/i2c/polled/i2c_pol_ki2c.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/i2c/polled/i2c_pol_prv.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/i2c/polled/i2c_pol_prv.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/lwgpio/kgpio/lwgpio_kgpio.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/lwgpio/lwgpio_kgpio.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/lwgpio/kgpio/lwgpio_kgpio.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/lwgpio/lwgpio_kgpio.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/serial/int/serinprv.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/serial/serinprv.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/serial/int/serl_int.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/serial/int/serl_int.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/serial/int/serl_int_kuart.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/serial/int/serl_int_kuart.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/serial/polled/serl_pol.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/serial/polled/serl_pol.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/serial/polled/serl_pol_kuart.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/serial/polled/serl_pol_kuart.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/serial/polled/serplprv.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/serial/serplprv.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/spi/dma_atheros_wifi/ath_spi_dma_dspi.c</name>
+			<type>1</type>
+			<locationURI>mqx/source/io/spi/dma_atheros_wifi/ath_spi_dma_dspi.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/spi/int/spi_int.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/spi/int/spi_int.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/spi/int/spi_int_dspi.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/spi/int/spi_int_dspi.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/spi/int/spi_int_prv.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/spi/int/spi_int_prv.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/spi/polled/spi_pol.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/spi/polled/spi_pol.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/spi/polled/spi_pol_dspi.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/spi/polled/spi_pol_dspi.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/spi/polled/spi_pol_prv.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/spi/polled/spi_pol_prv.h</locationURI>
+		</link>
+		<link>
+			<name>.external_binary/Users/Chris/Desktop/Atheros</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/common_src/api_interface</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/common_src/bmi</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/common_src/driver</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/common_src/hcd</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/common_src/htc</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/common_src/hw_interface</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/common_src/include</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/common_src/reorder</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/common_src/stack_common</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/common_src/storerecall</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/common_src/util</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/common_src/wmi</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/custom_src/api_interface</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/custom_src/driver</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/custom_src/hw_interface</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/custom_src/include</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/custom_src/stack_custom</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/include/athdefs.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/include/athdefs.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/include/bmi_msg.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/include/bmi_msg.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/include/dbglog.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/include/dbglog.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/include/dbglog_id.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/include/dbglog_id.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/include/htc.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/include/htc.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/include/htc_services.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/include/htc_services.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/include/pkt_log.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/include/pkt_log.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/include/wlan_defs.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/include/wlan_defs.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/include/wmi.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/include/wmi.h</locationURI>
+		</link>
+		<link>
+			<name>.external_binary/Users/Chris/Desktop/Atheros/Manuf_Tools_R_2_1_9</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/common_src/api_interface/api_init.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/common_src/api_interface/api_init.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/common_src/api_interface/api_ioctl.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/common_src/api_interface/api_ioctl.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/common_src/api_interface/api_txrx.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/common_src/api_interface/api_txrx.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/common_src/api_interface/api_wmi_rx.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/common_src/api_interface/api_wmi_rx.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/common_src/bmi/bmi.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/common_src/bmi/bmi.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/common_src/driver/driver_diag.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/common_src/driver/driver_diag.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/common_src/driver/driver_init.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/common_src/driver/driver_init.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/common_src/driver/driver_main.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/common_src/driver/driver_main.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/common_src/driver/driver_netbuf.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/common_src/driver/driver_netbuf.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/common_src/driver/driver_txrx.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/common_src/driver/driver_txrx.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/common_src/hcd/spi_hcd.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/common_src/hcd/spi_hcd.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/common_src/htc/htc.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/common_src/htc/htc.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/common_src/hw_interface/hw_api.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/common_src/hw_interface/hw_api.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/common_src/include/a_debug.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/common_src/include/a_debug.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/common_src/include/a_drv.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/common_src/include/a_drv.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/common_src/include/a_drv_api.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/common_src/include/a_drv_api.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/common_src/include/aggr_recv_api.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/common_src/include/aggr_recv_api.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/common_src/include/bmi.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/common_src/include/bmi.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/common_src/include/common_api.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/common_src/include/common_api.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/common_src/include/dbglog_api.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/common_src/include/dbglog_api.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/common_src/include/driver_cxt.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/common_src/include/driver_cxt.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/common_src/include/hif_internal.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/common_src/include/hif_internal.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/common_src/include/htc_api.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/common_src/include/htc_api.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/common_src/include/ieee80211.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/common_src/include/ieee80211.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/common_src/include/netbuf.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/common_src/include/netbuf.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/common_src/include/spi_hcd_if.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/common_src/include/spi_hcd_if.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/common_src/include/wlan_api.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/common_src/include/wlan_api.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/common_src/include/wmi_api.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/common_src/include/wmi_api.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/common_src/reorder/rcv_aggr.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/common_src/reorder/rcv_aggr.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/common_src/stack_common/api_stack_offload.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/common_src/stack_common/api_stack_offload.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/common_src/stack_common/common_stack_offload.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/common_src/stack_common/common_stack_offload.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/common_src/storerecall/storerecall.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/common_src/storerecall/storerecall.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/common_src/util/util.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/common_src/util/util.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/common_src/wmi/wmi.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/common_src/wmi/wmi.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/common_src/wmi/wmi_host.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/common_src/wmi/wmi_host.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/custom_src/api_interface/cust_api_init.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/custom_src/api_interface/cust_api_init.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/custom_src/api_interface/cust_api_ioctl.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/custom_src/api_interface/cust_api_ioctl.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/custom_src/api_interface/cust_api_wmi_rx.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/custom_src/api_interface/cust_api_wmi_rx.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/custom_src/driver/cust_driver_main.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/custom_src/driver/cust_driver_main.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/custom_src/driver/cust_driver_netbuf.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/custom_src/driver/cust_driver_netbuf.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/custom_src/hw_interface/cust_hw_api.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/custom_src/hw_interface/cust_hw_api.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/custom_src/include/a_config.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/custom_src/include/a_config.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/custom_src/include/a_osapi.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/custom_src/include/a_osapi.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/custom_src/include/a_types.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/custom_src/include/a_types.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/custom_src/include/athendpack.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/custom_src/include/athendpack.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/custom_src/include/athstartpack.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/custom_src/include/athstartpack.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/custom_src/include/cust_context.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/custom_src/include/cust_context.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/custom_src/include/cust_netbuf.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/custom_src/include/cust_netbuf.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/custom_src/include/custom_api.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/custom_src/include/custom_api.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/custom_src/include/dma</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/custom_src/include/wlan_config.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/custom_src/include/wlan_config.h</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/custom_src/stack_custom/cust_api_stack_offload.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/custom_src/stack_custom/cust_api_stack_offload.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/custom_src/stack_custom/cust_api_stack_txrx.c</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/custom_src/stack_custom/cust_api_stack_txrx.c</locationURI>
+		</link>
+		<link>
+			<name>Peripheral IO Drivers/enet/atheros_wifi/custom_src/stack_custom/custom_stack_offload.h</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/mqx/source/io/enet/atheros_wifi/custom_src/stack_custom/custom_stack_offload.h</locationURI>
+		</link>
+		<link>
+			<name>.external_binary/Users/Chris/Desktop/Atheros/Manuf_Tools_R_2_1_9/K60</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+	</linkedResources>
+	<variableList>
+		<variable>
+			<name>C</name>
+			<value>$%7BPARENT-10-PROJECT_LOC%7D</value>
+		</variable>
+		<variable>
+			<name>MQX_ROOT_DIR</name>
+			<value>$%7BPARENT-4-PROJECT_LOC%7D</value>
+		</variable>
+		<variable>
+			<name>PROJDIRPATH</name>
+			<value>$%7BPARENT-2-PROJECT_LOC%7D</value>
+		</variable>
+		<variable>
+			<name>mqx</name>
+			<value>$%7BPARENT-3-PROJECT_LOC%7D</value>
+		</variable>
+	</variableList>
+</projectDescription>

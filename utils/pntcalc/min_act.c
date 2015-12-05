@@ -1,0 +1,1 @@
+../../MQX 3.8/whistle/corona/common/min_act/min_act.c

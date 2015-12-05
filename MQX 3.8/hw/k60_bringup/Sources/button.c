@@ -1,0 +1,105 @@
+////////////////////////////////////////////////////////////////////////////////
+//! \addtogroup drivers
+//! \ingroup corona
+//! @{
+//
+// Copyright (c) 2013 Whistle Labs
+//
+// Whistle Labs
+// Proprietary and Confidential
+//
+// This source code and the algorithms implemented therein constitute
+// confidential information and may comprise trade secrets of Whistle Labs
+// or its associates.
+//
+//! \file button.c
+//! \brief Button manager and driver.
+//! \version version 0.1
+//! \date Jan, 2013
+//! \author ernie@whistle.com
+//!
+//! \detail This is the button manager and button driver.  It handles the button interrupt,
+//! and events.
+//! \todo Create better and more appropriate GROUPING of the source code (not button specific).
+//! \todo Experiment with GRAPHS and CHARTS capabilities of dOxygen (not button specific).
+//! \todo Give descriptions for the GROUPS, like system and drivers, etc...
+////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////
+// Includes
+////////////////////////////////////////////////////////////////////////////////
+#include "button.h"
+#include "IO_Map.h"
+#include "PE_Types.h"
+#include "corona_isr_util.h"
+#include "corona_console.h"
+extern cc_handle_t g_cc_handle;
+
+
+////////////////////////////////////////////////////////////////////////////////
+// Definitions
+////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////
+// Prototypes
+////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////
+// Variables
+////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////
+// Code
+////////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////////
+//! \brief Initialize button handler.
+//!
+//! \fntype Non-Reentrant Function
+//!
+//! \detail This function initializes the button ISR and clears interrupt flags.
+//!
+//! \return corona_err_t error code
+//!
+//! \todo Create registration API and enums for different types of button events.
+///////////////////////////////////////////////////////////////////////////////
+corona_err_t button_init(void)
+{
+    PE_ISR(PORTE_ISR);
+#if 0
+	PORTE_ISFR |= 0x00000002;
+#endif
+	return SUCCESS;
+}
+
+///////////////////////////////////////////////////////////////////////////////
+//! \brief ISR for button.
+//!
+//! \fntype Non-Reentrant Function
+//!
+//! \detail This ISR is executed when the button is pressed.
+//!
+///////////////////////////////////////////////////////////////////////////////
+PE_ISR(isr_Button)   // Note you have to put this in the 0x12C entry of the vectortable for this to work.
+{
+    /*
+     *   DEPCRECATED - use PORTE_ISR instead!
+     */
+	if(PORTA_ISFR & 0x20000000)
+	{
+		PORTA_ISFR |= 0x20000000; // clear PTA29 (button) interrupt status bit.
+		ciu_inc(INT_PORTA, 29);
+		cc_print(&g_cc_handle, "PTA29 Button Pressed\n");
+	}
+	
+#if 0
+	/*
+	 *  Unit testing for CIU module.
+	 */
+	if(ciu_cnt(INT_PORTA, 29) == 15)
+	{
+		cc_print(&g_cc_handle, "Button Count = 15!\n");
+		ciu_clr(INT_PORTA, 29);
+	}
+#endif
+}

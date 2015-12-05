@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+  Copyright : 2012 Freescale, Inc. All Rights Reserved.
+
+  This configuration file is a standard interchange file that's format is maintained
+  by Freescale, Inc. The configuration file is a derivative work
+  of the Processor Expert Software technology licensed for use by customers
+  as defined as SOFTWARE in the product's End User License Agreement. This file
+  and format are free to use and distribute for read-only purposes. You do not have
+  the right to create these files or modify this format or use for any purposes other
+  than interchange with the Processor Expert Software technology.
+
+  THIS SOFTWARE IS PROVIDED "AS IS".
+
+  NO WARRANTIES, WHETHER EXPRESS, IMPLIED OR STATUTORY, INCLUDING, BUT NOT
+  LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE APPLY TO THIS SOFTWARE. IN NO EVENT WILL FREESCALE BE LIABLE, WHETHER
+  IN CONTRACT, TORT, OR OTHERWISE, FOR ANY INCIDENTAL, SPECIAL, INDIRECT,
+  CONSEQUENTIAL OR PUNITIVE DAMAGES, INCLUDING, BUT NOT LIMITED TO, DAMAGES FOR
+  ANY LOSS OF USE, LOSS OF TIME, INCONVENIENCE, COMMERCIAL LOSS, OR LOST PROFITS,
+  SAVINGS, OR REVENUES TO THE FULL EXTENT SUCH MAY BE DISCLAIMED BY LAW.
+
+-->
+<export xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ProjectInfoDescription.xsd">
+  <PROCESSOR>
+    <DeviceID>MK60DN512xxx10</DeviceID>
+    <CoreNum>1</CoreNum>
+    <Cores>
+      <Core>
+        <CoreSet>Cortex-M4</CoreSet>
+      </Core>
+    </Cores>
+    <SRAMsize>128k</SRAMsize>
+    <FLASHsize>512k</FLASHsize>
+  </PROCESSOR>
+  <PATHS>
+    <IncludePaths>
+      <Path>C:\Freescale\PExDrv v10.0\eclipse\ProcessorExpert\lib\Kinetis\iofiles\</Path>
+      <Path>C:\Freescale\PExDrv v10.0\eclipse\ProcessorExpert\lib\Kinetis\pdd\inc\</Path>
+      <Path>C:\whistle\firmware\corona_fw\MQX 3.8\mqx\build\cw10\bsp_twrk60d100m\Sources\</Path>
+      <Path>C:\whistle\firmware\corona_fw\MQX 3.8\mqx\build\cw10\bsp_twrk60d100m\Generated_Code\</Path>
+    </IncludePaths>
+    <SourceCodePaths>
+      <Path>C:\whistle\firmware\corona_fw\MQX 3.8\mqx\build\cw10\bsp_twrk60d100m\Generated_Code\</Path>
+      <Path>C:\whistle\firmware\corona_fw\MQX 3.8\mqx\build\cw10\bsp_twrk60d100m\Sources\</Path>
+    </SourceCodePaths>
+  </PATHS>
+  <FILES>
+    <GeneratedCs>
+      <PathName>C:\whistle\firmware\corona_fw\MQX 3.8\mqx\build\cw10\bsp_twrk60d100m\Generated_Code\Cpu.c</PathName>
+      <PathName>C:\whistle\firmware\corona_fw\MQX 3.8\mqx\build\cw10\bsp_twrk60d100m\Generated_Code\DA1.c</PathName>
+      <PathName>C:\whistle\firmware\corona_fw\MQX 3.8\mqx\build\cw10\bsp_twrk60d100m\Generated_Code\GPIO1.c</PathName>
+      <PathName>C:\whistle\firmware\corona_fw\MQX 3.8\mqx\build\cw10\bsp_twrk60d100m\Generated_Code\MQX1.c</PathName>
+      <PathName>C:\whistle\firmware\corona_fw\MQX 3.8\mqx\build\cw10\bsp_twrk60d100m\Generated_Code\PE_LDD.c</PathName>
+      <PathName>C:\whistle\firmware\corona_fw\MQX 3.8\mqx\build\cw10\bsp_twrk60d100m\Generated_Code\PWM.c</PathName>
+      <PathName>C:\whistle\firmware\corona_fw\MQX 3.8\mqx\build\cw10\bsp_twrk60d100m\Generated_Code\TRG.c</PathName>
+      <PathName>C:\whistle\firmware\corona_fw\MQX 3.8\mqx\build\cw10\bsp_twrk60d100m\Generated_Code\WDog1.c</PathName>
+      <PathName>C:\whistle\firmware\corona_fw\MQX 3.8\mqx\build\cw10\bsp_twrk60d100m\Sources\Events.c</PathName>
+      <PathName>C:\whistle\firmware\corona_fw\MQX 3.8\mqx\build\cw10\bsp_twrk60d100m\Sources\ProcessorExpert.c</PathName>
+    </GeneratedCs>
+    <GeneratedHs>
+      <PathName>C:\whistle\firmware\corona_fw\MQX 3.8\mqx\build\cw10\bsp_twrk60d100m\Generated_Code\Cpu.h</PathName>
+      <PathName>C:\whistle\firmware\corona_fw\MQX 3.8\mqx\build\cw10\bsp_twrk60d100m\Generated_Code\DA1.h</PathName>
+      <PathName>C:\whistle\firmware\corona_fw\MQX 3.8\mqx\build\cw10\bsp_twrk60d100m\Generated_Code\GPIO1.h</PathName>
+      <PathName>C:\whistle\firmware\corona_fw\MQX 3.8\mqx\build\cw10\bsp_twrk60d100m\Generated_Code\IO_Map.h</PathName>
+      <PathName>C:\whistle\firmware\corona_fw\MQX 3.8\mqx\build\cw10\bsp_twrk60d100m\Generated_Code\MQX1.h</PathName>
+      <PathName>C:\whistle\firmware\corona_fw\MQX 3.8\mqx\build\cw10\bsp_twrk60d100m\Generated_Code\PE_Const.h</PathName>
+      <PathName>C:\whistle\firmware\corona_fw\MQX 3.8\mqx\build\cw10\bsp_twrk60d100m\Generated_Code\PE_Error.h</PathName>
+      <PathName>C:\whistle\firmware\corona_fw\MQX 3.8\mqx\build\cw10\bsp_twrk60d100m\Generated_Code\PE_LDD.h</PathName>
+      <PathName>C:\whistle\firmware\corona_fw\MQX 3.8\mqx\build\cw10\bsp_twrk60d100m\Generated_Code\PE_Types.h</PathName>
+      <PathName>C:\whistle\firmware\corona_fw\MQX 3.8\mqx\build\cw10\bsp_twrk60d100m\Generated_Code\PWM.h</PathName>
+      <PathName>C:\whistle\firmware\corona_fw\MQX 3.8\mqx\build\cw10\bsp_twrk60d100m\Generated_Code\TRG.h</PathName>
+      <PathName>C:\whistle\firmware\corona_fw\MQX 3.8\mqx\build\cw10\bsp_twrk60d100m\Generated_Code\WDog1.h</PathName>
+      <PathName>C:\whistle\firmware\corona_fw\MQX 3.8\mqx\build\cw10\bsp_twrk60d100m\Sources\Events.h</PathName>
+    </GeneratedHs>
+  </FILES>
+  <OPTIONS>
+  </OPTIONS>
+</export>

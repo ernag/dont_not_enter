@@ -1,0 +1,53 @@
+#----------------------------------------------------------
+# setup variables
+#----------------------------------------------------------
+MQX_ROOTDIR             = $(abspath [% mqxrootdir %])
+TYPE                    = library
+NAME                    = [% library_name %]
+BOARD                   = [% board_name %]
+LIBRARY_ROOTDIR         = [% library_rootdir %]
+LIBRARY_DIR             = [% library_dir %]
+LIBRARY_FILE            = [% library_file %]
+POSTBUILD_CMD           = $(if $(findstring $(HOSTENV),WINDOWS),[% postbuild_cmd_bat %],[% postbuild_cmd_sh %])
+
+
+#-----------------------------------------------------------
+# load tool settings
+#-----------------------------------------------------------
+-include tools/$(TOOL).mak
+
+
+#-----------------------------------------------------------
+# search paths
+#-----------------------------------------------------------
+[%  FOREACH config_key IN include_data.keys -%]
+[%      SET config_data=include_data.$config_key -%]
+ifeq ($(CONFIG),[% config_key %])
+[%      FOREACH data IN config_data -%]
+INCLUDE += [% data.include %]
+[%      END -%]
+endif
+[%  END -%]
+
+
+[%  SET module = '' -%]
+[%  FOREACH data IN sources_data -%]
+[%      IF data.module != module -%]
+
+#-----------------------------------------------------------
+# '[% data.module %]' sources
+#-----------------------------------------------------------
+[%      SET module = data.module -%]
+[%      END -%]
+SOURCES += [% data.source %]
+[%  END -%]
+
+
+#----------------------------------------------------------
+# load global settings
+#----------------------------------------------------------
+include $(MQX_ROOTDIR)/build/common/make/global.mak
+-include $(MQX_ROOTDIR)/build/$(BOARD)/make/tools/$(TOOL).mak
+include $(MQX_ROOTDIR)/build/common/make/verify.mak
+include $(MQX_ROOTDIR)/build/common/make/lib-process.mak
+

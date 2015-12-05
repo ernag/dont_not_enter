@@ -1,0 +1,48 @@
+#------------------------------------------------------------
+# use specific TOOLCHAIN_ROOTDIR if not set in global.mak
+#------------------------------------------------------------
+#TOOLCHAIN_ROOTDIR = C:/PROGRA~1/FREESC~1/CWMCUV~1.1
+
+#------------------------------------------------------------
+# toolchain settings for windows
+#
+# XX_PROCESS macros:
+# $(1) - output file path
+# $(2) - list of object files
+# $(3) - file contains list of object files
+#------------------------------------------------------------
+ifeq ($(HOSTENV),WINDOWS)
+
+AS = $(TOOLCHAIN_ROOTDIR)/MCU/PA_Tools/Command_Line_Tools/mwasmeppc.exe 
+CC = $(TOOLCHAIN_ROOTDIR)/MCU/PA_Tools/Command_Line_Tools/mwcceppc.exe 
+CX = $(TOOLCHAIN_ROOTDIR)/MCU/PA_Tools/Command_Line_Tools/mwcceppc.exe 
+AR = $(TOOLCHAIN_ROOTDIR)/MCU/PA_Tools/Command_Line_Tools/mwldeppc.exe 
+LD = $(TOOLCHAIN_ROOTDIR)/MCU/PA_Tools/Command_Line_Tools/mwldeppc.exe 
+
+AS_PROCESS = $(AS) $(2) -o $(1) $(AS_FLAGS) $(addprefix -D,$(AS_DEFINE)) $(addprefix -I,$(INCLUDE)) $(addprefix -I,$(RT_INCLUDE)) 
+CC_PROCESS = $(CC) $(2) -o $(1) $(CC_FLAGS) $(addprefix -D,$(CC_DEFINE)) $(addprefix -I,$(INCLUDE)) $(addprefix -I,$(RT_INCLUDE)) -MDfile $(DEPENDS_DIR)/$(notdir $(basename $(1))).d 
+CX_PROCESS = $(CX) $(2) -o $(1) $(CX_FLAGS) $(addprefix -D,$(CX_DEFINE)) $(addprefix -I,$(INCLUDE)) $(addprefix -I,$(RT_INCLUDE)) -MDfile $(DEPENDS_DIR)/$(notdir $(basename $(1))).d 
+AR_PROCESS = $(AR) $(AR_FLAGS) -library @"$(3)" -o $(1) 
+LD_PROCESS = $(LD) $(LD_FLAGS) -application @"$(3)" \
+$(addprefix -l,$(LIBRARIES)) \
+$(addprefix -L,$(RT_PATHS)) \
+$(addprefix -l,$(RT_LIBRARIES)) \
+-lcf $(LINKER_FILE) -o $(1) 
+
+endif
+
+
+#------------------------------------------------------------
+# toolchain settings for unix
+#
+# XX_PROCESS macros:
+# $(1) - output file path
+# $(2) - list of object files
+# $(3) - file contains list of object files
+#------------------------------------------------------------
+ifeq ($(HOSTENV),UNIX)
+$(error "no cw10 settings for unix")
+endif
+
+
+[% INCLUDE tool.tmpl %]

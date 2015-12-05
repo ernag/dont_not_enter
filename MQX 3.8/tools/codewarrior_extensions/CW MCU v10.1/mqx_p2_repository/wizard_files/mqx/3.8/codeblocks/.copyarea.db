@@ -1,0 +1,36 @@
+ClearCase CopyAreaDB|4
+MSGSW\MQX\src\tools\codewarrior_extensions\CW MCU v10.1\mqx_p2_repository\wizard_files\mqx\3.8\codeblocks
+2
+20
+16:mainc_shell_includes.c|1|135bcf79c2f|14|49600667|3669dc8f870c408ba7f07fa81ba031ce|0
+1d:mainc_mfs_ifdef_ramdisksize.c|1|135bcf79d1a|4a|659816c4|1642d528bf4c4d37957d7311fa709675|0
+1d:mainc_shell_cmdstruct_begin.c|1|135bcf79c7d|31|999f0ff2|e65b1ee0f07e49629e0170df6c33b9f6|0
+1a:mainc_usbdevice_includes.c|1|135bcf79a89|1a|7bd90825|67d372e0df724c5e857f3e921ee0a6a5|0
+1e:usbd_init_function_prototype.h|1|135bcf79a4b|17|699f07e9|6f843dabc39d4952acbb0df3c7e1702d|0
+16:mainh_shell_includes.h|1|135bcf79b64|33|aa890f72|977bf6207a494174bd261f65431c70ce|0
+18:mainh_usbhost_includes.h|1|135bcf79a1c|1ea|15059995|9487084ebd5b4503b1d2954c29dff76a|0
+23:mainc_rtcs_tellnet_shellcmdstruct.c|1|135bcf79cbc|244|75ba2b9|9c1cd4a414664d0695bbd7c4d8282cea|0
+11:mainc_not_shell.c|1|135bcf79cfa|1b|48c404a3|2e1afd803d5a4d1985cbb650da3eb614|0
+26:usbhost_hostevent_function_prototype.h|1|135bcf79bd1|5c|aa3e2353|289b07f2d5954a4ea022c65ce95c828b|0
+14:mainc_mfs_includes.c|1|135bcf79a3b|27|11b0c63|d1d0d94bc2ec4b33a8cfef73d2778087|0
+11:mainc_shell_for.c|1|135bcf79c3f|92|d28c257d|07a2d457cb27498186e8f6c9ce98f08f|0
+18:usbhost_max_frame_size.h|1|135bcf79bc2|25|ca4908f7|c6ab009b6f7441128bd3799f1b54a85c|0
+15:mainc_rtcs_includes.c|1|135bcf79ceb|3d|743213a6|35b5acda6b7f4e5eb33c2a68fe9a7cdf|0
+1a:mainh_usbdevice_includes.h|1|135bcf79a99|18|6b99080e|c967b6ff8e824f0ea9e3660c6bfbeb25|0
+1b:mainc_shell_cmdstruct_end.c|1|135bcf79b54|110|58b247e4|096ea2e4c7234f2396d7ff52f54bb9b8|0
+16:mainc_usbd_init_call.c|1|135bcf79aa9|29|ecfd0b1c|bf010e01d8934e84844d48a79b5185e7|0
+16:mainc_usbh_init_call.c|1|135bcf79a5a|26|cfdf0a6e|6a004254452d4466a1e5bca8cef5a96c|0
+19:mainc_mfs_ifdef_usesmfs.c|1|135bcf79d0a|a4|ae4237eb|e06bd7469b524fcc81444a8fcfc8a503|0
+18:mainc_usbhost_includes.c|1|135bcf79a1c|31|aa611071|d9ef4a27e1fd47f0b594a9413700108a|0
+16:mainc_rtcs_shellcmds.c|1|135bcf79cdb|212|84cf95e7|739e4ba3a54248f4bc04fc2ef2eaba0c|0
+1d:mainc_mfs_ramdiskstart_call.c|1|135bcf79ad7|39|f83610ed|c59f8a8bee9d429fa3d511b5b67c0fcc|0
+14:mainh_mfs_includes.h|1|135bcf79a2b|27|11b0c63|dee362fa2fe44e159ad5605bfe3173eb|0
+20:usbhost_host_controller_number.h|1|135bcf79be1|22|bccf09df|e4d8ae5cecab4547ae42bcace0e13d97|0
+16:mainc_rtcs_init_call.c|1|135bcf79ab8|23|a18e090c|2f71a32009cc4e9698957bdc5ac95ecb|0
+1e:rtcs_init_function_prototype.h|1|135bcf79bf1|17|6a6b07f7|f82fa8cc7fc749f6bedcd44cabefbb77|0
+15:mfs_ramdisk_defines.h|1|135bcf79c00|e2|7f794715|2c386fd043a84ece8315c6854c1becc9|0
+1e:usbh_init_function_prototype.h|1|135bcf79b45|17|69db07ed|62ef888f8ae2450c993f64703cf82c9c|0
+15:mainh_rtcs_includes.h|1|135bcf79b83|63|94b1e84|03ce5c575d484dc699b2cb0db49d0abf|0
+27:mfs_ram_disk_start_function_prototype.h|1|135bcf79c20|1c|9b1609df|c848aca1fe6b40628ae8b71085aeaad1|0
+11:usbhost_usb_otg.h|1|135bcf79ba3|63|fd51e68|90538f2e49e4436c8239ee2ebaed2fdd|0
+15:mainc_mfs_shellcmds.c|1|135bcf79b93|21c|77af8962|d7cbe60893d945bb80ef816e7a954c20|0

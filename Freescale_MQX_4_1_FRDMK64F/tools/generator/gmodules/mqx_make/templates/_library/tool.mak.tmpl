@@ -1,0 +1,85 @@
+[%  IF include_data.keys.size -%]
+#-----------------------------------------------------------
+# search paths
+#-----------------------------------------------------------
+[%      FOREACH config_key IN include_data.keys -%]
+[%          SET config_data=include_data.$config_key -%]
+ifeq ($(CONFIG),[% config_key %])
+[%          FOREACH data IN config_data -%]
+INCLUDE += [% data.include %]
+[%          END -%]
+endif
+[%      END -%]
+[%  END -%]
+
+
+[%  IF rtinclude_data.keys.size -%]
+#-----------------------------------------------------------
+# runtime search paths
+#-----------------------------------------------------------
+[%      FOREACH config_key IN rtinclude_data.keys -%]
+[%          SET config_data=rtinclude_data.$config_key -%]
+ifeq ($(CONFIG),[% config_key %])
+[%          FOREACH data IN config_data -%]
+RT_INCLUDE += [% data.include %]
+[%          END -%]
+endif
+[%      END -%]
+[%  END -%]
+
+
+[%  SET module = '' -%]
+[%  FOREACH data IN sources_data -%]
+[%      IF data.module != module -%]
+#-----------------------------------------------------------
+# [% data.module %] sources
+#-----------------------------------------------------------
+[%      SET module = data.module -%]
+[%      END -%]
+SOURCES += [% data.source %]
+[%  END -%]
+
+
+[%  FOREACH config_key IN settings_data.keys -%]
+[%      SET config = settings_data.$config_key -%]
+[%      IF 
+            config.asflags.size ||
+            config.ccflags.size ||
+            config.cxflags.size ||
+            config.asdefines.size ||
+            config.ccdefines.size ||
+            config.cxdefines.size
+-%]
+#-----------------------------------------------------------
+# '[% config_key %]' configuration settings
+#-----------------------------------------------------------
+ifeq ($(CONFIG),[% config_key %])
+[%          IF config.asflags.size -%]
+AS_FLAGS += [% FOREACH flag IN config.asflags %][% flag %] [% END %]
+[%          END -%]
+[%          IF config.ccflags.size -%]
+CC_FLAGS += [% FOREACH flag IN config.ccflags %][% flag %] [% END %]
+[%          END -%]
+[%          IF config.cxflags.size -%]
+CX_FLAGS += [% FOREACH flag IN config.cxflags %][% flag %] [% END %]
+[%          END -%]
+[%          IF config.ldflags.size -%]
+LD_FLAGS += [% FOREACH flag IN config.ldflags %][% flag %] [% END %]
+[%          END -%]
+[%          IF config.arflags.size -%]
+AR_FLAGS += [% FOREACH flag IN config.arflags %][% flag %] [% END %]
+[%          END -%]
+[%          IF config.asdefines.size -%]
+AS_DEFINE += [% FOREACH define IN config.asdefines %][% define %] [% END %]
+[%          END -%]
+[%          IF config.ccdefines.size -%]
+CC_DEFINE += [% FOREACH define IN config.ccdefines %][% define %] [% END %]
+[%          END -%]
+[%          IF config.cxdefines.size -%]
+CX_DEFINE += [% FOREACH define IN config.cxdefines %][% define %] [% END %]
+[%          END -%]
+endif
+
+
+[%      END -%]
+[%  END -%]

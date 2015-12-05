@@ -1,0 +1,44 @@
+#------------------------------------------------------------
+# use specific TOOLCHAIN_ROOTDIR if not set in global.mak
+#------------------------------------------------------------
+#TOOLCHAIN_ROOTDIR = C:/PROGRA~1/IARSYS~1/EMBEDD~1.0
+
+#------------------------------------------------------------
+# toolchain settings for windows
+#
+# XX_PROCESS macros:
+# $(1) - output file path
+# $(2) - list of object files
+# $(3) - file contains list of object files
+#------------------------------------------------------------
+ifeq ($(HOSTENV),WINDOWS)
+
+AS = $(TOOLCHAIN_ROOTDIR)/ARM/BIN/iasmarm.exe 
+CC = $(TOOLCHAIN_ROOTDIR)/ARM/BIN/iccarm.exe 
+CX = $(TOOLCHAIN_ROOTDIR)/ARM/BIN/iccarm.exe 
+AR = $(TOOLCHAIN_ROOTDIR)/ARM/BIN/iarchive.exe 
+LD = $(TOOLCHAIN_ROOTDIR)/ARM/BIN/ilinkarm.exe 
+
+AS_PROCESS = $(AS) $(2) -o $(1) $(AS_FLAGS) $(addprefix -D,$(AS_DEFINE)) $(addprefix -I,$(INCLUDE)) $(addprefix -I,$(RT_INCLUDE)) 
+CC_PROCESS = $(CC) $(2) -o $(1) $(CC_FLAGS) $(addprefix -D,$(CC_DEFINE)) $(addprefix -I,$(INCLUDE)) $(addprefix -I,$(RT_INCLUDE)) --dependencies=m $(DEPENDS_DIR)
+CX_PROCESS = $(CX) $(2) -o $(1) $(CX_FLAGS) $(addprefix -D,$(CX_DEFINE)) $(addprefix -I,$(INCLUDE)) $(addprefix -I,$(RT_INCLUDE)) --dependencies=m $(DEPENDS_DIR)
+AR_PROCESS = $(AR) $(AR_FLAGS) --create -f $(3) -o $(1)
+LD_PROCESS = $(LD) --map $(basename $(1)).map $(LIBRARIES) $(LD_FLAGS) --config $(LINKER_FILE) -f $(3) -o $(1)
+
+endif
+
+
+#------------------------------------------------------------
+# toolchain settings for unix
+#
+# XX_PROCESS macros:
+# $(1) - output file path
+# $(2) - list of object files
+# $(3) - file contains list of object files
+#------------------------------------------------------------
+ifeq ($(HOSTENV),UNIX)
+$(error "no iar settings for unix")
+endif
+
+
+[% INCLUDE tool.tmpl %]

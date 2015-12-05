@@ -1,0 +1,6 @@
+include min_act.c
+include min_act.h
+include pntcalcmodule.c
+include setup.py
+include example.py
+include README.txt

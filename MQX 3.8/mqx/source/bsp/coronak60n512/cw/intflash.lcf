@@ -1,0 +1,844 @@
+
+FORCE_ACTIVE {apph}
+
+MEMORY
+{
+   vectorrom       (RX): ORIGIN = 0x00022000, LENGTH = 0x00000200
+   header          (RX): ORIGIN = 0x00022200, LENGTH = 0x00000020
+   rom             (RX): ORIGIN = 0x00022220, LENGTH = 0x0005DDE0 # Code + Const data
+   
+   # RAM length is 0x20000.  Use first 256 bytes for persistent vars.
+   # Note changes here must also be reflected in boot1 and boot2, so those don't stomp on this area.
+   reset_save_area (RW): ORIGIN = 0x1FFF0000, LENGTH = 0x00000200 
+   ram             (RW): ORIGIN = 0x1FFF0200, LENGTH = 0x0001FE00 # Bulk of RAM following the 256-byte 'persistent' section.
+#   cfmprotrom  (RX): ORIGIN = 0x00000410, LENGTH = 0x00000010
+
+   # kernel space starts after RAM variables (Location of MQX Kernel data + MQX heap)
+   end_of_kd   (RW): ORIGIN = 0x2000FFF0, LENGTH = 0x00000000
+   
+   # Boot stack reused by MQX Kernel data
+   bstack      (RW): ORIGIN = 0x2000FA00, LENGTH = 0x00000200  # Boot stack
+   end_bstack  (RW): ORIGIN = 0x2000FBFF, LENGTH = 0x00000000
+}
+
+KEEP_SECTION { .vectors_rom, .vectors_ram }
+KEEP_SECTION { .header }
+
+SECTIONS
+{
+   __INTERNAL_SRAM_BASE  = 0x1FFF0000;
+   __INTERNAL_SRAM_SIZE  = 0x00020000;
+
+   __INTERNAL_FLASH_BASE = 0x00000000;
+   __INTERNAL_FLASH_SIZE = 0x00080000;
+
+   __INTERNAL_FLEXNVM_BASE = 0;
+   __INTERNAL_FLEXNVM_SIZE = 0;
+   
+   __EXTERNAL_MRAM_BASE  = 0x70000000;
+   __EXTERNAL_MRAM_SIZE  = 0x00080000;
+   __EXTERNAL_MRAM_ROM_BASE = 0x70000000;
+   __EXTERNAL_MRAM_ROM_SIZE = 0x00000000;
+   __EXTERNAL_MRAM_RAM_BASE = 0x70000000;
+   __EXTERNAL_MRAM_RAM_SIZE = 0x00080000;
+
+   __EXTERNAL_LCD_BASE = 0x60000000;
+   __EXTERNAL_LCD_SIZE = 0x1FFFF;
+   __EXTERNAL_LCD_DC_BASE = 0x60010000;
+
+   # MQX link time configurations
+   __DEFAULT_PROCESSOR_NUMBER = 1;
+   __DEFAULT_INTERRUPT_STACK_SIZE = 1024;
+   __KERNEL_DATA_VERIFY_ENABLE = 0;    # Test SDRAM read/write
+
+   # Flashx configurations
+   __FLASHX_SECT_SIZE = 0x800;
+
+    .vectors :
+    {
+        __VECTOR_TABLE_ROM_START = .;        # Runtime vector table in sram
+        *(.vectors_rom)
+        . = ALIGN (0x4); 
+    } > vectorrom
+
+    .appheader :
+    {
+        apphdr = .;
+        *(.appheader)
+        . = ALIGN (0x4);
+    } > header
+
+#    .cfmprotect :
+#    {
+#        *(.cfmconfig)
+#        . = ALIGN (0x4);
+#    } > cfmprotrom
+
+    .main_application :
+    {
+        *(KERNEL)
+        *(S_BOOT)
+        *(IPSUM)
+        __START_TEXT = .;        
+        *(.text)
+        __END_TEXT = .;
+        *(.init)
+        *(.fini)
+        *(.eini)
+        *(.ctors)
+        *(.dtors)
+        *(.text.SHLK)
+        *(.text.FCFG)
+        *(.text.PMEM)
+        *(.data.g_fcfg_desc)
+        *(i.GAP_Un_Register_Remote_Authentication)
+        *(i.SDP_Cancel_Service_Request)
+        *(i._HCI_Accept_Connection_Request)
+        *(i._HCI_Authentication_Requested)
+        *(i._HCI_Change_Local_Name)
+        *(i._HCI_Create_Connection)
+        *(i._HCI_Create_Connection_Cancel)
+        *(i._HCI_Delete_Stored_Link_Key)
+        *(i._HCI_Disconnect)
+        *(i._HCI_Enable_Device_Under_Test_Mode)
+        *(i._HCI_Event_Callback)
+        *(i._HCI_Exit_Sniff_Mode)
+        *(i._HCI_Flush)
+        *(i._HCI_Host_Number_Of_Completed_Packets)
+        *(i._HCI_Inquiry)
+        *(i._HCI_IO_Capability_Request_Negative_Reply)
+        *(i._HCI_IO_Capability_Request_Reply)
+        *(i._HCI_LE_Read_Buffer_Size)
+        *(i._HCI_LE_Read_White_List_Size)
+        *(i._HCI_Link_Key_Request_Negative_Reply)
+        *(i._HCI_Link_Key_Request_Reply)
+        *(i._HCI_Periodic_Inquiry_Mode)
+        *(i._HCI_PIN_Code_Request_Negative_Reply)
+        *(i._HCI_PIN_Code_Request_Reply)
+        *(i._HCI_Read_BD_ADDR)
+        *(i._HCI_Read_Buffer_Size)
+        *(i._HCI_Read_Class_of_Device)
+        *(i._HCI_Read_Encryption_Mode)
+        *(i._HCI_Read_LE_Host_Supported)
+        *(i._HCI_Read_Local_Name)
+        *(i._HCI_Read_Local_Supported_Commands)
+        *(i._HCI_Read_Local_Supported_Features)
+        *(i._HCI_Read_Local_Version_Information)
+        *(i._HCI_Read_Remote_Extended_Features)
+        *(i._HCI_Read_Scan_Enable)
+        *(i._HCI_Read_Simple_Pairing_Mode)
+        *(i._HCI_Reject_Connection_Request)
+        *(i._HCI_Remote_Name_Request)
+        *(i._HCI_Remote_OOB_Data_Request_Negative_Reply)
+        *(i._HCI_Remote_OOB_Data_Request_Reply)
+        *(i._HCI_Send_Keypress_Notification)
+        *(i._HCI_Set_Connection_Encryption)
+        *(i._HCI_Set_Event_Filter)
+        *(i._HCI_Set_Event_Mask)
+        *(i._HCI_Sniff_Mode)
+        *(i._HCI_User_Confirmation_Request_Negative_Reply)
+        *(i._HCI_User_Confirmation_Request_Reply)
+        *(i._HCI_User_Passkey_Request_Negative_Reply)
+        *(i._HCI_User_Passkey_Request_Reply)
+        *(i._HCI_Write_Automatic_Flush_Timeout)
+        *(i._HCI_Write_Class_of_Device)
+        *(i._HCI_Write_Current_IAC_LAP)
+        *(i._HCI_Write_Default_Link_Policy_Settings)
+        *(i._HCI_Write_Encryption_Mode)
+        *(i._HCI_Write_Extended_Inquiry_Response)
+        *(i._HCI_Write_LE_Host_Supported)
+        *(i._HCI_Write_Link_Supervision_Timeout)
+        *(i._HCI_Write_Page_Timeout)
+        *(i._HCI_Write_Scan_Enable)
+        *(i._HCI_Write_Simple_Pairing_Mode)
+	    *(i._HCI_Write_Simple_Pairing_Debug_Mode)
+        *(i._L2CA_Config_Request)
+        *(i._L2CA_Config_Response)
+        *(i._L2CA_Connect_Request)
+        *(i._L2CA_Connect_Response)
+        *(i._L2CA_Data_Write)
+        *(i._L2CA_Disconnect_Request)
+        *(i._L2CA_Disconnect_Response)
+        *(i._L2CA_Enhanced_Data_Write)
+        *(i._L2CA_Event_Callback)
+        *(i._L2CA_Flush_Channel_Data)
+        *(i._L2CA_Register_PSM)
+        *(i._RFCOMM_Event_Callback)
+        *(i._RFCOMM_Get_Data_Queuing_Parameters)
+        *(i._RFCOMM_Line_Status_Change)
+        *(i._RFCOMM_Modem_Status)
+        *(i._RFCOMM_Open_Request)
+        *(i._RFCOMM_Open_Response)
+        *(i._RFCOMM_Parameter_Negotiation_Response)
+        *(i._RFCOMM_Register_Server_Channel)
+        *(i._RFCOMM_Release_Request)
+        *(i._RFCOMM_Remote_Port_Negotiation_Response)
+        *(i._RFCOMM_Send_Credits)
+        *(i._RFCOMM_Send_Data)
+        *(i._RFCOMM_Send_Data_With_Credits)
+        *(i._RFCOMM_Set_Data_Queuing_Parameters)
+        *(i._RFCOMM_Set_System_Parameters)
+        *(i._RFCOMM_Un_Register_Server_Channel)
+        *(i._SDP_Service_Search_Attribute_Request)
+        *(i.AcquireBluetoothStackInformation)
+        *(i.AcquireDriverEntry)
+        *(i.AcquireGAPLEContext)
+        *(i.AcquireGAPStackACLInfo)
+        *(i.AcquireGAPStackInfo)
+        *(i.AcquireGAPStackInformation)
+        *(i.AcquireISPPContext)
+        *(i.AcquireISPPContextPortInfo)
+        *(i.AcquireL2CAPStackInformation)
+        *(i.AcquireRFCOMMStackInformation)
+        *(i.AcquireSDPStackInformation)
+        *(i.AcquireSPPStackInformation)
+        *(i.AcquireSPPStackPortInformation)
+        *(i.AddCallbackEntry)
+        *(i.AddConnectionInfoEntry)
+        *(i.AddL2CAPConnectionInfoEntry)
+        *(i.AddPacketQueueEntry)
+        *(i.AddPortInfoEntry)
+        *(i.AddPortInformationEntry)
+        *(i.AddRegistryInfoEntry)
+        *(i.AddRFCOMMChannelInfoEntry)
+        *(i.AddRFCOMMMessageInfoEntry)
+        *(i.AddServiceAttributeEntry)
+        *(i.AddServiceRecordEntry)
+        *(i.AdjustSharedBuffer)
+        *(i.Asynchronous_Callback)
+        *(i.AsynchronousACLDataCallback)
+        *(i.AsynchronousCallbackFunction)
+        *(i.AsynchronousHCIEventCallback)
+        *(i.BSC_AcquireListLock)
+        *(i.BSC_AddGenericListEntry)
+        *(i.BSC_AddGenericListEntry_Actual)
+        *(i.BSC_AuthenticateDevice)
+        *(i.BSC_DeleteGenericListEntry)
+        *(i.BSC_Event_Callback)
+        *(i.BSC_FreeGenericListEntryList)
+        *(i.BSC_FreeGenericListEntryMemory)
+        *(i.BSC_GetNextGenericListEntry)
+        *(i.BSC_Initialize)
+        *(i.BSC_LockBluetoothStack)
+        *(i.BSC_RegisterEventCallback)
+        *(i.BSC_ReleaseListLock)
+        *(i.BSC_ScheduleAsynchronousCallback)
+        *(i.BSC_SearchGenericListEntry)
+        *(i.BSC_Shutdown)
+        *(i.BSC_StartTimer)
+        *(i.BSC_StopTimer)
+        *(i.BSC_Timer_Callback)
+        *(i.BSC_UnLockBluetoothStack)
+        *(i.BSC_UnRegisterEventCallback)
+        *(i.BTPS_ChangeTimer)
+        *(i.BTPS_CleanupTimerModule)
+        *(i.BTPS_InitializeTimerModule)
+        *(i.BTPS_StartTimer)
+        *(i.BTPS_StopTimer)
+        *(i.BuildAndQueuePacket)
+        *(i.BuildAndSubmitCommandBD_ADDRByte)
+        *(i.BuildAndSubmitCommandBD_ADDRByteVariable)
+        *(i.BuildAndSubmitCommandByte)
+        *(i.BuildAndSubmitCommandByteVariable)
+        *(i.BuildAndSubmitCommandNoData)
+        *(i.BuildAndSubmitCommandThreeWords)
+        *(i.BuildAndSubmitCommandWord)
+        *(i.BuildAndSubmitCommandWordByte)
+        *(i.BuildCommandHeader)
+        *(i.BuildEventBD_ADDRDWord)
+        *(i.BuildEventBD_ADDRVariableData)
+        *(i.BuildEventByte)
+        *(i.BuildEventByteBD_ADDRByte)
+        *(i.BuildEventByteWordByte)
+        *(i.BuildEventByteWordWord)
+        *(i.BuildEventHeader)
+        *(i.BuildEventWord)
+        *(i.BuildPortInformationStructure)
+        *(i.BuildRemotePortNegotiationStructure)
+        *(i.BuildWiAPPacket)
+        *(i.CalculateAttributeRequestParameters)
+        *(i.CalculateBufferOffset)
+        *(i.CalculateCreditThreshold)
+        *(i.CalculateDataTypeLength)
+        *(i.CalculateFCS)
+        *(i.CleanupCertificateModule)
+        *(i.CleanupChannel)
+        *(i.CleanupCOMMList)
+        *(i.CleanupHCIDriver)
+        *(i.CleanUpInquiry)
+        *(i.CleanupPortInformationEntry)
+        *(i.CleanupPortInfoStructure)
+        *(i.CleanupSDPConnection)
+        *(i.CloseComm)
+        *(i.CompareBluetoothAddress)
+        *(i.CompareListEntryKeys)
+        *(i.CompareNULLBluetoothAddress)
+        *(i.CompareServiceRecordWithServiceList)
+        *(i.CountExtendedInquiryDataRecords)
+        *(i.CreateNewChannel)
+        *(i.CreateNewIdentifierEntry)
+        *(i.CreditDataPacket)
+        *(i.DecreaseBluetoothStackThreadCount)
+        *(i.DelayedAuthenticationProcess)
+        *(i.DeleteACLLinkEntryConnection_Handle)
+        *(i.DeleteACLPacketEntry)
+        *(i.DeleteBSCTimerEntry)
+        *(i.DeleteCallbackEntry)
+        *(i.DeleteCallbackInfoByType)
+        *(i.DeleteChannelInfoEntry)
+        *(i.DeleteCOMEntry)
+        *(i.DeleteConnectionInfoEntry)
+        *(i.DeleteConnectionInfoEntryCID)
+        *(i.DeleteIdentifierInfoEntryByIdentifier)
+        *(i.DeletePacketQueueEntry)
+        *(i.DeletePacketQueueInfoEntry)
+        *(i.DeletePortInfoEntry)
+        *(i.DeletePortInformationEntry)
+        *(i.DeleteRegistryInfoEntry)
+        *(i.DeleteSessionInfoEntry)
+        *(i.DetermineLEControllerSupport)
+        *(i.Disconnect)
+        *(i.DisconnectChannel)
+        *(i.Discoverability_Timeout_Callback)
+        *(i.DispatchDebugPacketCallbacks)
+        *(i.DispatchEvent)
+        *(i.DispatchFixedChannelConnectDisconnect)
+        *(i.DispatchStatus)
+        *(i.FormatAndDispatchAuthenticationEvent)
+        *(i.FormatAndDispatchAuthenticationStatusEvent)
+        *(i.FormatAndDispatchEncryptionChangeEvent)
+        *(i.FormatAndDispatchEventBD_ADDR)
+        *(i.FormatAndDispatchEventPortInformation)
+        *(i.FormatAndDispatchEventTEIDLCIByte)
+        *(i.FormatAndDispatchEventUnsignedInteger)
+        *(i.FormatAndDispatchFlowEvent)
+        *(i.FormatAndDispatchInquiryEvent)
+        *(i.FormatAndDispatchOpenConfirmationEvent)
+        *(i.FormatEventCIDOnly)
+        *(i.FormatEventConfigConfirmation)
+        *(i.FormatEventConnectConfirmation)
+        *(i.FormatEventDisconnectConfirmation)
+        *(i.FormatEventEchoConfirmation)
+        *(i.FormatEventInformationConfirmation)
+        *(i.FormatEventMemberStatus)
+        *(i.FormatResponsePDUHeaderAndSend)
+        *(i.ForwardEvent)
+        *(i.FragmentPacket)
+        *(i.FreeACLDataList)
+        *(i.FreeACLLinkList)
+        *(i.FreeBSCTimerEntryList)
+        *(i.FreeCallbackInfoList)
+        *(i.FreeCallbackList)
+        *(i.FreeChannelInfoList)
+        *(i.FreeCOMStructureResources)
+        *(i.FreeConnectionInfoList)
+        *(i.FreeDataElementList)
+        *(i.FreeDriverStructureResources)
+        *(i.FreeIdentifierInfoList)
+        *(i.FreeInquiryResultList)
+        *(i.FreeL2CAPConnectionInfoList)
+        *(i.FreeL2CAPContextInformation)
+        *(i.FreeLELinkEntryMemory)
+        *(i.FreeLELinkList)
+        *(i.FreePacketQueueInfoList)
+        *(i.FreeParsedExtendedInquiryDataMemory)
+        *(i.FreeParsedServiceAttributeResponseData)
+        *(i.FreePortInfoEntryResources)
+        *(i.FreePortInformationEntryMemory)
+        *(i.FreePortInformationList)
+        *(i.FreeRegistryInfoList)
+        *(i.FreeRFCOMMChannelInfoList)
+        *(i.FreeSecurityManagerResources)
+        *(i.FreeServiceAttributeList)
+        *(i.FreeServiceRecordList)
+        *(i.FreeSessionInfoList)
+        *(i.FreeTransmitBufferListHead)
+        *(i.GAP_Authenticate_Remote_Device)
+        *(i.GAP_Authentication_Response)
+        *(i.GAP_Cancel_Bonding)
+        *(i.GAP_Cleanup)
+        *(i.GAP_Convert_Extended_Inquiry_Response_Data)
+        *(i.GAP_End_Bonding)
+        *(i.GAP_Initialize)
+        *(i.GAP_Initiate_Bonding)
+        *(i.GAP_LE_Cleanup)
+        *(i.GAP_LE_Initialize)
+        *(i.GAP_Perform_Inquiry)
+        *(i.GAP_Query_Class_Of_Device)
+        *(i.GAP_Query_Connection_Handle)
+        *(i.GAP_Query_Encryption_Mode)
+        *(i.GAP_Query_Local_BD_ADDR)
+        *(i.GAP_Query_Local_Device_Name)
+        *(i.GAP_Query_Remote_Device_Name)
+        *(i.GAP_Register_Remote_Authentication)
+        *(i.GAP_Set_Class_Of_Device)
+        *(i.GAP_Set_Connectability_Mode)
+        *(i.GAP_Set_Discoverability_Mode)
+        *(i.GAP_Set_Encryption_Mode)
+        *(i.GAP_Set_Inquiry_Mode)
+        *(i.GAP_Set_Local_Device_Name)
+        *(i.GAP_Set_Pairability_Mode)
+        *(i.GAP_Write_Extended_Inquiry_Information)
+        *(i.GAPBondingEventHandler)
+        *(i.GAPInquiryEventHandler)
+        *(i.GAPRemoteNameEventHandler)
+        *(i.GenerateSignature)
+        *(i.GetAccess)
+        *(i.GetCertCurrentDate)
+        *(i.GetCertLength)
+        *(i.GetCertPtr)
+        *(i.GetNextACLPacketEntry)
+        *(i.GetNextCallbackPacketID)
+        *(i.GetNextChannelInfoEntry)
+        *(i.GetNextDataIdentifier)
+        *(i.GetNextGroupInfoEntry)
+        *(i.GetNextIdentifierInfoEntry)
+        *(i.GetNextIDNumber)
+        *(i.GetNextRFCOMMChannelInfoEntry)
+        *(i.GetNextRFCOMMServerInfoEntry)
+        *(i.GetNextSerialPortID)
+        *(i.GetNextServiceAttribute)
+        *(i.GetNextServiceRequestID)
+        *(i.GetNextTimerID)
+        *(i.GetNextTransactionID)
+        *(i.GOEP_Cleanup)
+        *(i.GOEP_Initialize)
+        *(i.HandleChannelDisconnection)
+        *(i.HandleCloseDataSession)
+        *(i.HandleGeneralLingo)
+        *(i.HandleOpenDataSession)
+        *(i.HandleReadDataError)
+        *(i.HandleSessionData)
+        *(i.HCI_Accept_Connection_Request)
+        *(i.HCI_ACL_Data_Callback)
+        *(i.HCI_Authentication_Requested)
+        *(i.HCI_Build_ACL_Packet_Type_Mask)
+        *(i.HCI_CancelPacket)
+        *(i.HCI_Change_Local_Name)
+        *(i.HCI_Cleanup)
+        *(i.HCI_CloseDriver)
+        *(i.HCI_Command_Supported)
+        *(i.HCI_Create_Connection)
+        *(i.HCI_Create_Connection_Cancel)
+        *(i.HCI_Delete_Stored_Link_Key)
+        *(i.HCI_Disconnect)
+        *(i.HCI_DriverCallback)
+        *(i.HCI_Enable_Device_Under_Test_Mode)
+        *(i.HCI_Event_Callback)
+        *(i.HCI_Exit_Sniff_Mode)
+        *(i.HCI_Flush)
+        *(i.HCI_Host_Number_Of_Completed_Packets)
+        *(i.HCI_Initialize)
+        *(i.HCI_Inquiry)
+        *(i.HCI_IO_Capability_Request_Negative_Reply)
+        *(i.HCI_IO_Capability_Request_Reply)
+        *(i.HCI_LE_Read_Buffer_Size)
+        *(i.HCI_LE_Read_White_List_Size)
+        *(i.HCI_Link_Key_Request_Negative_Reply)
+        *(i.HCI_Link_Key_Request_Reply)
+        *(i.HCI_OpenDriver)
+        *(i.HCI_Periodic_Inquiry_Mode)
+        *(i.HCI_PIN_Code_Request_Negative_Reply)
+        *(i.HCI_PIN_Code_Request_Reply)
+        *(i.HCI_Query_LE_Controller_Support)
+        *(i.HCI_Read_BD_ADDR)
+        *(i.HCI_Read_Buffer_Size)
+        *(i.HCI_Read_Class_of_Device)
+        *(i.HCI_Read_Encryption_Mode)
+        *(i.HCI_Read_LE_Host_Supported)
+        *(i.HCI_Read_Local_Name)
+        *(i.HCI_Read_Local_Supported_Commands)
+        *(i.HCI_Read_Local_Supported_Features)
+        *(i.HCI_Read_Local_Version_Information)
+        *(i.HCI_Read_Remote_Extended_Features)
+        *(i.HCI_Read_Scan_Enable)
+        *(i.HCI_Read_Simple_Pairing_Mode)
+        *(i.HCI_Reconfigure_Driver)
+        *(i.HCI_ReconfigureDriver)
+        *(i.HCI_Register_ACL_Data_Callback)
+        *(i.HCI_Register_Event_Callback)
+        *(i.HCI_RegisterACLDataCallback)
+        *(i.HCI_RegisterDebugPacketCallback)
+        *(i.HCI_RegisterEventCallback)
+        *(i.HCI_Reject_Connection_Request)
+        *(i.HCI_Remote_Name_Request)
+        *(i.HCI_Remote_OOB_Data_Request_Negative_Reply)
+        *(i.HCI_Remote_OOB_Data_Request_Reply)
+        *(i.HCI_Reset)
+        *(i.HCI_Schedule_Asynchronous_Callback)
+        *(i.HCI_Send_ACL_Data)
+        *(i.HCI_Send_Keypress_Notification)
+        *(i.HCI_Send_Raw_Command)
+        *(i.HCI_SendPacket)
+        *(i.HCI_Set_Connection_Encryption)
+        *(i.HCI_Set_Event_Filter)
+        *(i.HCI_Set_Event_Mask)
+        *(i.HCI_Sniff_Mode)
+        *(i.HCI_Switch_Role)
+        *(i.HCI_Un_Register_Callback)
+        *(i.HCI_UnRegisterCallback)
+        *(i.HCI_User_Confirmation_Request_Negative_Reply)
+        *(i.HCI_User_Confirmation_Request_Reply)
+        *(i.HCI_User_Passkey_Request_Negative_Reply)
+        *(i.HCI_User_Passkey_Request_Reply)
+        *(i.HCI_Version_Supported)
+        *(i.HCI_Write_Automatic_Flush_Timeout)
+        *(i.HCI_Write_Class_of_Device)
+        *(i.HCI_Write_Current_IAC_LAP)
+        *(i.HCI_Write_Default_Link_Policy_Settings)
+        *(i.HCI_Write_Encryption_Mode)
+        *(i.HCI_Write_Extended_Inquiry_Response)
+        *(i.HCI_Write_Inquiry_Mode)
+        *(i.HCI_Write_LE_Host_Supported)
+        *(i.HCI_Write_Link_Supervision_Timeout)
+        *(i.HCI_Write_Page_Timeout)
+        *(i.HCI_Write_Scan_Enable)
+        *(i.HCI_Write_Simple_Pairing_Mode)
+        *(i.HCI_Write_Simple_Pairing_Debug_Mode)
+        *(i.HCICallbackThread)
+        *(i.HCIInquiryEventHandler)
+        *(i.HCILL_Initialize)
+        *(i.HCILL_ReceiveBytes)
+        *(i.HCILL_Reconfigure)
+        *(i.HCILL_Resynchronize)
+        *(i.HCILL_Shutdown)
+        *(i.HCILL_TransmitBytes)
+        *(i.HCILLEventCallback)
+        *(i.HCIRemoteExtendedFeaturesEventHandler)
+        *(i.HCIRemoteNameEventHandler)
+        *(i.HCISendPacket)
+        *(i.HCITR_COMDataCallback_UART)
+        *(i.IncreaseBluetoothStackThreadCount)
+        *(i.InitializeBSCModule)
+        *(i.InitializeCertificateModule)
+        *(i.InitializeCOMMList)
+        *(i.InitializeISPPModule)
+        *(i.ISPP_Ack_Last_Session_Data_Packet)
+        *(i.ISPP_Cancel_Authorization)
+        *(i.ISPP_Close_Port)
+        *(i.ISPP_Close_Server_Port)
+        *(i.ISPP_Data_Read)
+        *(i.ISPP_Data_Write)
+        *(i.ISPP_Event)
+        *(i.ISPP_Get_Configuration_Parameters)
+        *(i.ISPP_Get_Port_Operating_Mode)
+        *(i.ISPP_Get_Queuing_Parameters)
+        *(i.ISPP_Initialize)
+        *(i.ISPP_Open_Port_Request_Response)
+        *(i.ISPP_Open_Remote_Port)
+        *(i.ISPP_Open_Server_Port)
+        *(i.ISPP_Open_Session_Request_Response)
+        *(i.ISPP_Register_SDP_Record)
+        *(i.ISPP_Respond_Port_Information)
+        *(i.ISPP_Send_Raw_Data)
+        *(i.ISPP_Send_Session_Data)
+        *(i.ISPP_Send_Session_Data_With_Timeout)
+        *(i.ISPP_Set_Configuration_Parameters)
+        *(i.ISPP_Set_Queuing_Parameters)
+        *(i.ISPP_Start_Authorization)
+        *(i.IssueBondingCallback)
+        *(i.IssueRemoteNameCallback)
+        *(i.L2CA_Config_Request)
+        *(i.L2CA_Config_Response)
+        *(i.L2CA_Connect_Request)
+        *(i.L2CA_Connect_Response)
+        *(i.L2CA_Data_Write)
+        *(i.L2CA_Disconnect_Request)
+        *(i.L2CA_Disconnect_Response)
+        *(i.L2CA_Enhanced_Data_Write)
+        *(i.L2CA_Event_Callback)
+        *(i.L2CA_Flush_Channel_Data)
+        *(i.L2CA_Register_Fixed_Channel)
+        *(i.L2CA_Register_PSM)
+        *(i.L2CA_Set_Link_Connection_Configuration)
+        *(i.L2CA_Un_Register_Fixed_Channel)
+        *(i.L2CA_Un_Register_PSM)
+        *(i.L2CAP_Cleanup)
+        *(i.L2CAP_ConfigRequestEvent)
+        *(i.L2CAP_ConfigRequestResponse)
+        *(i.L2CAP_ConfigResponseEvent)
+        *(i.L2CAP_ConnectionParameterUpdateRequestEvent)
+        *(i.L2CAP_ConnectionParameterUpdateResponseEvent)
+        *(i.L2CAP_ConnectionTimeout)
+        *(i.L2CAP_ConnectRequestEvent)
+        *(i.L2CAP_ConnectRequestResponse)
+        *(i.L2CAP_ConnectResponseEvent)
+        *(i.L2CAP_DataWrite)
+        *(i.L2CAP_DisconnectRequestEvent)
+        *(i.L2CAP_DisconnectRequestResponse)
+        *(i.L2CAP_DisconnectResponseEvent)
+        *(i.L2CAP_EchoRequestResponse)
+        *(i.L2CAP_EchoResponseEvent)
+        *(i.L2CAP_InformationRequestResponse)
+        *(i.L2CAP_InformationResponseEvent)
+        *(i.L2CAP_Initialize)
+        *(i.L2CAP_ProcessACLQueue)
+        *(i.L2CAP_ReceiveTimeout)
+        *(i.L2CAP_RejectCommand)
+        *(i.L2CAP_RequestTimeout)
+        *(i.L2CAP_StateTimeout)
+        *(i.LP_ConnectCfm)
+        *(i.LP_ConnectCfmNeg)
+        *(i.LP_ConnectIndication)
+        *(i.LP_ConnectRequest)
+        *(i.LP_DisconnectCfm)
+        *(i.LP_DisconnectReq)
+        *(i.MailboxDeleteDataCallback)
+        *(i.MatchResponsePacket)
+        *(i.NormalizeUUID)
+        *(i.OpenComm)
+        *(i.OTP_Cleanup)
+        *(i.OTP_Initialize)
+        *(i.ParseAPIAttributeIDList)
+        *(i.ParseAPIAttributes)
+        *(i.ParseAPIOptions)
+        *(i.ParseAPIUUIDs)
+        *(i.ParseAttributeIDList)
+        *(i.ParseDataElement)
+        *(i.ParseDataElements)
+        *(i.ParseExtendedInquiryDataRecords)
+        *(i.ParseInquiryResultRSSI)
+        *(i.ParseOptionsToAPI)
+        *(i.ParseRecordAttributes)
+        *(i.ParseServiceSearchPattern)
+        *(i.ProcessConnectionError)
+        *(i.ProcessL2CAPDataPacket)
+        *(i.ProcessPacketQueue)
+        *(i.ProcessRFCOMMControlMessage)
+        *(i.ProcessRFCOMMDataMessage)
+        *(i.ProcessSendPDU)
+        *(i.ProcessSerialData)
+        *(i.ProcessServiceAttributeRequest)
+        *(i.ProcessServiceAttributeResponse)
+        *(i.ProcessServiceSearchAttributeRequest)
+        *(i.ProcessServiceSearchRequest)
+        *(i.QuerySharedBuffer)
+        *(i.QueueACLPacket)
+        *(i.ReadDataElementSequenceLength)
+        *(i.ReconfigureComm)
+        *(i.RegisterCallback)
+        *(i.ReleaseBluetoothStackInformation)
+        *(i.ReleaseGAPLEContext)
+        *(i.RemoveL2CAPConnectionInfoEntry)
+        *(i.RemoveRFCOMMChannelInfoEntry)
+        *(i.RemoveRFCOMMMessageInfoEntryByTEIAndMessage)
+        *(i.RetrieveAccessoryCertificateData)
+        *(i.RFCOMM_Cleanup)
+        *(i.RFCOMM_Control)
+        *(i.RFCOMM_Control_Message)
+        *(i.RFCOMM_Data_Write)
+        *(i.RFCOMM_Event_Callback)
+        *(i.RFCOMM_Get_Data_Queuing_Parameters)
+        *(i.RFCOMM_Initialize)
+        *(i.RFCOMM_Line_Status_Change)
+        *(i.RFCOMM_Modem_Status)
+        *(i.RFCOMM_Open_Request)
+        *(i.RFCOMM_Open_Response)
+        *(i.RFCOMM_Parameter_Negotiation_Response)
+        *(i.RFCOMM_Register_Server_Channel)
+        *(i.RFCOMM_Release_Request)
+        *(i.RFCOMM_Remote_Port_Negotiation_Response)
+        *(i.RFCOMM_Send_Credits)
+        *(i.RFCOMM_Send_Data)
+        *(i.RFCOMM_Send_Data_With_Credits)
+        *(i.RFCOMM_Set_Data_Queuing_Parameters)
+        *(i.RFCOMM_Set_System_Parameters)
+        *(i.RFCOMM_SignalTimeout)
+        *(i.RFCOMM_Start_Link_Negotiation)
+        *(i.RFCOMM_Un_Register_Server_Channel)
+        *(i.RFCOMMCleanupHandler)
+        *(i.RFCOMMClientSABMMessageHandler)
+        *(i.RFCOMMServerPNMessageHandler)
+        *(i.RFCOMMServerSABMMessageHandler)
+        *(i.ScanAPIAttributesForUUID)
+        *(i.SCO_Cleanup)
+        *(i.SCO_Initialize)
+        *(i.SDP_Add_Attribute)
+        *(i.SDP_Cleanup)
+        *(i.SDP_Create_Service_Record)
+        *(i.SDP_Delete_Service_Record)
+        *(i.SDP_Initialize)
+        *(i.SDP_Service_Search_Attribute_Request)
+        *(i.SDP_Timeout_Callback)
+        *(i.SDPParseServiceAttributeResponseData)
+        *(i.SDPServiceSearchAttributeResponseHandler)
+        *(i.SearchACLLinkEntryBD_ADDR)
+        *(i.SearchACLLinkEntryConnection_Handle)
+        *(i.SearchACLPacketEntryByConnectionHandle)
+        *(i.SearchACLPacketEntryByIdentifier)
+        *(i.SearchACLPacketEntryByNotSent)
+        *(i.SearchACLPacketEntryBySent)
+        *(i.SearchBTStackEntry)
+        *(i.SearchCallbackEntry)
+        *(i.SearchChannelInfoEntry)
+        *(i.SearchChannelInfoEntryByConnectionHandle)
+        *(i.SearchCOMEntry)
+        *(i.SearchConnectionInfoEntry)
+        *(i.SearchConnectionInfoEntryByBD_ADDR)
+        *(i.SearchConnectionInfoEntryByConnectionHandle)
+        *(i.SearchDriverEntry)
+        *(i.SearchIdentifierInfoEntryByIdentifier)
+        *(i.SearchISPPContextEntry)
+        *(i.SearchL2CAPConnectionInfoEntryByBD_ADDR)
+        *(i.SearchL2CAPConnectionInfoEntryByCID)
+        *(i.SearchPortInfoEntry)
+        *(i.SearchPortInformationEntry)
+        *(i.SearchRegistryByID)
+        *(i.SearchRegistryByValue)
+        *(i.SearchRFCOMMChannelInfoEntryByTEIAndDLCI)
+        *(i.SearchRFCOMMMessageInfoEntryByMessageTEIAndDLCI)
+        *(i.SearchRFCOMMMessageInfoEntryByTEIAndDLCI)
+        *(i.SearchRFCOMMServerInfoEntryByTEI)
+        *(i.SearchServiceRecordEntry)
+        *(i.SearchSessionInfoEntry)
+        *(i.SendCommPacket)
+        *(i.SendDataPacket)
+        *(i.SendDispatchResetThreadClose)
+        *(i.SendFormattedControlMessage)
+        *(i.SendHCIPacketToLowerDriver)
+        *(i.SendQueuedData)
+        *(i.SendSDPRequestPDU)
+        *(i.ServiceAttributeListValid)
+        *(i.SPP_Cleanup)
+        *(i.SPP_Close_Port)
+        *(i.SPP_Close_Server_Port)
+        *(i.SPP_Data_Read)
+        *(i.SPP_Data_Write)
+        *(i.SPP_Event_Callback)
+        *(i.SPP_Get_Configuration_Parameters)
+        *(i.SPP_Get_Queuing_Parameters)
+        *(i.SPP_Initialize)
+        *(i.SPP_Line_Status)
+        *(i.SPP_Open_Port_Request_Response)
+        *(i.SPP_Open_Remote_Port)
+        *(i.SPP_Open_Server_Port)
+        *(i.SPP_Port_Status)
+        *(i.SPP_Register_SDP_Record)
+        *(i.SPP_Respond_Port_Information)
+        *(i.SPP_Respond_Query_Port_Information)
+        *(i.SPP_Send_Break)
+        *(i.SPP_Set_Configuration_Parameters)
+        *(i.SPP_Set_Queuing_Parameters)
+        *(i.SPP_Set_Server_Connection_Mode)
+        *(i.SPPClientHandler)
+        *(i.SPPServerHandler)
+        *(i.SubmitSDPRequest)
+        *(i.SynchronousHCICommandCallback)
+        *(i.TimerCallback)        
+        *(i.TimerThread)
+        *(i.TransmitData)
+        *(i.UpdateAndExpireTimers)
+        *(i.VerifySharedBufferPointer)
+        *(i.WriteAttributeRequestContinuationInformation)
+        *(i.WriteDataElementSequenceHeader)
+        . = ALIGN(0x4);
+        __START_RODATA = .;
+        *(.rodata)
+        *(.constdata)
+        __END_RODATA = .;
+        . = ALIGN(0x4);
+        *(.rdata)
+        . = ALIGN(0x4);
+        *(.exception)
+        . = ALIGN(0x4);
+        __exception_table_start__ = .;
+        EXCEPTION
+        __exception_table_end__ = .;
+        __sinit__ = .;
+        STATICINIT
+
+        . = ALIGN(0x4);
+        __COPY_OF_DATA = .;
+    } > rom
+    
+    .save_across_boots:
+    {
+       __SAVED_ACROSS_BOOT = .;
+    } > reset_save_area 
+
+    .main_application_data : AT(__COPY_OF_DATA)
+    {
+        . = ALIGN(256);
+        __VECTOR_TABLE_RAM_START = .;        # Runtime vector table in sram
+        *(.vectors_ram)
+
+        . = ALIGN(512);
+        __BDT_BASE = .;
+        *(.usb_bdt)
+        __BDT_END = .;
+
+        __START_DATA = .;
+        *(.data)
+        __END_DATA = .;
+
+        . = ALIGN(0x4);
+        __START_SDATA = .;
+        *(.sdata)
+        __END_SDATA = .;
+
+        . = ALIGN(0x4);
+        __SDA_BASE  = .;
+        __SDA_BASE_ = __SDA_BASE;
+        . = ALIGN(512);
+    } > ram
+    
+    
+    .main_application_bss :
+    {
+        . = ALIGN(0x10);
+        __START_SBSS = .;
+        *(.sbss)
+        *(SCOMMON)
+        __END_SBSS = .;
+
+        __START_BSS = .;
+        *(.bss)
+        *(COMMON)
+        __END_BSS = .;
+        . = ALIGN(512);
+    } >> ram
+
+    .kernel_data : #AT(ADDR(.main_application_bss) + SIZEOF(.main_application_bss))
+    {
+        __KERNEL_DATA_START = ALIGN(0x10);
+    }
+    .end_of_kernel_data :
+    {
+        __KERNEL_DATA_END = .;
+    } > end_of_kd
+
+    .boot_stack :
+    {
+        _stack_end = .;
+    } > bstack
+   
+    .end_of_boot_stack :
+    {
+        _stack_addr  = .;
+        __SP_INIT    = .;
+        __BOOT_STACK_ADDRESS = .;
+    } > end_bstack
+
+    # Locate the ROM copy table into ROM after the initialized data
+    _romp_at = __COPY_OF_DATA + SIZEOF(.main_application_data);
+
+    .romp : AT (_romp_at)
+    {
+        __S_romp = _romp_at;
+        WRITEW(__COPY_OF_DATA);                    #ROM start address
+        WRITEW(ADDR(.main_application_data));      #RAM start address
+        WRITEW(SIZEOF(.main_application_data));    #size
+        WRITEW(0);
+        WRITEW(0);
+        WRITEW(0);
+    }
+
+    _flashx_start = __COPY_OF_DATA + SIZEOF(.main_application_data) + SIZEOF(.romp);
+
+    # flashx working area spans across the whole rest of Flash memory
+    __FLASHX_START_ADDR = ((_flashx_start + __FLASHX_SECT_SIZE - 1) / __FLASHX_SECT_SIZE) * __FLASHX_SECT_SIZE;
+    __FLASHX_END_ADDR = __INTERNAL_FLASH_BASE + __INTERNAL_FLASH_SIZE;
+
+}
+
+/* EOF */

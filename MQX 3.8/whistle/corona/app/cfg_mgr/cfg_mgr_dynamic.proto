@@ -1,0 +1,103 @@
+//////////////////////////////////////////////////////////
+// NOTE:  Do NOT change ID's, only appending is permitted.
+//////////////////////////////////////////////////////////
+
+import "nanopb.proto";
+
+enum PomType {
+  POM_SPP = 1;
+  POM_IAP = 2;
+}
+
+
+///////////////////////////////////////
+// Top Level: Dynamic Whistle Configs
+///////////////////////////////////////
+message ConfigDynamic 
+{
+	optional UserInfo   userInfo = 1;
+	optional SystemInfo sysInfo  = 2;
+}
+
+/////////////////////////////////
+// User Configs
+/////////////////////////////////
+message UserInfo 
+{
+	optional string dogName    			 = 1;
+	optional UserNetworks userNetwork    = 2;
+	optional BluetoothCfg btCfg 		 = 3;
+	optional ActivityCfg  activityCfg    = 4;
+	optional TimeCfg      timeCfg        = 5;
+}
+
+message ActivityCfg
+{
+	optional uint32 daily_minutes_active_goal = 1;
+}
+
+message TimeCfg
+{
+	optional int64 timezone_offset = 1;
+}
+
+message UserNetworks
+{
+	repeated Network network		  = 20;
+	optional string mru_ssid          = 21;
+}
+
+message Network 
+{
+    optional string ssid 	  		  = 1;
+    optional NetworkSecurity security = 2;
+}
+
+message NetworkSecurity 
+{
+	optional uint32 securityType = 1;  // ar4100p_main.h: SEC_MODE_*
+	
+	// Only one security will be present per network (union)
+	optional SecurityWEP wepParams = 2;
+	optional SecurityWPA wpaParams = 3;
+}
+
+message SecurityWEP 
+{
+	optional string key = 1;
+	optional uint32 default_key_index = 2;
+}
+
+message SecurityWPA 
+{
+	optional string version = 1; // "wpa", "wpa2" - static ref per WPA_PARAM_VERSION_WPA & WPA_PARAM_VERSION_WPA2
+	optional string passphrase = 2;
+	optional uint32 ucipher = 3;
+	optional uint32 mcipher = 4;  // CRYPTO_TYPE
+}
+
+
+message BluetoothCfg 
+{
+	repeated LinkKeyInfo LinkKeyInfo = 1;
+	optional string BtDeviceName = 2;
+	optional uint32 mru_index = 3;
+}
+
+message LinkKeyInfo
+{
+	optional bytes Key = 1 [(nanopb).max_size = 16];
+	optional bytes Addr = 2 [(nanopb).max_size = 6];
+	optional uint32 usage_count = 3;
+	optional PomType pom = 4;
+}
+
+/////////////////////////////////
+// System Information
+/////////////////////////////////
+message SystemInfo 
+{
+	optional uint32 lastFWUAttempt = 1;
+	optional uint32 installFlag = 2;
+	optional uint32 deviceHasCheckedIn = 3;
+}

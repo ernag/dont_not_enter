@@ -1,0 +1,5 @@
+exec device = MK60DN512xxx10
+loadbin B2P.BIN, 0x00000000
+verifybin B2P.BIN, 0x00000000
+r
+q

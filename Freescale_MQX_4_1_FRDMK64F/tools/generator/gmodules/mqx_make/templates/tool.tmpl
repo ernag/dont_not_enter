@@ -1,0 +1,159 @@
+#------------------------------------------------------------
+# tool extensions 
+#------------------------------------------------------------
+LIBRARY_EXT     = [% general.libext %]
+APPLICATION_EXT = [% general.appext %]
+
+
+#------------------------------------------------------------
+# libraries tool options 
+#------------------------------------------------------------
+ifeq ($(TYPE),library)
+
+[%  IF libdata.common -%]
+# common settings
+[%      IF libdata.common.asflags.size -%]
+AS_FLAGS += [% FOREACH flag IN libdata.common.asflags %][% flag %] [% END %]
+[%      END -%]
+[%      IF libdata.common.ccflags.size -%]
+CC_FLAGS += [% FOREACH flag IN libdata.common.ccflags %][% flag %] [% END %]
+[%      END -%]
+[%      IF libdata.common.cxflags.size -%]
+CX_FLAGS += [% FOREACH flag IN libdata.common.cxflags %][% flag %] [% END %]
+[%      END -%]
+[%      IF libdata.common.ldflags.size -%]
+LD_FLAGS += [% FOREACH flag IN libdata.common.ldflags %][% flag %] [% END %]
+[%      END -%]
+[%      IF libdata.common.arflags.size -%]
+AR_FLAGS += [% FOREACH flag IN libdata.common.arflags %][% flag %] [% END %]
+[%      END -%]
+[%      IF libdata.common.asdefines.size -%]
+AS_DEFINE += [% FOREACH define IN libdata.common.asdefines %][% define %] [% END %]
+[%      END -%]
+[%      IF libdata.common.ccdefines.size -%]
+CC_DEFINE += [% FOREACH define IN libdata.common.ccdefines %][% define %] [% END %]
+[%      END -%]
+[%      IF libdata.common.cxdefines.size -%]
+CX_DEFINE += [% FOREACH define IN libdata.common.cxdefines %][% define %] [% END %]
+[%      END -%]
+[%  END -%]
+
+
+[%  FOREACH config_key IN libdata.configs.keys -%]
+[%      SET config = libdata.configs.$config_key -%]
+[%      IF 
+            config.asflags.size ||
+            config.ccflags.size ||
+            config.cxflags.size ||
+            config.asdefines.size ||
+            config.ccdefines.size ||
+            config.cxdefines.size
+-%]
+# common '[% config_key %]' configuration settings
+ifeq ($(CONFIG),[% config_key %])
+[%          IF config.asflags.size -%]
+AS_FLAGS += [% FOREACH flag IN config.asflags %][% flag %] [% END %]
+[%          END -%]
+[%          IF config.ccflags.size -%]
+CC_FLAGS += [% FOREACH flag IN config.ccflags %][% flag %] [% END %]
+[%          END -%]
+[%          IF config.cxflags.size -%]
+CX_FLAGS += [% FOREACH flag IN config.cxflags %][% flag %] [% END %]
+[%          END -%]
+[%          IF config.ldflags.size -%]
+LD_FLAGS += [% FOREACH flag IN config.ldflags %][% flag %] [% END %]
+[%          END -%]
+[%          IF config.arflags.size -%]
+AR_FLAGS += [% FOREACH flag IN config.arflags %][% flag %] [% END %]
+[%          END -%]
+[%          IF config.asdefines.size -%]
+AS_DEFINE += [% FOREACH define IN config.asdefines %][% define %] [% END %]
+[%          END -%]
+[%          IF config.ccdefines.size -%]
+CC_DEFINE += [% FOREACH define IN config.ccdefines %][% define %] [% END %]
+[%          END -%]
+[%          IF config.cxdefines.size -%]
+CX_DEFINE += [% FOREACH define IN config.cxdefines %][% define %] [% END %]
+[%          END -%]
+endif
+
+[%      END -%]
+[%  END -%]
+endif
+
+
+#------------------------------------------------------------
+# application tool options 
+#------------------------------------------------------------
+ifeq ($(TYPE),application)
+
+[%  IF appdata.common -%]
+# common settings
+[%      IF appdata.common.asflags.size -%]
+AS_FLAGS += [% FOREACH flag IN appdata.common.asflags %][% flag %] [% END %]
+[%      END -%]
+[%      IF appdata.common.ccflags.size -%]
+CC_FLAGS += [% FOREACH flag IN appdata.common.ccflags %][% flag %] [% END %]
+[%      END -%]
+[%      IF appdata.common.cxflags.size -%]
+CX_FLAGS += [% FOREACH flag IN appdata.common.cxflags %][% flag %] [% END %]
+[%      END -%]
+[%      IF appdata.common.ldflags.size -%]
+LD_FLAGS += [% FOREACH flag IN appdata.common.ldflags %][% flag %] [% END %]
+[%      END -%]
+[%      IF appdata.common.arflags.size -%]
+AR_FLAGS += [% FOREACH flag IN appdata.common.arflags %][% flag %] [% END %]
+[%      END -%]
+[%      IF appdata.common.asdefines.size -%]
+AS_DEFINE += [% FOREACH define IN appdata.common.asdefines %][% define %] [% END %]
+[%      END -%]
+[%      IF appdata.common.ccdefines.size -%]
+CC_DEFINE += [% FOREACH define IN appdata.common.ccdefines %][% define %] [% END %]
+[%      END -%]
+[%      IF appdata.common.cxdefines.size -%]
+CX_DEFINE += [% FOREACH define IN appdata.common.cxdefines %][% define %] [% END %]
+[%      END -%]
+[%  END -%]
+
+
+[%  FOREACH config_key IN appdata.configs.keys -%]
+[%      SET config = appdata.configs.$config_key -%]
+[%      IF 
+            config.asflags.size ||
+            config.ccflags.size ||
+            config.cxflags.size ||
+            config.asdefines.size ||
+            config.ccdefines.size ||
+            config.cxdefines.size
+-%]
+# common '[% config_key %]' configuration settings
+ifeq ($(CONFIG),[% config_key %])
+[%          IF config.asflags.size -%]
+AS_FLAGS += [% FOREACH flag IN config.asflags %][% flag %] [% END %]
+[%          END -%]
+[%          IF config.ccflags.size -%]
+CC_FLAGS += [% FOREACH flag IN config.ccflags %][% flag %] [% END %]
+[%          END -%]
+[%          IF config.cxflags.size -%]
+CX_FLAGS += [% FOREACH flag IN config.cxflags %][% flag %] [% END %]
+[%          END -%]
+[%          IF config.ldflags.size -%]
+LD_FLAGS += [% FOREACH flag IN config.ldflags %][% flag %] [% END %]
+[%          END -%]
+[%          IF config.arflags.size -%]
+AR_FLAGS += [% FOREACH flag IN config.arflags %][% flag %] [% END %]
+[%          END -%]
+[%          IF config.asdefines.size -%]
+AS_DEFINE += [% FOREACH define IN config.asdefines %][% define %] [% END %]
+[%          END -%]
+[%          IF config.ccdefines.size -%]
+CC_DEFINE += [% FOREACH define IN config.ccdefines %][% define %] [% END %]
+[%          END -%]
+[%          IF config.cxdefines.size -%]
+CX_DEFINE += [% FOREACH define IN config.cxdefines %][% define %] [% END %]
+[%          END -%]
+endif
+
+[%      END -%]
+[%  END -%]
+endif

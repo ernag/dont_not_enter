@@ -1,0 +1,6 @@
+Project_Settings/Debugger/init_kinetis.tcl
+Project_Settings/Debugger/mass_erase_kinetis.tcl
+.settings/com.freescale.processorexpert.core.prefs
+ProcessorExpert.pe
+.settings/com.freescale.core.ide.newprojectwizard.prefs
+ReferencedRSESystems.xml

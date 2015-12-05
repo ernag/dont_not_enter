@@ -1,0 +1,12 @@
+###################################################################################
+# Below non-modal registers will be saved in eeprom bin if 2048 solution is enabled
+# and will be saved in OTP if WRITE_TO_OTP is enabled.
+###################################################################################
+sw a=0x2a340; v=0x558d23c6  #Write address 0x2a440 with the value 0x30001a04
+sw a=0x2a344; v=0x99ce1070
+sw a=0x2a348; v=0xe1f02c00
+sw a=0x2a34c; v=0xfe000000
+sw a=0x29de4; v=0x80
+sw a=0x29de8; v=0x80
+#sc a=0x2a348                #Clear the 0x2a348 entry
+#sc all                      #Clear all setting

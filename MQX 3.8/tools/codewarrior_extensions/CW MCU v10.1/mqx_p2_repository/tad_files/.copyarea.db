@@ -1,0 +1,8 @@
+ClearCase CopyAreaDB|4
+MSGSW\MQX\src\tools\codewarrior_extensions\CW MCU v10.1\mqx_p2_repository\tad_files
+2
+4
+f:PPCrtos_MQX.dll|1|135bcf6fe97|5ea00|4831061a|a6ae96e1e2ba4771826047060881bcfd|0
+13:CORTEXMrtos_MQX.dll|1|135bcf6db30|5ea00|e14bdd15|5f79bbdc149a4c0591aaed23af9c6d2e|0
+3:mqx|2|0|0|0|63cfad3626b341f3acdef3b69f902b70|0
+e:CFrtos_MQX.dll|1|135bcf6cf59|5ea00|2734c23c|7c0138da49b14fa0983c95d15c7dc173|0

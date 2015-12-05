@@ -1,0 +1,410 @@
+option java_outer_classname = "WhistleMessageProto";
+option java_package = "com.whistle.wmp";
+
+// WhistleMessage:MessageType
+enum WhistleMessageType {
+  DATA_DUMP = 1;
+  REMOTE_DEV_MGMT = 2;
+  LOCAL_DEV_MGMT = 3;
+}
+
+// WhistleMessage:TransactionType
+// TRANS_REQUEST: Initial message of a transaction
+// TRANS_RESPONSE_ACK: Responding message of a transaction where it was
+//   successfully processed. Further information can be found in the payload.
+// TRANS_RESPONSE_NAK: Responding message of a transaction where it there
+//   was a problem on the other end. Further info can be found in the payload
+//   or possibly in an errorCode field (not yet defined)
+enum TransactionType {
+  TRANS_REQUEST = 1;
+  TRANS_RESPONSE_ACK = 2;
+  TRANS_RESPONSE_NAK = 3;
+}
+
+// WhistleMessage
+// objectType: indicates message type. See WhistleMessageType.
+// transactionType: indicates which part of the transaction the given message is.
+//   See TransactionType for details.
+// magicChecksum: MD5(serial_number string + CRC(WhistleMessage)). CRC of
+//   WhistleMessage assumes magicChecksum is 0
+// serialNumber: device's unique serial number. ASCII String.
+// PAYLOADS (Mutually Exclusive)
+// dataDump: sensor data including accelerometer and BT proximity as bytes.  Parsed using DataMessage proto file.
+// remoteMgmtMsg: messages used for communicating configuration information between
+//   the device and the server.
+// localMgmtMsg: messages used for communicating between the mobile app and device.
+//
+message WhistleMessage {
+  optional WhistleMessageType objectType = 1;
+  optional TransactionType transactionType = 2;
+  optional fixed32 magicChecksum = 3;
+  optional string serialNumber = 4;
+  
+  //PAYLOAD
+  optional bytes dataDump = 5;
+  optional RemoteMgmtMsg remoteMgmtMsg = 6;
+  optional LocalMgmtMsg localMgmtMsg = 7;
+  
+  // optional uint32 wifiFWVersion = 8; // DEPRECATED
+  optional uint32 progress = 20 [default = 0];
+  // optional TransportType transportType = 21; // DEPRECATED (Moved to CheckIn)
+}
+
+enum progressType {
+  PROGRESS_NOT_USED = 0;
+  PROGRESS_FIRST_MSG = 1;
+  PROGRESS_LAST_MSG = 100;
+}
+
+////////////////////
+// REMOTE MANAGEMENT
+////////////////////
+
+// RemoteMgmtMsg:RmMessageType
+enum RmMessageType {
+  RM_CHECK_IN = 1;
+  RM_FWU_MANIFEST = 2;
+  RM_FWU_STATUS = 3; // No payload
+  RM_CONFIG = 4;
+
+  // use these instead
+  RM_CHECK_IN_REQ = 5;
+  RM_CHECK_IN_RESP = 6;
+  RM_FWU_MANIFEST_REQ = 7;
+  RM_FWU_MANIFEST_RESP = 8;
+  RM_FWU_STATUS_REQ = 9;
+  RM_FWU_STATUS_RESP = 10;
+  RM_CONFIG_REQ = 11;
+  RM_CONFIG_RESP = 12;
+}
+
+// RemoteMgmtMsg
+///HEADERS
+// messageType: Indicates which payload is contained in the message. See RemoteMgmtMsgType
+///PAYLOADS (mutually exclusive)
+// checkInRequest:
+// checkInResponse:
+// fwuManifestRequest:
+// fwuManifestResponse:
+// fwuStatusPost:
+// fwuStatusResponse:
+// configRequest:
+// configResponse:
+//
+message RemoteMgmtMsg {
+  // HEADERS
+  optional RmMessageType messageType = 1;
+  // PAYLOADS (Mutually Exclusive)
+  optional RmCheckInRequest checkInRequest = 2;
+  optional RmCheckInResponse checkInResponse = 3;
+  optional RmFwuManifestRequest fwuManifestRequest = 4;
+  optional RmFwuManifestResponse fwuManifestResponse = 5;
+  optional RmFwuStatusPost fwuStatusPost = 6;
+  //[7] No need for a message structure for a status post response
+  optional RmConfigRequest configRequest = 8;
+  optional RmConfigResponse configResponse = 9;
+
+  optional bytes payload = 20;
+}
+
+// RemoteMgmtMsg:RmCheckInRequest:RmCheckInRequestType
+enum RmCheckInRequestType {
+  RM_CHECK_IN_MANUAL_SYNC = 1;
+  RM_CHECK_IN_AUTO_SYNC = 2;
+}
+
+// RemoteMgmtMsg:RmCheckInRequest:RmCheckInTransportType
+enum RmCheckInTransportType {
+  TRANSPORT_UNKNOWN = 1;
+  TRANSPORT_WIFI = 2;
+  TRANSPORT_BTC_ANDROID = 3;
+  TRANSPORT_BTC_IOS = 4;
+}
+
+// RemoteMgmtMsg:RmCheckInRequest
+// requestType: indicates how the message was initiated (manual vs auto)
+// boot1/boot2/app versions are formatted as "x.y-tag", e.g., 1.21-ernie_test_3
+//   x: major release #
+//   y: minor release #
+//   tag: tag (alpha numeric string)
+// batteryLevel: integer 0-102 indicating the percentage full (101 = charging, 102 = charged)
+// wifiFWVersion is 'wlan_ver' in atheros_wifi_api.h, converted to a str like '2.1.9.168.5'.
+//"%d.%d.%d.%d.%d", (version.wlan_ver & 0xF0000000) >> 28, (version.wlan_ver & 0x0F000000) >> 24,
+//                  (version.wlan_ver & 0x00FC0000) >> 18, (version.wlan_ver & 0x0003FF00) >> 8, 
+//                  (version.wlan_ver & 0x000000FF));
+message RmCheckInRequest {
+  optional RmCheckInRequestType requestType = 1;
+  optional string currentBoot1Version = 2;
+  optional string currentBoot2Version = 3;
+  optional string currentAppVersion = 4;
+  optional int32 batteryLevel = 5;
+  optional uint32 batteryCounts = 6;
+  optional uint32 temperatureCounts = 7;
+  optional uint32 wifiFWVersion = 8;
+  optional uint32 currentMinutesActive = 9;
+  optional RmCheckInTransportType transportType = 10;
+}
+
+// RemoteMgmtMsg:RmCheckInResponse:RmCheckInResponseActionType
+enum RmCheckInResponseActionType {
+  CHECK_IN_PENDING_FIRMWARE_UPDATE = 1;
+  CHECK_IN_PENDING_DEVICE_CONFIG = 2;
+}
+
+// RemoteMgmtMsg:RmCheckInResponse
+// This is the server response that indicates whether there are pending device
+//   management actions that are pending. The device will be required to act upon
+//   the listed action. For example, if the returned pendingAction = "Firmware Update"
+//   then the device should request a firmware update.
+///HEADER
+// pendingAction: lists what pending action there is for the device to perform.
+// serverAbsoluteTime: the server's current time in UTC. Used for synchronizing the
+//  device clock.
+//
+message RmCheckInResponse {
+  optional RmCheckInResponseActionType pendingAction = 1;
+  optional int64 serverAbsoluteTime = 2;
+  optional string bluetoothName = 3;
+  optional int32 activityGoal = 4;
+  optional sint32 utcOffsetSeconds = 5;
+}
+
+// RemoteMgmtMsg:RmFwuManifestRequest
+// boot1/boot2/app versions are formatted as "x.y-tag", e.g., 1.21-ernie_test_3
+//   x: major release #
+//   y: minor release #
+//   tag: tag (alpha numeric string)
+//
+message RmFwuManifestRequest {
+  optional string currentBoot1Version = 1;
+  optional string currentBoot2Version = 2;
+  optional string currentAppVersion = 3;
+}
+
+// RemoteMgmtMsg:RmFwuManifestResponse
+// firmwareUpdateVersion is a version string that the server can
+// use to identify a firmware update record
+message RmFwuManifestResponse {
+  optional string firmwareUpdateVersion = 1;
+  optional string packageUrl = 2;
+}
+
+// RemoteMgmtMsg:RmFwuStatusPost:RmFwuStatusPostStatus
+enum RmFwuStatusPostStatus {
+  FWU_DOWNLOAD_SUCCESS = 1;
+  FWU_DOWNLOAD_FAILED_TIMEOUT = 2;
+  FWU_DOWNLOAD_FAILED_ACCESS_DENIED = 3;
+  FWU_DOWNLOAD_FAILED_CRC_FAILED = 4;
+  FWU_DOWNLOAD_FAILED_SIGNATURE_FAILED = 5;
+  FWU_DOWNLOAD_FAILED_OTHER = 6;
+  FWU_INSTALL_SUCCESS = 20;
+  FWU_INSTALL_FAILED_PARSE_ERROR = 21;
+  FWU_INSTALL_DEPENDENCY_ERROR = 22;
+  FWU_INSTALL_FAILED_OTHER = 23;
+}
+
+// RemoteMgmtMsg:RmFwuStatusPost
+// 
+//
+// attemptedFirwmareUpdateVersion: corelates to the firmwareUpdateVersion provided 
+//   in the RmFwuManifestResponse message
+// status: status of the process (download vs. install)
+// attemptedBoot1Version: version of the boot1 attempted to install
+// attemptedBoot2Version: version of the boot2 attempted to install
+// attemptedAppVersion: version of the App attempted to install
+//
+// NOTE: boot1/boot2/app versions are formatted as "x.y-tag", e..g, 1.21-ernie_test
+message RmFwuStatusPost {
+  optional string attemptedFirmwareUpdateVersion = 1;
+  optional RmFwuStatusPostStatus status = 2;
+  optional string attemptedBoot1Version = 3;
+  optional string attemptedBoot2Version = 4;
+  optional string attemptedAppVersion = 5;
+}
+
+// RemoteMgmtMsg:RmConfigRequest
+message RmConfigRequest {
+  optional int64 currentStreamConfigVersion = 1;
+  optional int64 currentUniqueConfigVersion = 2;
+}
+
+// RemoteMgmtMsg:RmConfigResponse:RmConfigStringItem
+message RmConfigItem {
+  optional string type = 1;
+  optional string value = 2;
+}
+
+// RemoteMgmtMsg:RmConfigResponse
+// There should not be duplicate config items.
+message RmConfigResponse {
+  optional int64 streamConfigVersion = 1;
+  optional int64 uniqueConfigVersion = 2;
+  // PAYLOADS
+  repeated RmConfigItem configItem = 3;
+}	
+
+////////////////////
+// LOCAL MANAGEMENT
+////////////////////
+
+// LocalMgmtMsg:LmMessageType
+enum LmMessageType {
+  LM_MOBILE_STAT_REQ    = 1; // Dev->Mob. payload is of type LmMobileStatRequest
+  LM_MOBILE_STAT_RESP   = 2; // Mob->Dev. payload is of type LmMobileStat
+  LM_MOBILE_STAT_NOTIFY =11; // Mob->Dev. payload is of type LmMobileStat
+  LM_WIFI_SCAN_REQ   = 3;   // Mob->Dev. no payload
+  LM_WIFI_SCAN_RESP  = 4;   // Dev->Mob. payload is of type LmWiFiScanResponse
+  LM_WIFI_TEST_REQ   = 5;   // Mob->Dev. payload is of type LmWiFiTestRequest
+  LM_WIFI_TEST_RESP  = 6;   // Dev->Mob. payload is of type LmWiFiTestResponse
+  LM_WIFI_ADD_REQ    = 7;   // Mob->Dev. payload is of type LmWiFiAddRequest
+  LM_WIFI_ADD_RESP   = 8;   // Dev->Mob. payload is of type LmWiFiAddResponse
+  LM_WIFI_REM_REQ    = 9;   // Mob->Dev. payload is of type LmWiFiRemRequest
+  LM_WIFI_REM_RESP   =10;   // Dev->Mob. payload is of type LmWiFiRemResponse
+  LM_DEV_STAT_NOTIFY =12;   // Dev->Mob. payload is of type LmDevStat
+  LM_WIFI_LIST_REQ   =13;   // Mob->Dev. no payload
+  LM_WIFI_LIST_RESP  =14;   // Dev->Mob. payload is of type LmWiFiListResponse
+  //NEXT #: 15
+}
+
+
+// LocalMgmtMsg
+// 
+// messageType: type of message being sent
+// payload: parsed based on messageType, see messageType comments
+message LocalMgmtMsg {
+  // HEADERS
+  optional LmMessageType messageType = 1;
+  // PAYLOAD
+  optional bytes payload = 21;
+}
+
+enum LmInitType {
+  LM_INIT_MANUAL = 1;
+  LM_INIT_AUTO   = 2;
+}
+
+// batteryLevel: integer 0-102 indicating the percentage full (101 = charging, 102 = charged)
+message LmMobileStatRequest {
+  optional LmInitType initType = 1;
+  optional int64 mobileBTMAC = 2;
+  optional int32 batteryLevel = 3;
+  optional string wifiMac = 4;
+  optional string wifiVer = 5;
+}
+
+enum LmMobileStatus {
+  MOBILE_STATUS_OK         = 1; // Device can use the mobile for data access
+  MOBILE_STATUS_BUSY       = 11; // Device cannot use the mobile
+  MOBILE_STATUS_NO_WAN     = 12; // Mobile does not have WAN access, device shouldn't use.
+  MOBILE_STATUS_DEV_MGMT   = 13; // Mobile wants to manage a mobile device, the device 
+                                 // should wait for furhter instructions
+}
+
+message LmMobileStat {
+  optional LmMobileStatus status = 1;
+  optional int64 serverAbsoluteTime = 2;
+}
+
+enum LmWiFiNetworkType {
+  WIFI_NETWORK_TYPE_NONE = 1;
+  WIFI_NETWORK_TYPE_WEP  = 2;
+  WIFI_NETWORK_TYPE_WPA  = 3;
+  WIFI_NETWORK_TYPE_WPA2 = 4;
+}
+
+enum LmWiFiNetworkuCipher {
+  WIFI_NETWORK_UCIPHER_TKIP = 1;
+  WIFI_NETWORK_UCIPHER_CCMP = 2;
+}
+
+enum LmWiFiNetworkmCipher {
+  WIFI_NETWORK_MCIPHER_AES  = 1;
+  WIFI_NETWORK_MCIPHER_TKIP = 2;
+}
+
+message LmWiFiNetwork {
+  optional string ssid                  = 1;
+  optional LmWiFiNetworkType type       = 2;
+  optional LmWiFiNetworkuCipher uCipher = 3;
+  optional LmWiFiNetworkmCipher mCipher = 4;
+  optional bool isHidden                = 5;
+  optional string password              = 6;
+}
+
+message LmWiFiScanResponse {
+  repeated LmWiFiNetwork network = 1;
+}
+
+// LmWiFiTestRequest
+// Message sent from mobile app to device to test that a network works.
+// 
+// network: the network details to test.
+message LmWiFiTestRequest {
+  optional LmWiFiNetwork network = 1;
+}
+
+enum LmWiFiTestStatus {
+  LM_WIFI_TEST_PASSED = 1;
+  LM_WIFI_TEST_FAILED = 11;
+}
+
+// LmWiFiTestResponse
+// Response to LmWiFiTestRequest indicating whether the supplied credentials worked.
+// 
+// status: the result of the device testing the supplied credentials
+// network: the network that was tested
+message LmWiFiTestResponse {
+  optional LmWiFiTestStatus status 	= 1;
+  optional LmWiFiNetwork network 	= 2;
+}
+
+// LmWiFiAddRequest
+// Mobile app sends new network for the device to add
+// If a network already exists with the supplied SSID then the device should
+// update the fields.
+// 
+// 
+message LmWiFiAddRequest {
+  optional LmWiFiNetwork network = 1; // network to add / update
+}
+
+enum LmWiFiAddStatus {
+  LM_WIFI_ADD_STATUS_SUCCESS  = 1;
+  LM_WIFI_ADD_FAILED          = 11;
+}
+
+// LmWiFiAddResponse
+//
+// status: the result of the attempt to add the network
+// network: the network that was added
+message LmWiFiAddResponse {
+  optional LmWiFiAddStatus status = 1;
+  optional LmWiFiNetwork network 	= 2;
+}
+
+message LmWiFiRemRequest {
+  optional string ssid = 1; // SSID of the network to remove
+}
+
+enum LmWiFiRemStatus {
+  LM_WIFI_REM_STATUS_SUCCESS  = 1;
+  LM_WIFI_REM_FAILED          = 11;
+}
+
+message LmWiFiRemResponse {
+  optional LmWiFiRemStatus status = 1;
+  optional string ssid = 2;
+}
+
+enum LmDevStatus {
+  LM_DEV_STATUS_READY_FOR_MGMT = 1;
+  LM_DEV_STATUS_DONE           = 2;
+}
+
+message LmDevStat {
+  optional LmDevStatus status = 1;
+}
+
+message LmWiFiListResponse {
+  repeated LmWiFiNetwork network = 1;
+}

@@ -1,0 +1,843 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?fileVersion 4.0.0?>
+
+<cproject>
+	<storageModule moduleId="org.eclipse.cdt.core.settings">
+		<cconfiguration id="com.freescale.arm.cdt.toolchain.config.arm.release.1738784430">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="com.freescale.arm.cdt.toolchain.config.arm.release.1738784430" moduleId="org.eclipse.cdt.core.settings" name="Debug UART">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.managedbuilder.core.ManagedBuildManager" point="org.eclipse.cdt.core.ScannerInfoProvider"/>
+					<extension id="com.freescale.mxc.cdt.errorparsers.LltErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.mxc.cdt.errorparsers.IcodeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.mxc.cdt.errorparsers.CobjErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.mxc.cdt.errorparsers.MwfeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.mxc.cdt.errorparsers.SccErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.MakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.mxc.cdt.errorparsers.LnkErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.mxc.cdt.errorparsers.AsmErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.core.ide.cdt.errorParsers.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.core.ide.cdt.errorParsers.LltErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.core.ide.cdt.errorParsers.AsmErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.core.ide.cdt.errorParsers.IcodeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.core.ide.cdt.errorParsers.MwfeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.core.ide.cdt.errorParsers.CobjErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.core.ide.cdt.errorParsers.LnkErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.core.ide.cdt.errorParsers.MwErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.core.ide.cdt.errorParsers.MPWErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactExtension="afx" artifactName="intflash_d_uart" buildProperties="" buildReferences="true" buildReferencingConfigurations="false" cleanCommand="${system:ECLIPSE_HOME}/../gnu/bin/rm -f" description="" errorParsers="org.eclipse.cdt.core.MakeErrorParser;org.eclipse.cdt.core.GCCErrorParser;org.eclipse.cdt.core.GLDErrorParser;org.eclipse.cdt.core.GASErrorParser;com.freescale.mxc.cdt.errorparsers.MwfeErrorParser;com.freescale.mxc.cdt.errorparsers.SccErrorParser;com.freescale.mxc.cdt.errorparsers.LnkErrorParser;com.freescale.mxc.cdt.errorparsers.AsmErrorParser;com.freescale.mxc.cdt.errorparsers.CobjErrorParser;com.freescale.mxc.cdt.errorparsers.IcodeErrorParser;com.freescale.mxc.cdt.errorparsers.LltErrorParser;com.freescale.core.ide.cdt.errorParsers.GCCErrorParser;com.freescale.core.ide.cdt.errorParsers.LnkErrorParser;com.freescale.core.ide.cdt.errorParsers.AsmErrorParser;com.freescale.core.ide.cdt.errorParsers.CobjErrorParser;com.freescale.core.ide.cdt.errorParsers.IcodeErrorParser;com.freescale.core.ide.cdt.errorParsers.LltErrorParser;com.freescale.core.ide.cdt.errorParsers.MwfeErrorParser;com.freescale.core.ide.cdt.errorParsers.MwErrorParser;com.freescale.core.ide.cdt.errorParsers.MPWErrorParser" id="com.freescale.arm.cdt.toolchain.config.arm.release.1738784430" isPrebuildInvalidatingBuild="false" name="Debug UART" parent="com.freescale.arm.cdt.toolchain.config.arm.release" postannouncebuildStep="" postbuildStep="" preannouncebuildStep="" prebuildStep="${MQX_ROOT_DIR}\..\utils\shaid\Shaid\Shaid\shaid.exe" produceBuildErrorsWithMissingReferences="true">
+					<folderInfo id="com.freescale.arm.cdt.toolchain.config.arm.release.1738784430." name="/" resourcePath="">
+						<toolChain errorParsers="" id="com.freescale.arm.cdt.toolchain.arm.release.583725022" name="ARM Toolchain" superClass="com.freescale.arm.cdt.toolchain.arm.release">
+							<option id="com.freescale.arm.cdt.toolchain.sharedoption.model.616124921" name="Model" superClass="com.freescale.arm.cdt.toolchain.sharedoption.model" value="com.freescale.arm.cdt.toolchain.sharedoption.model.ewl" valueType="enumerated"/>
+							<targetPlatform binaryParser="org.eclipse.cdt.core.ELF" id="com.freescale.arm.cdt.toolchain.targetplatform.442903038" isAbstract="false" name="ARM Target Platform" superClass="com.freescale.arm.cdt.toolchain.targetplatform"/>
+							<builder buildPath="${ProjDirPath}/Int Flash Debug" errorParsers="com.freescale.core.ide.cdt.errorParsers.GCCErrorParser;com.freescale.core.ide.cdt.errorParsers.LltErrorParser;com.freescale.core.ide.cdt.errorParsers.AsmErrorParser;com.freescale.core.ide.cdt.errorParsers.IcodeErrorParser;com.freescale.core.ide.cdt.errorParsers.CobjErrorParser;com.freescale.core.ide.cdt.errorParsers.MwErrorParser;com.freescale.core.ide.cdt.errorParsers.MPWErrorParser;com.freescale.core.ide.cdt.errorParsers.MwfeErrorParser;com.freescale.core.ide.cdt.errorParsers.LnkErrorParser;org.eclipse.cdt.core.MakeErrorParser;org.eclipse.cdt.core.GASErrorParser;org.eclipse.cdt.core.GLDErrorParser" id="com.freescale.arm.cdt.toolchain.builder.825618763" keepEnvironmentInBuildfile="false" name="GNU Make Builder" parallelBuildOn="false" parallelBuildWorkspaceOn="false" parallelizationNumber="1" superClass="com.freescale.arm.cdt.toolchain.builder"/>
+							<tool command="&quot;${ARM_ToolsDir}/mwldarm&quot;" commandLinePattern="${COMMAND} ${FLAGS} ${OUTPUT_FLAG} ${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}" errorParsers="" id="com.freescale.arm.cdt.toolchain.linker.68886344" name="ARM Linker" superClass="com.freescale.arm.cdt.toolchain.linker">
+								<option id="com.freescale.arm.cdt.toolchain.linker.libraries.libSearch.628164446" name="Library Search Paths" superClass="com.freescale.arm.cdt.toolchain.linker.libraries.libSearch" valueType="stringList">
+									<listOptionValue builtIn="false" value="&quot;${MCUToolsBaseDir}/ARM_EABI_Support/ewl/lib&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\projects\pmem\Debug&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\projects\sherlock\Debug&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\projects\cfg_factory\cfg_factory\Debug&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\lib\coronak60n512.cw10\bsp&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\lib\coronak60n512.cw10\psp&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\lib\coronak60n512.cw10\rtcs&quot;"/>
+								</option>
+								<option id="com.freescale.arm.cdt.toolchain.linker.commandFile.556244487" name="Linker Command File" superClass="com.freescale.arm.cdt.toolchain.linker.commandFile" value="${MQX_ROOT_DIR}\lib\coronak60n512.cw10\bsp\intflash.lcf" valueType="string"/>
+								<option id="com.freescale.arm.cdt.toolchain.linker.libraries.additionalLibs.2037258748" name="Additional Libraries" superClass="com.freescale.arm.cdt.toolchain.linker.libraries.additionalLibs" valueType="libs">
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\lib\coronak60n512.cw10\bsp\bsp_coronak60n512_d_uart.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\projects\pmem\Debug\pmem.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\projects\cfg_factory\cfg_factory\Debug\libcfg_factory.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\projects\sherlock\Debug\sherlock.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\whistle\corona\drivers\bt\Bluetopia\lib\rv\Bluetopia.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\whistle\corona\drivers\bt\Bluetopia\profiles\ISPP\lib\rv\SS1BTISP.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\lib\coronak60n512.cw10\psp\psp_coronak60n512_d_uart.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\lib\coronak60n512.cw10\rtcs\rtcs_coronak60n512_d.a&quot;"/>
+								</option>
+								<option id="com.freescale.arm.cdt.toolchain.linker.otherFlags.1714792624" name="Other Flags" superClass="com.freescale.arm.cdt.toolchain.linker.otherFlags" value="-warn noSymRedef" valueType="string"/>
+								<option id="com.freescale.arm.cdt.toolchain.linker.entryPoint.738919751" name="Entry Point" superClass="com.freescale.arm.cdt.toolchain.linker.entryPoint" value="__boot" valueType="string"/>
+								<option id="com.freescale.arm.cdt.toolchain.linker.nostdlib.291148816" name="No Standard Library" superClass="com.freescale.arm.cdt.toolchain.linker.nostdlib" value="true" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.linker.generateMapFile.263057231" name="Generate Link Map" superClass="com.freescale.arm.cdt.toolchain.linker.generateMapFile" value="true" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.linker.mapClosure.1354955778" name="Show Transitive Closure in Map" superClass="com.freescale.arm.cdt.toolchain.linker.mapClosure" value="true" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.linker.generateSRecord.2040145229" name="Generate S-Record File" superClass="com.freescale.arm.cdt.toolchain.linker.generateSRecord" value="true" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.linker.maxRecordLength.707314526" name="Max S-Record Length" superClass="com.freescale.arm.cdt.toolchain.linker.maxRecordLength" value="80" valueType="string"/>
+								<option id="com.freescale.arm.cdt.toolchain.linker.suppressLinkWarnings.1793098834" name="Suppress Link Warnings" superClass="com.freescale.arm.cdt.toolchain.linker.suppressLinkWarnings" value="false" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.linker.mapListUnused.1944174185" name="List Unused Symbols in Map" superClass="com.freescale.arm.cdt.toolchain.linker.mapListUnused" value="true" valueType="boolean"/>
+								<inputType id="com.freescale.arm.cdt.toolchain.linker.input.1915875087" name="ARM Linker Input" superClass="com.freescale.arm.cdt.toolchain.linker.input">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+									<additionalInput kind="additionaldependency" paths="$(LCF_SRCS)"/>
+								</inputType>
+							</tool>
+							<tool command="&quot;${ARM_ToolsDir}/mwccarm&quot; -gccinc" commandLinePattern="${COMMAND} ${FLAGS} ${OUTPUT_FLAG} ${OUTPUT_PREFIX}${OUTPUT} -c ${INPUTS}" errorParsers="" id="com.freescale.arm.cdt.toolchain.compiler.1453629299" name="ARM Compiler" superClass="com.freescale.arm.cdt.toolchain.compiler">
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.input.userIncludes.426417502" name="Include User Search Paths (-i)" superClass="com.freescale.arm.cdt.toolchain.armCpp.input.userIncludes" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${MCUToolsBaseDir}/ProcessorExpert/lib/Kinetis/pdd/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\mqx\source\io\enet&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\projects\pmem\Project_Headers&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\projects\cfg_factory\cfg_factory\Project_Headers&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\projects\sherlock\Project_Headers&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\mqx\source\io\enet\atheros_wifi\include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\mqx\source\io\enet\atheros_wifi\common_src\include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\mqx\source\io\enet\atheros_wifi\custom_src\include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\mqx\source\io\enet\atheros_wifi\common_src\wmi&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Source/app/button_mgr}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\mqx\source\io\enet\atheros_wifi\common_src\stack_common&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\mqx\source\io\enet\atheros_wifi\include\AR6002&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\mqx\source\io\enet\atheros_wifi\custom_src\stack_custom&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\mqx\source\io\enet\atheros_wifi\include\AR6002\hw2.0&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MCUToolsBaseDir}/ARM_EABI_Support/ewl/EWL_C/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\lib\coronak60n512.cw10\bsp\Generated_Code&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\lib\coronak60n512.cw10\bsp&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\lib\coronak60n512.cw10\psp&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\mqx\source\io\enet\atheros_wifi&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\lib\coronak60n512.cw10&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\lib\coronak60n512.cw10\rtcs&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}\..\..&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${PROJDIRPATH}\drivers\wifi\ar4100p\custom&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${PROJDIRPATH}\drivers\bt\Bluetopia\include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${PROJDIRPATH}\drivers\bt\Bluetopia\btpskrnl&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${PROJDIRPATH}\drivers\bt\Bluetopia\btpsvend&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${PROJDIRPATH}\drivers\bt\Bluetopia\hcitrans&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${PROJDIRPATH}\drivers\bt\Bluetopia\iacptran&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${PROJDIRPATH}\drivers\bt\Bluetopia\profiles&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${PROJDIRPATH}\drivers\bt\Bluetopia\ss1btvs&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${PROJDIRPATH}\drivers\bt\Bluetopia\profiles\GAPS\include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${PROJDIRPATH}\drivers\bt\Bluetopia\profiles\GATT\include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${PROJDIRPATH}\drivers\bt\Bluetopia\profiles\ISPP\include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${PROJDIRPATH}\drivers\bt\Platform&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${PROJDIRPATH}\app}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${PROJDIRPATH}\src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${PROJDIRPATH}\include&quot;"/>
+								</option>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.warningsFlag.hidden.adjusted.873746494.adjusted.1539987374" value="false" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.509736704.adjusted.2066426698" value="com.freescale.arm.cdt.toolchain.enableWarnings.custom.hidden" valueType="enumerated"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.optimization.mode.82600411" name="Speed vs. Size" superClass="com.freescale.arm.cdt.toolchain.armCpp.optimization.mode" value="com.freescale.arm.cdt.toolchain.armCpp.optimization.mode.space" valueType="enumerated"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.input.prefixFile.540108198" name="Prefix File" superClass="com.freescale.arm.cdt.toolchain.armCpp.input.prefixFile" value="" valueType="symbolFile"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.otherFlags.1917892196" name="Other Flags" superClass="com.freescale.arm.cdt.toolchain.armCpp.otherFlags" value="-define __CODEWARRIOR__=1 -define _DEBUG=1" valueType="string"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.warnIllPragma.1860590861" name="Illegal #pragmas (most)" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.warnIllPragma" value="false" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.warnPossibleErr.617486093" name="Possible Unwanted Effects (most)" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.warnPossibleErr" value="true" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.extraCommas.1369720749" name="Extra Commas (most)" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.extraCommas" value="true" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.emptyDecl.596115115" name="Empty Declarations (most)" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.emptyDecl" value="true" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.missingReturn.343774578" name="Missing 'return' Value in Non-Void-Returning Function (most)" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.missingReturn" value="true" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.optimization.level.413416150" name="Optimization Level" superClass="com.freescale.arm.cdt.toolchain.armCpp.optimization.level" value="com.freescale.arm.cdt.toolchain.armCpp.optimization.level.level0" valueType="enumerated"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.language.cpp.enumsInt.1653817571" name="Enums Always Int" superClass="com.freescale.arm.cdt.toolchain.armCpp.language.cpp.enumsInt" value="false" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.language.cpp.exceptions.1770726953" name="Enable Exceptions" superClass="com.freescale.arm.cdt.toolchain.armCpp.language.cpp.exceptions" value="false" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.language.cpp.rtti.576131775" name="Enable RTTI Support" superClass="com.freescale.arm.cdt.toolchain.armCpp.language.cpp.rtti" value="false" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.language.cpp.isoParser.1832507158" name="ISO Template Parser" superClass="com.freescale.arm.cdt.toolchain.armCpp.language.cpp.isoParser" value="false" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.warningsFlag.hidden.adjusted.1000433966.adjusted.2038116786" name="(hidden) warnings flag" value="false" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.394916508.adjusted.269725703" name="(hidden) toggle warnings flag" value="com.freescale.arm.cdt.toolchain.enableWarnings.custom.hidden" valueType="enumerated"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.warningsFlag.hidden.adjusted.1000433966.adjusted.791061763" value="false" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.warningsFlag.hidden.adjusted.1000433966.adjusted.1383008549" value="false" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.warningsFlag.hidden.adjusted.1000433966.adjusted.1372434557" value="false" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.394916508.adjusted.1911480339" value="com.freescale.arm.cdt.toolchain.enableWarnings.custom.hidden" valueType="enumerated"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.394916508.adjusted.1695091652" value="com.freescale.arm.cdt.toolchain.enableWarnings.custom.hidden" valueType="enumerated"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.394916508.adjusted.1705888344" value="com.freescale.arm.cdt.toolchain.enableWarnings.custom.hidden" valueType="enumerated"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.394916508.adjusted.1641374838" value="com.freescale.arm.cdt.toolchain.enableWarnings.custom.hidden" valueType="enumerated"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.394916508.adjusted.1171018331" value="com.freescale.arm.cdt.toolchain.enableWarnings.custom.hidden" valueType="enumerated"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.394916508.adjusted.1352480421" value="com.freescale.arm.cdt.toolchain.enableWarnings.custom.hidden" valueType="enumerated"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.input.define.13802719" name="Defined Macros" superClass="com.freescale.arm.cdt.toolchain.armCpp.input.define" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="__ATHEROS_FS__"/>
+									<listOptionValue builtIn="false" value="MQX_ENV"/>
+									<listOptionValue builtIn="false" value="DEBUG_WHISTLE"/>
+									<listOptionValue builtIn="false" value="PB_FIELD_16BIT"/>
+									<listOptionValue builtIn="false" value="USE_ATH_CHANGES"/>
+								</option>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.warningsFlag.hidden.adjusted.802054255.adjusted.1561855337" name="(hidden) warnings flag" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.warningsFlag.hidden.adjusted.802054255" value="false" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.1076512495.adjusted.1685332774" name="(hidden) toggle warnings flag" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.1076512495" value="com.freescale.arm.cdt.toolchain.enableWarnings.custom.hidden" valueType="enumerated"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.warningsFlag.hidden.adjusted.1311121149.adjusted.1483460543" name="(hidden) warnings flag" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.warningsFlag.hidden.adjusted.1311121149" value="false" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.626434640.adjusted.1346891338" name="(hidden) toggle warnings flag" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.626434640" value="com.freescale.arm.cdt.toolchain.enableWarnings.custom.hidden" valueType="enumerated"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.warningsFlag.hidden.adjusted.1311121149.adjusted.25788948" name="(hidden) warnings flag" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.warningsFlag.hidden.adjusted.1311121149" value="false" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.warningsFlag.hidden.adjusted.1311121149.adjusted.566948448" name="(hidden) warnings flag" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.warningsFlag.hidden.adjusted.1311121149" value="false" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.warningsFlag.hidden.adjusted.1311121149.adjusted.495327643" name="(hidden) warnings flag" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.warningsFlag.hidden.adjusted.1311121149" value="false" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.626434640.adjusted.391832955" name="(hidden) toggle warnings flag" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.626434640" value="com.freescale.arm.cdt.toolchain.enableWarnings.custom.hidden" valueType="enumerated"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.626434640.adjusted.7759364" name="(hidden) toggle warnings flag" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.626434640" value="com.freescale.arm.cdt.toolchain.enableWarnings.custom.hidden" valueType="enumerated"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.626434640.adjusted.1609234574" name="(hidden) toggle warnings flag" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.626434640" value="com.freescale.arm.cdt.toolchain.enableWarnings.custom.hidden" valueType="enumerated"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.626434640.adjusted.1601400581" name="(hidden) toggle warnings flag" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.626434640" value="com.freescale.arm.cdt.toolchain.enableWarnings.custom.hidden" valueType="enumerated"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.626434640.adjusted.107015098" name="(hidden) toggle warnings flag" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.626434640" value="com.freescale.arm.cdt.toolchain.enableWarnings.custom.hidden" valueType="enumerated"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.626434640.adjusted.768462951" name="(hidden) toggle warnings flag" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.626434640" value="com.freescale.arm.cdt.toolchain.enableWarnings.custom.hidden" valueType="enumerated"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.warningsFlag.hidden.adjusted.1021125828.adjusted.1437042003" name="(hidden) warnings flag" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.warningsFlag.hidden.adjusted.1021125828" value="false" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.101919782.adjusted.1577342679" name="(hidden) toggle warnings flag" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.101919782" value="com.freescale.arm.cdt.toolchain.enableWarnings.custom.hidden" valueType="enumerated"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.warningsFlag.hidden.adjusted.1021125828.adjusted.457227382" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.warningsFlag.hidden.adjusted.1021125828" value="false" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.warningsFlag.hidden.adjusted.1021125828.adjusted.1846992013" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.warningsFlag.hidden.adjusted.1021125828" value="false" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.warningsFlag.hidden.adjusted.1021125828.adjusted.1496164977" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.warningsFlag.hidden.adjusted.1021125828" value="false" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.101919782.adjusted.2087558069" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.101919782" value="com.freescale.arm.cdt.toolchain.enableWarnings.custom.hidden" valueType="enumerated"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.101919782.adjusted.223723592" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.101919782" value="com.freescale.arm.cdt.toolchain.enableWarnings.custom.hidden" valueType="enumerated"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.101919782.adjusted.961850851" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.101919782" value="com.freescale.arm.cdt.toolchain.enableWarnings.custom.hidden" valueType="enumerated"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.101919782.adjusted.553666296" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.101919782" value="com.freescale.arm.cdt.toolchain.enableWarnings.custom.hidden" valueType="enumerated"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.101919782.adjusted.217064488" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.101919782" value="com.freescale.arm.cdt.toolchain.enableWarnings.custom.hidden" valueType="enumerated"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.101919782.adjusted.541487171" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.101919782" value="com.freescale.arm.cdt.toolchain.enableWarnings.custom.hidden" valueType="enumerated"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.warningsFlag.hidden.adjusted.1761828050.adjusted.265211995" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.warningsFlag.hidden.adjusted.1761828050" value="false" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.599527447.adjusted.1021037565" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.599527447" value="com.freescale.arm.cdt.toolchain.enableWarnings.custom.hidden" valueType="enumerated"/>
+								<inputType id="com.freescale.arm.cdt.toolchain.armCpp.cSource.244528563" name="ARM C/C++ Compiler" superClass="com.freescale.arm.cdt.toolchain.armCpp.cSource"/>
+							</tool>
+							<tool command="&quot;${ARM_ToolsDir}/mwasmarm&quot;" commandLinePattern="${COMMAND} ${FLAGS} ${OUTPUT_FLAG} ${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}" errorParsers="" id="com.freescale.arm.cdt.toolchain.assembler.1536830663" name="ARM Assembler" superClass="com.freescale.arm.cdt.toolchain.assembler">
+								<option id="com.freescale.arm.cdt.toolchain.armAsm.include.449380194" name="Include User Search Paths (-i)" superClass="com.freescale.arm.cdt.toolchain.armAsm.include" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}\..\..&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\projects\cfg_factory\cfg_factory\Project_Headers&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\lib\coronak60n512.cw10\bsp\Generated_Code&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\lib\coronak60n512.cw10\bsp&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\lib\coronak60n512.cw10\psp&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\lib\coronak60n512.cw10&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\lib\coronak60n512.cw10\rtcs&quot;"/>
+								</option>
+								<option id="com.freescale.arm.cdt.toolchain.armAsm.prefixFile.284066417" name="Prefix File" superClass="com.freescale.arm.cdt.toolchain.armAsm.prefixFile" value="" valueType="string"/>
+								<option id="com.freescale.arm.cdt.toolchain.armAsm.otherFlags.1361739855" name="Other Flags" superClass="com.freescale.arm.cdt.toolchain.armAsm.otherFlags" value="-define __CODEWARRIOR__=1 -define _DEBUG=1" valueType="string"/>
+								<inputType id="com.freescale.arm.cdt.toolchain.armAsm.input.936352797" name="ARM Assembler Input" superClass="com.freescale.arm.cdt.toolchain.armAsm.input"/>
+							</tool>
+							<tool command="&quot;${ARM_ToolsDir}/mwccarm&quot; -gccinc" commandLinePattern="${COMMAND} -E ${FLAGS} ${INPUTS}" errorParsers="" id="com.freescale.arm.cdt.toolchain.preproc.223072801" name="ARM Preprocessor" superClass="com.freescale.arm.cdt.toolchain.preproc"/>
+							<tool command="&quot;${ARM_ToolsDir}/mwldarm&quot;" commandLinePattern="${COMMAND} -dis ${FLAGS} ${INPUTS}" errorParsers="" id="com.freescale.arm.cdt.toolchain.disassembler.539956525" name="ARM Disassembler" superClass="com.freescale.arm.cdt.toolchain.disassembler"/>
+						</toolChain>
+					</folderInfo>
+					<sourceEntries>
+						<entry excluding="Source/common/crc/crc_priv.h|Source/common/wmp/nanopb|Source/app/wmp/test.c|Source/app/evt_mgr/evt_mgr_old.c|MFS Libraries/mfs_coronak60n512.a|MQX Libraries/psp_coronak60n512.a|USB Host Libraries/usb_hdk_coronak60n512.a|Source/app/wmp/WhistleMessage.h|Source/app/wmp/WhistleMessage.c|Source/app/wmp/clean/WhistleMessage.h|web_hvac_coronak60n512_Int_Flash_Release_PEOSJTAG.launch|Source/common/crc/crc_pe.c|Source/drivers/bt/Bluetopia/btpsvend/LowEnergyPatch.c|Shell Libraries/shell_coronak60n512.a|Source/app/wmp/clean/WhistleMessage.c|MQX Libraries/bsp_coronak60n512.a|Source/drivers/bt/Bluetopia/btpsvend/BasePatch.c|RTCS Libraries/rtcs_coronak60n512.a|Source/app/wmp/nanopb|Source/common/nanopb" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+					</sourceEntries>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.pathentry"/>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings">
+				<externalSettings containerId="cfg_factory;" factoryId="org.eclipse.cdt.core.cfg.export.settings.sipplier"/>
+				<externalSettings containerId="sherlock;" factoryId="org.eclipse.cdt.core.cfg.export.settings.sipplier"/>
+				<externalSettings containerId="pmem;" factoryId="org.eclipse.cdt.core.cfg.export.settings.sipplier"/>
+			</storageModule>
+			<sourceEntries>
+				<entry excluding="MQX Libraries/bsp_coronak60n512.a|MQX Libraries/psp_coronak60n512.a|RTCS Libraries/rtcs_coronak60n512.a|MFS Libraries/mfs_coronak60n512.a|USB Host Libraries/usb_hdk_coronak60n512.a|Shell Libraries/shell_coronak60n512.a|web_hvac_coronak60n512_Int_Flash_Release_PEOSJTAG.launch" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+			</sourceEntries>
+			<storageModule moduleId="org.eclipse.cdt.core.language.mapping"/>
+			<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
+		</cconfiguration>
+		<cconfiguration id="com.freescale.arm.cdt.toolchain.config.arm.release.1738784431">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="com.freescale.arm.cdt.toolchain.config.arm.release.1738784431" moduleId="org.eclipse.cdt.core.settings" name="Release">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.managedbuilder.core.ManagedBuildManager" point="org.eclipse.cdt.core.ScannerInfoProvider"/>
+					<extension id="com.freescale.mxc.cdt.errorparsers.LltErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.mxc.cdt.errorparsers.IcodeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.mxc.cdt.errorparsers.CobjErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.mxc.cdt.errorparsers.MwfeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.mxc.cdt.errorparsers.SccErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.MakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.mxc.cdt.errorparsers.LnkErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.mxc.cdt.errorparsers.AsmErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.core.ide.cdt.errorParsers.LltErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.core.ide.cdt.errorParsers.AsmErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.core.ide.cdt.errorParsers.IcodeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.core.ide.cdt.errorParsers.MwfeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.core.ide.cdt.errorParsers.CobjErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.core.ide.cdt.errorParsers.LnkErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.core.ide.cdt.errorParsers.MwErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.core.ide.cdt.errorParsers.MPWErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.core.ide.cdt.errorParsers.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactExtension="afx" artifactName="intflash" buildProperties="" buildReferences="true" buildReferencingConfigurations="false" cleanCommand="${system:ECLIPSE_HOME}/../gnu/bin/rm -f" description="" errorParsers="org.eclipse.cdt.core.MakeErrorParser;org.eclipse.cdt.core.GCCErrorParser;org.eclipse.cdt.core.GLDErrorParser;org.eclipse.cdt.core.GASErrorParser;com.freescale.mxc.cdt.errorparsers.MwfeErrorParser;com.freescale.mxc.cdt.errorparsers.SccErrorParser;com.freescale.mxc.cdt.errorparsers.LnkErrorParser;com.freescale.mxc.cdt.errorparsers.AsmErrorParser;com.freescale.mxc.cdt.errorparsers.CobjErrorParser;com.freescale.mxc.cdt.errorparsers.IcodeErrorParser;com.freescale.mxc.cdt.errorparsers.LltErrorParser" id="com.freescale.arm.cdt.toolchain.config.arm.release.1738784431" isPrebuildInvalidatingBuild="false" name="Release" parent="com.freescale.arm.cdt.toolchain.config.arm.release" produceBuildErrorsWithMissingReferences="true">
+					<folderInfo id="com.freescale.arm.cdt.toolchain.config.arm.release.1738784431." name="/" resourcePath="">
+						<toolChain id="com.freescale.arm.cdt.toolchain.arm.release.583725023" name="ARM Toolchain" superClass="com.freescale.arm.cdt.toolchain.arm.release">
+							<option id="com.freescale.arm.cdt.toolchain.sharedoption.model.616124922" name="Model" superClass="com.freescale.arm.cdt.toolchain.sharedoption.model" value="com.freescale.arm.cdt.toolchain.sharedoption.model.ewl" valueType="enumerated"/>
+							<option id="com.freescale.arm.cdt.toolchain.sharedoption.debuginfo.391314615" name="Generate Debug Information" superClass="com.freescale.arm.cdt.toolchain.sharedoption.debuginfo" value="true" valueType="boolean"/>
+							<targetPlatform id="com.freescale.arm.cdt.toolchain.targetplatform.442903039" isAbstract="false" name="ARM Target Platform" superClass="com.freescale.arm.cdt.toolchain.targetplatform"/>
+							<builder buildPath="${ProjDirPath}/Int Flash Release" id="com.freescale.arm.cdt.toolchain.builder.825618764" keepEnvironmentInBuildfile="false" name="GNU Make Builder" parallelBuildWorkspaceOn="true" parallelizationNumber="-1" superClass="com.freescale.arm.cdt.toolchain.builder"/>
+							<tool id="com.freescale.arm.cdt.toolchain.linker.68886345" name="ARM Linker" superClass="com.freescale.arm.cdt.toolchain.linker">
+								<option id="com.freescale.arm.cdt.toolchain.linker.libraries.libSearch.628164447" name="Library Search Paths" superClass="com.freescale.arm.cdt.toolchain.linker.libraries.libSearch" valueType="stringList">
+									<listOptionValue builtIn="false" value="&quot;${MCUToolsBaseDir}/ARM_EABI_Support/ewl/lib&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\projects\pmem\Debug&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\projects\sherlock\Debug&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\projects\cfg_factory\cfg_factory\Debug&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\lib\coronak60n512.cw10\bsp&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\lib\coronak60n512.cw10\psp&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\lib\coronak60n512.cw10\rtcs&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\lib\coronak60n512.cw10\usb\device&quot;"/>
+								</option>
+								<option id="com.freescale.arm.cdt.toolchain.linker.commandFile.556244488" name="Linker Command File" superClass="com.freescale.arm.cdt.toolchain.linker.commandFile" value="${MQX_ROOT_DIR}\lib\coronak60n512.cw10\bsp\intflash.lcf" valueType="string"/>
+								<option id="com.freescale.arm.cdt.toolchain.linker.libraries.additionalLibs.2037258749" name="Additional Libraries" superClass="com.freescale.arm.cdt.toolchain.linker.libraries.additionalLibs" valueType="libs">
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\lib\coronak60n512.cw10\bsp\bsp_coronak60n512.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\projects\pmem\Debug\pmem.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\projects\sherlock\Debug\sherlock.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\projects\cfg_factory\cfg_factory\Debug\libcfg_factory.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\whistle\corona\drivers\bt\Bluetopia\lib\rv\Bluetopia.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\whistle\corona\drivers\bt\Bluetopia\profiles\ISPP\lib\rv\SS1BTISP.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\lib\coronak60n512.cw10\psp\psp_coronak60n512.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\lib\coronak60n512.cw10\rtcs\rtcs_coronak60n512_d.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\lib\coronak60n512.cw10\usb\device\usb_ddk_coronak60n512_d.a&quot;"/>
+								</option>
+								<option id="com.freescale.arm.cdt.toolchain.linker.otherFlags.1714792625" name="Other Flags" superClass="com.freescale.arm.cdt.toolchain.linker.otherFlags" value="" valueType="string"/>
+								<option id="com.freescale.arm.cdt.toolchain.linker.entryPoint.411991066" name="Entry Point" superClass="com.freescale.arm.cdt.toolchain.linker.entryPoint" value="__boot" valueType="string"/>
+								<option id="com.freescale.arm.cdt.toolchain.linker.nostdlib.1320553003" name="No Standard Library" superClass="com.freescale.arm.cdt.toolchain.linker.nostdlib" value="true" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.linker.generateMapFile.343420600" name="Generate Link Map" superClass="com.freescale.arm.cdt.toolchain.linker.generateMapFile" value="true" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.linker.mapClosure.2012731174" name="Show Transitive Closure in Map" superClass="com.freescale.arm.cdt.toolchain.linker.mapClosure" value="true" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.linker.generateSRecord.1548016210" name="Generate S-Record File" superClass="com.freescale.arm.cdt.toolchain.linker.generateSRecord" value="true" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.linker.maxRecordLength.1583965095" name="Max S-Record Length" superClass="com.freescale.arm.cdt.toolchain.linker.maxRecordLength" value="80" valueType="string"/>
+								<inputType id="com.freescale.arm.cdt.toolchain.linker.input.1626730971" name="ARM Linker Input" superClass="com.freescale.arm.cdt.toolchain.linker.input">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+									<additionalInput kind="additionaldependency" paths="$(LCF_SRCS)"/>
+								</inputType>
+							</tool>
+							<tool id="com.freescale.arm.cdt.toolchain.compiler.1453629298" name="ARM Compiler" superClass="com.freescale.arm.cdt.toolchain.compiler">
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.input.userIncludes.426417503" name="Include User Search Paths (-i)" superClass="com.freescale.arm.cdt.toolchain.armCpp.input.userIncludes" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${MCUToolsBaseDir}/ProcessorExpert/lib/Kinetis/pdd/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\projects\pmem\Project_Headers&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\projects\sherlock\Project_Headers&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\projects\cfg_factory\cfg_factory\Project_Headers&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\mqx\source\io\enet&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\mqx\source\io\enet\atheros_wifi\include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\mqx\source\io\enet\atheros_wifi\common_src\include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\mqx\source\io\enet\atheros_wifi\custom_src\include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\mqx\source\io\enet\atheros_wifi\common_src\wmi&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Source/app/button_mgr}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\mqx\source\io\enet\atheros_wifi\common_src\stack_common&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\mqx\source\io\enet\atheros_wifi\include\AR6002&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\mqx\source\io\enet\atheros_wifi\custom_src\stack_custom&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\mqx\source\io\enet\atheros_wifi\include\AR6002\hw2.0&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MCUToolsBaseDir}/ARM_EABI_Support/ewl/EWL_C/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\lib\coronak60n512.cw10\bsp\Generated_Code&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\lib\coronak60n512.cw10\bsp&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\lib\coronak60n512.cw10\psp&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\mqx\source\io\enet\atheros_wifi&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\lib\coronak60n512.cw10&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\lib\coronak60n512.cw10\rtcs&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\lib\coronak60n512.cw10\usb\device&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}\..\..&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${PROJDIRPATH}\drivers\wifi\ar4100p\custom&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${PROJDIRPATH}\drivers\bt\Bluetopia\include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${PROJDIRPATH}\drivers\bt\Bluetopia\btpskrnl&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${PROJDIRPATH}\drivers\bt\Bluetopia\btpsvend&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${PROJDIRPATH}\drivers\bt\Bluetopia\hcitrans&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${PROJDIRPATH}\drivers\bt\Bluetopia\iacptran&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${PROJDIRPATH}\drivers\bt\Bluetopia\profiles&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${PROJDIRPATH}\drivers\bt\Bluetopia\profiles\GAPS\include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${PROJDIRPATH}\drivers\bt\Bluetopia\profiles\GATT\include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${PROJDIRPATH}\drivers\bt\Bluetopia\profiles\ISPP\include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${PROJDIRPATH}\drivers\bt\Bluetopia\ss1btvs&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${PROJDIRPATH}\drivers\bt\Platform&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${PROJDIRPATH}\app}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${PROJDIRPATH}\src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${PROJDIRPATH}\include&quot;"/>
+								</option>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.warningsFlag.hidden.adjusted.873746495.adjusted.1539987375" value="false" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.509736705.adjusted.2066426699" value="com.freescale.arm.cdt.toolchain.enableWarnings.custom.hidden" valueType="enumerated"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.optimization.mode.82600412" name="Speed vs. Size" superClass="com.freescale.arm.cdt.toolchain.armCpp.optimization.mode" value="com.freescale.arm.cdt.toolchain.armCpp.optimization.mode.space" valueType="enumerated"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.input.prefixFile.540108199" name="Prefix File" superClass="com.freescale.arm.cdt.toolchain.armCpp.input.prefixFile" value="" valueType="symbolFile"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.otherFlags.1917892197" name="Other Flags" superClass="com.freescale.arm.cdt.toolchain.armCpp.otherFlags" value="-define __CODEWARRIOR__=1" valueType="string"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.warnIllPragma.209304061" name="Illegal #pragmas (most)" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.warnIllPragma" value="true" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.warnPossibleErr.1911046823" name="Possible Unwanted Effects (most)" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.warnPossibleErr" value="true" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.extraCommas.1260670445" name="Extra Commas (most)" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.extraCommas" value="true" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.emptyDecl.2031745541" name="Empty Declarations (most)" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.emptyDecl" value="true" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.missingReturn.1575904828" name="Missing 'return' Value in Non-Void-Returning Function (most)" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.missingReturn" value="true" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.optimization.level.1289713630" name="Optimization Level" superClass="com.freescale.arm.cdt.toolchain.armCpp.optimization.level" value="com.freescale.arm.cdt.toolchain.armCpp.optimization.level.level0" valueType="enumerated"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.language.cpp.enumsInt.1771210600" name="Enums Always Int" superClass="com.freescale.arm.cdt.toolchain.armCpp.language.cpp.enumsInt" value="true" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.language.cpp.exceptions.717907688" name="Enable Exceptions" superClass="com.freescale.arm.cdt.toolchain.armCpp.language.cpp.exceptions" value="false" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.language.cpp.rtti.598830674" name="Enable RTTI Support" superClass="com.freescale.arm.cdt.toolchain.armCpp.language.cpp.rtti" value="false" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.language.cpp.isoParser.1124356017" name="ISO Template Parser" superClass="com.freescale.arm.cdt.toolchain.armCpp.language.cpp.isoParser" value="false" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.warningsFlag.hidden.adjusted.1000433966.adjusted.380498418" name="(hidden) warnings flag" value="false" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.394916508.adjusted.834025246" name="(hidden) toggle warnings flag" value="com.freescale.arm.cdt.toolchain.enableWarnings.custom.hidden" valueType="enumerated"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.warningsFlag.hidden.adjusted.1000433966.adjusted.1678204220" value="false" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.warningsFlag.hidden.adjusted.1000433966.adjusted.1532342830" value="false" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.warningsFlag.hidden.adjusted.1000433966.adjusted.490564286" value="false" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.394916508.adjusted.980924445" value="com.freescale.arm.cdt.toolchain.enableWarnings.custom.hidden" valueType="enumerated"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.394916508.adjusted.471699781" value="com.freescale.arm.cdt.toolchain.enableWarnings.custom.hidden" valueType="enumerated"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.394916508.adjusted.1158802053" value="com.freescale.arm.cdt.toolchain.enableWarnings.custom.hidden" valueType="enumerated"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.394916508.adjusted.1964231837" value="com.freescale.arm.cdt.toolchain.enableWarnings.custom.hidden" valueType="enumerated"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.394916508.adjusted.1092342000" value="com.freescale.arm.cdt.toolchain.enableWarnings.custom.hidden" valueType="enumerated"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.394916508.adjusted.1450839835" value="com.freescale.arm.cdt.toolchain.enableWarnings.custom.hidden" valueType="enumerated"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.input.define.302336734" name="Defined Macros" superClass="com.freescale.arm.cdt.toolchain.armCpp.input.define" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="__ATHEROS_FS__"/>
+									<listOptionValue builtIn="false" value="MQX_ENV"/>
+									<listOptionValue builtIn="false" value="PB_FIELD_16BIT"/>
+									<listOptionValue builtIn="false" value="RELEASE_WHISTLE"/>
+									<listOptionValue builtIn="false" value="USE_ATH_CHANGES"/>
+								</option>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.warningsFlag.hidden.adjusted.2005474532.adjusted.1008817298" name="(hidden) warnings flag" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.warningsFlag.hidden.adjusted.2005474532" value="false" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.579003379.adjusted.1373024479" name="(hidden) toggle warnings flag" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.579003379" value="com.freescale.arm.cdt.toolchain.enableWarnings.custom.hidden" valueType="enumerated"/>
+								<inputType id="com.freescale.arm.cdt.toolchain.armCpp.cSource.244528564" name="ARM C/C++ Compiler" superClass="com.freescale.arm.cdt.toolchain.armCpp.cSource"/>
+							</tool>
+							<tool id="com.freescale.arm.cdt.toolchain.assembler.1536830664" name="ARM Assembler" superClass="com.freescale.arm.cdt.toolchain.assembler">
+								<option id="com.freescale.arm.cdt.toolchain.armAsm.include.449380195" name="Include User Search Paths (-i)" superClass="com.freescale.arm.cdt.toolchain.armAsm.include" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}\..\..&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\projects\cfg_factory\cfg_factory\Project_Headers&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\lib\coronak60n512.cw10\bsp\Generated_Code&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\lib\coronak60n512.cw10\bsp&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\lib\coronak60n512.cw10\psp&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\lib\coronak60n512.cw10&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\lib\coronak60n512.cw10\rtcs&quot;"/>
+								</option>
+								<option id="com.freescale.arm.cdt.toolchain.armAsm.prefixFile.284066418" name="Prefix File" superClass="com.freescale.arm.cdt.toolchain.armAsm.prefixFile" value="" valueType="string"/>
+								<option id="com.freescale.arm.cdt.toolchain.armAsm.otherFlags.1361739856" name="Other Flags" superClass="com.freescale.arm.cdt.toolchain.armAsm.otherFlags" value="-define __CODEWARRIOR__=1" valueType="string"/>
+								<inputType id="com.freescale.arm.cdt.toolchain.armAsm.input.936352798" name="ARM Assembler Input" superClass="com.freescale.arm.cdt.toolchain.armAsm.input"/>
+							</tool>
+							<tool id="com.freescale.arm.cdt.toolchain.preproc.223072802" name="ARM Preprocessor" superClass="com.freescale.arm.cdt.toolchain.preproc"/>
+							<tool id="com.freescale.arm.cdt.toolchain.disassembler.539956526" name="ARM Disassembler" superClass="com.freescale.arm.cdt.toolchain.disassembler"/>
+						</toolChain>
+					</folderInfo>
+					<sourceEntries>
+						<entry excluding="web_hvac_coronak60n512_Int_Flash_Debug_PEOSJTAG.launch|Source/common/wmp/nanopb|Shell Libraries/shell_coronak60n512_d.a|web_hvac_coronak60n512_Int_Ram_Debug_PEOSJTAG.launch|RTCS Libraries/rtcs_coronak60n512_d.a|USB Host Libraries/usb_hdk_coronak60n512_d.a|Source/drivers/bt/Bluetopia/btpsvend/LowEnergyPatch.c|Source/drivers/bt/Bluetopia/btpsvend/BasePatch.c|MQX Libraries/psp_coronak60n512_d.a|MFS Libraries/mfs_coronak60n512_d.a|Source/app/wmp/nanopb|MQX Libraries/bsp_coronak60n512_d.a|Source/common/nanopb" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+					</sourceEntries>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.pathentry"/>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings">
+				<externalSettings containerId="cfg_factory;" factoryId="org.eclipse.cdt.core.cfg.export.settings.sipplier"/>
+				<externalSettings containerId="sherlock;" factoryId="org.eclipse.cdt.core.cfg.export.settings.sipplier"/>
+				<externalSettings containerId="pmem;" factoryId="org.eclipse.cdt.core.cfg.export.settings.sipplier"/>
+			</storageModule>
+			<sourceEntries>
+				<entry excluding="MQX Libraries/bsp_coronak60n512_d.a|MQX Libraries/psp_coronak60n512_d.a|RTCS Libraries/rtcs_coronak60n512_d.a|MFS Libraries/mfs_coronak60n512_d.a|USB Host Libraries/usb_hdk_coronak60n512_d.a|Shell Libraries/shell_coronak60n512_d.a|web_hvac_coronak60n512_Int_Ram_Debug_PEOSJTAG.launch|web_hvac_coronak60n512_Int_Flash_Debug_PEOSJTAG.launch" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+			</sourceEntries>
+			<storageModule moduleId="org.eclipse.cdt.core.language.mapping"/>
+			<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
+		</cconfiguration>
+		<cconfiguration id="com.freescale.arm.cdt.toolchain.config.arm.release.1738784430.879168988">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="com.freescale.arm.cdt.toolchain.config.arm.release.1738784430.879168988" moduleId="org.eclipse.cdt.core.settings" name="Debug USB">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.managedbuilder.core.ManagedBuildManager" point="org.eclipse.cdt.core.ScannerInfoProvider"/>
+					<extension id="com.freescale.mxc.cdt.errorparsers.LltErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.mxc.cdt.errorparsers.IcodeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.mxc.cdt.errorparsers.CobjErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.mxc.cdt.errorparsers.MwfeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.mxc.cdt.errorparsers.SccErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.MakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.mxc.cdt.errorparsers.LnkErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.mxc.cdt.errorparsers.AsmErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.core.ide.cdt.errorParsers.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.core.ide.cdt.errorParsers.LltErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.core.ide.cdt.errorParsers.AsmErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.core.ide.cdt.errorParsers.IcodeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.core.ide.cdt.errorParsers.MwfeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.core.ide.cdt.errorParsers.CobjErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.core.ide.cdt.errorParsers.LnkErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.core.ide.cdt.errorParsers.MwErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.core.ide.cdt.errorParsers.MPWErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactExtension="afx" artifactName="intflash_d_usb" buildProperties="" buildReferences="true" buildReferencingConfigurations="false" cleanCommand="${system:ECLIPSE_HOME}/../gnu/bin/rm -f" description="" errorParsers="org.eclipse.cdt.core.MakeErrorParser;org.eclipse.cdt.core.GCCErrorParser;org.eclipse.cdt.core.GLDErrorParser;org.eclipse.cdt.core.GASErrorParser;com.freescale.mxc.cdt.errorparsers.MwfeErrorParser;com.freescale.mxc.cdt.errorparsers.SccErrorParser;com.freescale.mxc.cdt.errorparsers.LnkErrorParser;com.freescale.mxc.cdt.errorparsers.AsmErrorParser;com.freescale.mxc.cdt.errorparsers.CobjErrorParser;com.freescale.mxc.cdt.errorparsers.IcodeErrorParser;com.freescale.mxc.cdt.errorparsers.LltErrorParser;com.freescale.core.ide.cdt.errorParsers.GCCErrorParser;com.freescale.core.ide.cdt.errorParsers.LnkErrorParser;com.freescale.core.ide.cdt.errorParsers.AsmErrorParser;com.freescale.core.ide.cdt.errorParsers.CobjErrorParser;com.freescale.core.ide.cdt.errorParsers.IcodeErrorParser;com.freescale.core.ide.cdt.errorParsers.LltErrorParser;com.freescale.core.ide.cdt.errorParsers.MwfeErrorParser;com.freescale.core.ide.cdt.errorParsers.MwErrorParser;com.freescale.core.ide.cdt.errorParsers.MPWErrorParser" id="com.freescale.arm.cdt.toolchain.config.arm.release.1738784430.879168988" isPrebuildInvalidatingBuild="false" name="Debug USB" parent="com.freescale.arm.cdt.toolchain.config.arm.release" postannouncebuildStep="" postbuildStep="" preannouncebuildStep="" prebuildStep="" produceBuildErrorsWithMissingReferences="true">
+					<folderInfo id="com.freescale.arm.cdt.toolchain.config.arm.release.1738784430.879168988." name="/" resourcePath="">
+						<toolChain errorParsers="" id="com.freescale.arm.cdt.toolchain.arm.release.1683719286" name="ARM Toolchain" superClass="com.freescale.arm.cdt.toolchain.arm.release">
+							<option id="com.freescale.arm.cdt.toolchain.sharedoption.model.117836546" name="Model" superClass="com.freescale.arm.cdt.toolchain.sharedoption.model" value="com.freescale.arm.cdt.toolchain.sharedoption.model.ewl" valueType="enumerated"/>
+							<targetPlatform binaryParser="org.eclipse.cdt.core.ELF" id="com.freescale.arm.cdt.toolchain.targetplatform.1974147026" isAbstract="false" name="ARM Target Platform" superClass="com.freescale.arm.cdt.toolchain.targetplatform"/>
+							<builder buildPath="${ProjDirPath}/Flash USB" errorParsers="com.freescale.core.ide.cdt.errorParsers.GCCErrorParser;com.freescale.core.ide.cdt.errorParsers.LltErrorParser;com.freescale.core.ide.cdt.errorParsers.AsmErrorParser;com.freescale.core.ide.cdt.errorParsers.IcodeErrorParser;com.freescale.core.ide.cdt.errorParsers.CobjErrorParser;com.freescale.core.ide.cdt.errorParsers.MwErrorParser;com.freescale.core.ide.cdt.errorParsers.MPWErrorParser;com.freescale.core.ide.cdt.errorParsers.MwfeErrorParser;com.freescale.core.ide.cdt.errorParsers.LnkErrorParser;org.eclipse.cdt.core.MakeErrorParser;org.eclipse.cdt.core.GASErrorParser;org.eclipse.cdt.core.GLDErrorParser" id="com.freescale.arm.cdt.toolchain.builder.1397822799" keepEnvironmentInBuildfile="false" name="GNU Make Builder" parallelBuildOn="false" parallelBuildWorkspaceOn="false" parallelizationNumber="1" superClass="com.freescale.arm.cdt.toolchain.builder"/>
+							<tool command="&quot;${ARM_ToolsDir}/mwldarm&quot;" commandLinePattern="${COMMAND} ${FLAGS} ${OUTPUT_FLAG} ${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}" errorParsers="" id="com.freescale.arm.cdt.toolchain.linker.938337479" name="ARM Linker" superClass="com.freescale.arm.cdt.toolchain.linker">
+								<option id="com.freescale.arm.cdt.toolchain.linker.libraries.libSearch.1443340952" name="Library Search Paths" superClass="com.freescale.arm.cdt.toolchain.linker.libraries.libSearch" valueType="stringList">
+									<listOptionValue builtIn="false" value="&quot;${MCUToolsBaseDir}/ARM_EABI_Support/ewl/lib&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\projects\pmem\Debug&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\projects\sherlock\Debug&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\projects\cfg_factory\cfg_factory\Debug&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\lib\coronak60n512.cw10\bsp&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\lib\coronak60n512.cw10\psp&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\lib\coronak60n512.cw10\rtcs&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\lib\coronak60n512.cw10\usb\device&quot;"/>
+								</option>
+								<option id="com.freescale.arm.cdt.toolchain.linker.commandFile.639610402" name="Linker Command File" superClass="com.freescale.arm.cdt.toolchain.linker.commandFile" value="${MQX_ROOT_DIR}\lib\coronak60n512.cw10\bsp\intflash.lcf" valueType="string"/>
+								<option id="com.freescale.arm.cdt.toolchain.linker.libraries.additionalLibs.2113568055" name="Additional Libraries" superClass="com.freescale.arm.cdt.toolchain.linker.libraries.additionalLibs" valueType="libs">
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\lib\coronak60n512.cw10\bsp\bsp_coronak60n512_d_usb.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\projects\pmem\Debug\pmem.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\projects\sherlock\Debug\sherlock.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\projects\cfg_factory\cfg_factory\Debug\libcfg_factory.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\whistle\corona\drivers\bt\Bluetopia\lib\rv\Bluetopia.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\whistle\corona\drivers\bt\Bluetopia\profiles\ISPP\lib\rv\SS1BTISP.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\lib\coronak60n512.cw10\psp\psp_coronak60n512_d_usb.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\lib\coronak60n512.cw10\rtcs\rtcs_coronak60n512_d.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\lib\coronak60n512.cw10\usb\device\usb_ddk_coronak60n512_d.a&quot;"/>
+								</option>
+								<option id="com.freescale.arm.cdt.toolchain.linker.otherFlags.1968508612" name="Other Flags" superClass="com.freescale.arm.cdt.toolchain.linker.otherFlags" value="-warn noSymRedef" valueType="string"/>
+								<option id="com.freescale.arm.cdt.toolchain.linker.entryPoint.1759043693" name="Entry Point" superClass="com.freescale.arm.cdt.toolchain.linker.entryPoint" value="__boot" valueType="string"/>
+								<option id="com.freescale.arm.cdt.toolchain.linker.nostdlib.728146170" name="No Standard Library" superClass="com.freescale.arm.cdt.toolchain.linker.nostdlib" value="true" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.linker.generateMapFile.1102417316" name="Generate Link Map" superClass="com.freescale.arm.cdt.toolchain.linker.generateMapFile" value="true" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.linker.mapClosure.856968790" name="Show Transitive Closure in Map" superClass="com.freescale.arm.cdt.toolchain.linker.mapClosure" value="true" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.linker.generateSRecord.1101644383" name="Generate S-Record File" superClass="com.freescale.arm.cdt.toolchain.linker.generateSRecord" value="true" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.linker.maxRecordLength.1118444944" name="Max S-Record Length" superClass="com.freescale.arm.cdt.toolchain.linker.maxRecordLength" value="80" valueType="string"/>
+								<option id="com.freescale.arm.cdt.toolchain.linker.suppressLinkWarnings.2046563213" name="Suppress Link Warnings" superClass="com.freescale.arm.cdt.toolchain.linker.suppressLinkWarnings" value="false" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.linker.mapListUnused.605662307" name="List Unused Symbols in Map" superClass="com.freescale.arm.cdt.toolchain.linker.mapListUnused" value="true" valueType="boolean"/>
+								<inputType id="com.freescale.arm.cdt.toolchain.linker.input.498401070" name="ARM Linker Input" superClass="com.freescale.arm.cdt.toolchain.linker.input">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+									<additionalInput kind="additionaldependency" paths="$(LCF_SRCS)"/>
+								</inputType>
+							</tool>
+							<tool command="&quot;${ARM_ToolsDir}/mwccarm&quot; -gccinc" commandLinePattern="${COMMAND} ${FLAGS} ${OUTPUT_FLAG} ${OUTPUT_PREFIX}${OUTPUT} -c ${INPUTS}" errorParsers="" id="com.freescale.arm.cdt.toolchain.compiler.888472612" name="ARM Compiler" superClass="com.freescale.arm.cdt.toolchain.compiler">
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.input.userIncludes.1168121900" name="Include User Search Paths (-i)" superClass="com.freescale.arm.cdt.toolchain.armCpp.input.userIncludes" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${MCUToolsBaseDir}/ProcessorExpert/lib/Kinetis/pdd/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\projects\pmem\Project_Headers&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\projects\sherlock\Project_Headers&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\mqx\source\io\enet&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\projects\cfg_factory\cfg_factory\Project_Headers&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\mqx\source\io\enet\atheros_wifi\include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\mqx\source\io\enet\atheros_wifi\common_src\include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\mqx\source\io\enet\atheros_wifi\custom_src\include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\mqx\source\io\enet\atheros_wifi\common_src\wmi&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Source/app/button_mgr}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\mqx\source\io\enet\atheros_wifi\common_src\stack_common&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\mqx\source\io\enet\atheros_wifi\include\AR6002&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\mqx\source\io\enet\atheros_wifi\custom_src\stack_custom&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\mqx\source\io\enet\atheros_wifi\include\AR6002\hw2.0&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MCUToolsBaseDir}/ARM_EABI_Support/ewl/EWL_C/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\lib\coronak60n512.cw10\bsp\Generated_Code&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\lib\coronak60n512.cw10\bsp&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\lib\coronak60n512.cw10\psp&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\mqx\source\io\enet\atheros_wifi&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\lib\coronak60n512.cw10&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\lib\coronak60n512.cw10\rtcs&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\lib\coronak60n512.cw10\usb\device&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}\..\..&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${PROJDIRPATH}\drivers\wifi\ar4100p\custom&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${PROJDIRPATH}\drivers\bt\Bluetopia\include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${PROJDIRPATH}\drivers\bt\Bluetopia\btpskrnl&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${PROJDIRPATH}\drivers\bt\Bluetopia\btpsvend&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${PROJDIRPATH}\drivers\bt\Bluetopia\hcitrans&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${PROJDIRPATH}\drivers\bt\Bluetopia\iacptran&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${PROJDIRPATH}\drivers\bt\Bluetopia\profiles&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${PROJDIRPATH}\drivers\bt\Bluetopia\ss1btvs&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${PROJDIRPATH}\drivers\bt\Bluetopia\profiles\GAPS\include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${PROJDIRPATH}\drivers\bt\Bluetopia\profiles\GATT\include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${PROJDIRPATH}\drivers\bt\Bluetopia\profiles\ISPP\include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${PROJDIRPATH}\drivers\bt\Platform&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${PROJDIRPATH}\app}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${PROJDIRPATH}\src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${PROJDIRPATH}\include&quot;"/>
+								</option>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.warningsFlag.hidden.adjusted.873746494.adjusted.1539987374.1238016464" value="false" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.509736704.adjusted.2066426698.1066546486" value="com.freescale.arm.cdt.toolchain.enableWarnings.custom.hidden" valueType="enumerated"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.optimization.mode.849198516" name="Speed vs. Size" superClass="com.freescale.arm.cdt.toolchain.armCpp.optimization.mode" value="com.freescale.arm.cdt.toolchain.armCpp.optimization.mode.space" valueType="enumerated"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.input.prefixFile.813461876" name="Prefix File" superClass="com.freescale.arm.cdt.toolchain.armCpp.input.prefixFile" value="" valueType="symbolFile"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.otherFlags.1411123608" name="Other Flags" superClass="com.freescale.arm.cdt.toolchain.armCpp.otherFlags" value="-define __CODEWARRIOR__=1 -define _DEBUG=1" valueType="string"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.warnIllPragma.1985463491" name="Illegal #pragmas (most)" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.warnIllPragma" value="false" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.warnPossibleErr.770215896" name="Possible Unwanted Effects (most)" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.warnPossibleErr" value="true" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.extraCommas.2023563920" name="Extra Commas (most)" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.extraCommas" value="true" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.emptyDecl.1560222444" name="Empty Declarations (most)" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.emptyDecl" value="true" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.missingReturn.1144780932" name="Missing 'return' Value in Non-Void-Returning Function (most)" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.missingReturn" value="true" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.optimization.level.1608412333" name="Optimization Level" superClass="com.freescale.arm.cdt.toolchain.armCpp.optimization.level" value="com.freescale.arm.cdt.toolchain.armCpp.optimization.level.level0" valueType="enumerated"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.language.cpp.enumsInt.860104863" name="Enums Always Int" superClass="com.freescale.arm.cdt.toolchain.armCpp.language.cpp.enumsInt" value="false" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.language.cpp.exceptions.1459598499" name="Enable Exceptions" superClass="com.freescale.arm.cdt.toolchain.armCpp.language.cpp.exceptions" value="false" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.language.cpp.rtti.1142649296" name="Enable RTTI Support" superClass="com.freescale.arm.cdt.toolchain.armCpp.language.cpp.rtti" value="false" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.language.cpp.isoParser.919133180" name="ISO Template Parser" superClass="com.freescale.arm.cdt.toolchain.armCpp.language.cpp.isoParser" value="false" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.warningsFlag.hidden.adjusted.1000433966.adjusted.2038116786.980538498" name="(hidden) warnings flag" value="false" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.394916508.adjusted.269725703.154010730" name="(hidden) toggle warnings flag" value="com.freescale.arm.cdt.toolchain.enableWarnings.custom.hidden" valueType="enumerated"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.warningsFlag.hidden.adjusted.1000433966.adjusted.791061763.2050996929" value="false" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.warningsFlag.hidden.adjusted.1000433966.adjusted.1383008549.1536479093" value="false" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.warningsFlag.hidden.adjusted.1000433966.adjusted.1372434557.2257540" value="false" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.394916508.adjusted.1911480339.356234278" value="com.freescale.arm.cdt.toolchain.enableWarnings.custom.hidden" valueType="enumerated"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.394916508.adjusted.1695091652.452188349" value="com.freescale.arm.cdt.toolchain.enableWarnings.custom.hidden" valueType="enumerated"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.394916508.adjusted.1705888344.1840385910" value="com.freescale.arm.cdt.toolchain.enableWarnings.custom.hidden" valueType="enumerated"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.394916508.adjusted.1641374838.30733714" value="com.freescale.arm.cdt.toolchain.enableWarnings.custom.hidden" valueType="enumerated"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.394916508.adjusted.1171018331.1571713368" value="com.freescale.arm.cdt.toolchain.enableWarnings.custom.hidden" valueType="enumerated"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.394916508.adjusted.1352480421.940457363" value="com.freescale.arm.cdt.toolchain.enableWarnings.custom.hidden" valueType="enumerated"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.input.define.1998216236" name="Defined Macros" superClass="com.freescale.arm.cdt.toolchain.armCpp.input.define" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="__ATHEROS_FS__"/>
+									<listOptionValue builtIn="false" value="USB_ENABLED"/>
+									<listOptionValue builtIn="false" value="MQX_ENV"/>
+									<listOptionValue builtIn="false" value="DEBUG_WHISTLE"/>
+									<listOptionValue builtIn="false" value="PB_FIELD_16BIT"/>
+									<listOptionValue builtIn="false" value="USE_ATH_CHANGES"/>
+								</option>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.warningsFlag.hidden.adjusted.802054255.adjusted.1561855337.1137036719" name="(hidden) warnings flag" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.warningsFlag.hidden.adjusted.802054255" value="false" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.1076512495.adjusted.1685332774.1804038142" name="(hidden) toggle warnings flag" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.1076512495" value="com.freescale.arm.cdt.toolchain.enableWarnings.custom.hidden" valueType="enumerated"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.warningsFlag.hidden.adjusted.1311121149.adjusted.1483460543.1286919629" name="(hidden) warnings flag" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.warningsFlag.hidden.adjusted.1311121149" value="false" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.626434640.adjusted.1346891338.1303457063" name="(hidden) toggle warnings flag" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.626434640" value="com.freescale.arm.cdt.toolchain.enableWarnings.custom.hidden" valueType="enumerated"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.warningsFlag.hidden.adjusted.1311121149.adjusted.25788948.1939646242" name="(hidden) warnings flag" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.warningsFlag.hidden.adjusted.1311121149" value="false" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.warningsFlag.hidden.adjusted.1311121149.adjusted.566948448.1518083248" name="(hidden) warnings flag" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.warningsFlag.hidden.adjusted.1311121149" value="false" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.warningsFlag.hidden.adjusted.1311121149.adjusted.495327643.620145001" name="(hidden) warnings flag" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.warningsFlag.hidden.adjusted.1311121149" value="false" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.626434640.adjusted.391832955.545086871" name="(hidden) toggle warnings flag" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.626434640" value="com.freescale.arm.cdt.toolchain.enableWarnings.custom.hidden" valueType="enumerated"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.626434640.adjusted.7759364.1991555113" name="(hidden) toggle warnings flag" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.626434640" value="com.freescale.arm.cdt.toolchain.enableWarnings.custom.hidden" valueType="enumerated"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.626434640.adjusted.1609234574.1051954436" name="(hidden) toggle warnings flag" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.626434640" value="com.freescale.arm.cdt.toolchain.enableWarnings.custom.hidden" valueType="enumerated"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.626434640.adjusted.1601400581.1490061314" name="(hidden) toggle warnings flag" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.626434640" value="com.freescale.arm.cdt.toolchain.enableWarnings.custom.hidden" valueType="enumerated"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.626434640.adjusted.107015098.1137897389" name="(hidden) toggle warnings flag" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.626434640" value="com.freescale.arm.cdt.toolchain.enableWarnings.custom.hidden" valueType="enumerated"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.626434640.adjusted.768462951.832293170" name="(hidden) toggle warnings flag" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.626434640" value="com.freescale.arm.cdt.toolchain.enableWarnings.custom.hidden" valueType="enumerated"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.warningsFlag.hidden.adjusted.1021125828.adjusted.1437042003.1087759158" name="(hidden) warnings flag" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.warningsFlag.hidden.adjusted.1021125828" value="false" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.101919782.adjusted.1577342679.306893453" name="(hidden) toggle warnings flag" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.101919782" value="com.freescale.arm.cdt.toolchain.enableWarnings.custom.hidden" valueType="enumerated"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.warningsFlag.hidden.adjusted.1021125828.adjusted.457227382.1770026881" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.warningsFlag.hidden.adjusted.1021125828" value="false" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.warningsFlag.hidden.adjusted.1021125828.adjusted.1846992013.23373857" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.warningsFlag.hidden.adjusted.1021125828" value="false" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.warningsFlag.hidden.adjusted.1021125828.adjusted.1496164977.1679534748" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.warningsFlag.hidden.adjusted.1021125828" value="false" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.101919782.adjusted.2087558069.1364605658" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.101919782" value="com.freescale.arm.cdt.toolchain.enableWarnings.custom.hidden" valueType="enumerated"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.101919782.adjusted.223723592.10574465" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.101919782" value="com.freescale.arm.cdt.toolchain.enableWarnings.custom.hidden" valueType="enumerated"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.101919782.adjusted.961850851.1105794885" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.101919782" value="com.freescale.arm.cdt.toolchain.enableWarnings.custom.hidden" valueType="enumerated"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.101919782.adjusted.553666296.68923644" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.101919782" value="com.freescale.arm.cdt.toolchain.enableWarnings.custom.hidden" valueType="enumerated"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.101919782.adjusted.217064488.1597921444" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.101919782" value="com.freescale.arm.cdt.toolchain.enableWarnings.custom.hidden" valueType="enumerated"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.101919782.adjusted.541487171.1581765942" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.101919782" value="com.freescale.arm.cdt.toolchain.enableWarnings.custom.hidden" valueType="enumerated"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.warningsFlag.hidden.adjusted.1761828050.adjusted.265211995.1264367366" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.warningsFlag.hidden.adjusted.1761828050" value="false" valueType="boolean"/>
+								<option id="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.599527447.adjusted.1021037565.1924757359" superClass="com.freescale.arm.cdt.toolchain.armCpp.warn.enableWarnings.hidden.adjusted.599527447" value="com.freescale.arm.cdt.toolchain.enableWarnings.custom.hidden" valueType="enumerated"/>
+								<inputType id="com.freescale.arm.cdt.toolchain.armCpp.cSource.1879620046" name="ARM C/C++ Compiler" superClass="com.freescale.arm.cdt.toolchain.armCpp.cSource"/>
+							</tool>
+							<tool command="&quot;${ARM_ToolsDir}/mwasmarm&quot;" commandLinePattern="${COMMAND} ${FLAGS} ${OUTPUT_FLAG} ${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}" errorParsers="" id="com.freescale.arm.cdt.toolchain.assembler.1942217955" name="ARM Assembler" superClass="com.freescale.arm.cdt.toolchain.assembler">
+								<option id="com.freescale.arm.cdt.toolchain.armAsm.include.1462344906" name="Include User Search Paths (-i)" superClass="com.freescale.arm.cdt.toolchain.armAsm.include" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}\..\..&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\projects\cfg_factory\cfg_factory\Project_Headers&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\lib\coronak60n512.cw10\bsp\Generated_Code&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\lib\coronak60n512.cw10\bsp&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\lib\coronak60n512.cw10\psp&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\lib\coronak60n512.cw10&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MQX_ROOT_DIR}\lib\coronak60n512.cw10\rtcs&quot;"/>
+								</option>
+								<option id="com.freescale.arm.cdt.toolchain.armAsm.prefixFile.2140365089" name="Prefix File" superClass="com.freescale.arm.cdt.toolchain.armAsm.prefixFile" value="" valueType="string"/>
+								<option id="com.freescale.arm.cdt.toolchain.armAsm.otherFlags.2059023920" name="Other Flags" superClass="com.freescale.arm.cdt.toolchain.armAsm.otherFlags" value="-define __CODEWARRIOR__=1 -define _DEBUG=1" valueType="string"/>
+								<inputType id="com.freescale.arm.cdt.toolchain.armAsm.input.1130516479" name="ARM Assembler Input" superClass="com.freescale.arm.cdt.toolchain.armAsm.input"/>
+							</tool>
+							<tool command="&quot;${ARM_ToolsDir}/mwccarm&quot; -gccinc" commandLinePattern="${COMMAND} -E ${FLAGS} ${INPUTS}" errorParsers="" id="com.freescale.arm.cdt.toolchain.preproc.2090007654" name="ARM Preprocessor" superClass="com.freescale.arm.cdt.toolchain.preproc"/>
+							<tool command="&quot;${ARM_ToolsDir}/mwldarm&quot;" commandLinePattern="${COMMAND} -dis ${FLAGS} ${INPUTS}" errorParsers="" id="com.freescale.arm.cdt.toolchain.disassembler.808154167" name="ARM Disassembler" superClass="com.freescale.arm.cdt.toolchain.disassembler"/>
+						</toolChain>
+					</folderInfo>
+					<sourceEntries>
+						<entry excluding="Source/common/crc/crc_priv.h|Source/common/wmp/nanopb|Source/app/wmp/test.c|Source/app/evt_mgr/evt_mgr_old.c|MFS Libraries/mfs_coronak60n512.a|MQX Libraries/psp_coronak60n512.a|USB Host Libraries/usb_hdk_coronak60n512.a|Source/app/wmp/WhistleMessage.h|Source/app/wmp/WhistleMessage.c|Source/app/wmp/clean/WhistleMessage.h|web_hvac_coronak60n512_Int_Flash_Release_PEOSJTAG.launch|Source/common/crc/crc_pe.c|Source/drivers/bt/Bluetopia/btpsvend/LowEnergyPatch.c|Shell Libraries/shell_coronak60n512.a|Source/app/wmp/clean/WhistleMessage.c|MQX Libraries/bsp_coronak60n512.a|Source/drivers/bt/Bluetopia/btpsvend/BasePatch.c|RTCS Libraries/rtcs_coronak60n512.a|Source/app/wmp/nanopb|Source/common/nanopb" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+					</sourceEntries>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.pathentry"/>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings">
+				<externalSettings containerId="cfg_factory;" factoryId="org.eclipse.cdt.core.cfg.export.settings.sipplier"/>
+				<externalSettings containerId="sherlock;" factoryId="org.eclipse.cdt.core.cfg.export.settings.sipplier"/>
+				<externalSettings containerId="pmem;" factoryId="org.eclipse.cdt.core.cfg.export.settings.sipplier"/>
+			</storageModule>
+			<sourceEntries>
+				<entry excluding="MQX Libraries/bsp_coronak60n512.a|MQX Libraries/psp_coronak60n512.a|RTCS Libraries/rtcs_coronak60n512.a|MFS Libraries/mfs_coronak60n512.a|USB Host Libraries/usb_hdk_coronak60n512.a|Shell Libraries/shell_coronak60n512.a|web_hvac_coronak60n512_Int_Flash_Release_PEOSJTAG.launch" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+			</sourceEntries>
+			<storageModule moduleId="org.eclipse.cdt.core.language.mapping"/>
+			<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
+		</cconfiguration>
+	</storageModule>
+	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+		<project id="mqx.com.freescale.arm.cdt.toolchain.project.arm.1020799198" name="ARM Project" projectType="com.freescale.arm.cdt.toolchain.project.arm"/>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
+	<storageModule moduleId="refreshScope" versionNumber="1">
+		<resource resourceType="PROJECT" workspacePath="/corona_coronak60n512"/>
+	</storageModule>
+	<storageModule moduleId="scannerConfiguration">
+		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.make.core.GCCStandardMakePerProjectProfile"/>
+		<profile id="org.eclipse.cdt.make.core.GCCStandardMakePerFileProfile">
+			<buildOutputProvider>
+				<openAction enabled="true" filePath=""/>
+				<parser enabled="true"/>
+			</buildOutputProvider>
+			<scannerInfoProvider id="makefileGenerator">
+				<runAction arguments="-f ${project_name}_scd.mk" command="make" useDefault="true"/>
+				<parser enabled="true"/>
+			</scannerInfoProvider>
+		</profile>
+		<profile id="org.eclipse.cdt.managedbuilder.core.GCCWinManagedMakePerProjectProfile">
+			<buildOutputProvider>
+				<openAction enabled="true" filePath=""/>
+				<parser enabled="true"/>
+			</buildOutputProvider>
+			<scannerInfoProvider id="specsFile">
+				<runAction arguments="-E -P -v -dD ${plugin_state_location}/${specs_file}" command="gcc" useDefault="true"/>
+				<parser enabled="true"/>
+			</scannerInfoProvider>
+		</profile>
+		<profile id="org.eclipse.cdt.managedbuilder.core.GCCWinManagedMakePerProjectProfileCPP">
+			<buildOutputProvider>
+				<openAction enabled="true" filePath=""/>
+				<parser enabled="true"/>
+			</buildOutputProvider>
+			<scannerInfoProvider id="specsFile">
+				<runAction arguments="-E -P -v -dD ${plugin_state_location}/specs.cpp" command="g++" useDefault="true"/>
+				<parser enabled="true"/>
+			</scannerInfoProvider>
+		</profile>
+		<profile id="org.eclipse.cdt.managedbuilder.core.GCCWinManagedMakePerProjectProfileC">
+			<buildOutputProvider>
+				<openAction enabled="true" filePath=""/>
+				<parser enabled="true"/>
+			</buildOutputProvider>
+			<scannerInfoProvider id="specsFile">
+				<runAction arguments="-E -P -v -dD ${plugin_state_location}/specs.c" command="gcc" useDefault="true"/>
+				<parser enabled="true"/>
+			</scannerInfoProvider>
+		</profile>
+		<scannerConfigBuildInfo instanceId="com.freescale.arm.cdt.toolchain.config.arm.release.1738784430.879168988;com.freescale.arm.cdt.toolchain.config.arm.release.1738784430.879168988.;com.freescale.arm.cdt.toolchain.compiler.888472612;com.freescale.arm.cdt.toolchain.armCpp.cSource.1879620046">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="com.freescale.arm.cdt.toolchain.c.symbols.discoveryProfile"/>
+			<profile id="org.eclipse.cdt.make.core.GCCStandardMakePerFileProfile">
+				<buildOutputProvider>
+					<openAction enabled="true" filePath=""/>
+					<parser enabled="true"/>
+				</buildOutputProvider>
+				<scannerInfoProvider id="makefileGenerator">
+					<runAction arguments="-f ${project_name}_scd.mk" command="make" useDefault="true"/>
+					<parser enabled="true"/>
+				</scannerInfoProvider>
+			</profile>
+			<profile id="org.eclipse.cdt.managedbuilder.core.GCCWinManagedMakePerProjectProfile">
+				<buildOutputProvider>
+					<openAction enabled="true" filePath=""/>
+					<parser enabled="true"/>
+				</buildOutputProvider>
+				<scannerInfoProvider id="specsFile">
+					<runAction arguments="-E -P -v -dD ${plugin_state_location}/${specs_file}" command="gcc" useDefault="true"/>
+					<parser enabled="true"/>
+				</scannerInfoProvider>
+			</profile>
+			<profile id="org.eclipse.cdt.managedbuilder.core.GCCWinManagedMakePerProjectProfileCPP">
+				<buildOutputProvider>
+					<openAction enabled="true" filePath=""/>
+					<parser enabled="true"/>
+				</buildOutputProvider>
+				<scannerInfoProvider id="specsFile">
+					<runAction arguments="-E -P -v -dD ${plugin_state_location}/specs.cpp" command="g++" useDefault="true"/>
+					<parser enabled="true"/>
+				</scannerInfoProvider>
+			</profile>
+			<profile id="org.eclipse.cdt.managedbuilder.core.GCCWinManagedMakePerProjectProfileC">
+				<buildOutputProvider>
+					<openAction enabled="true" filePath=""/>
+					<parser enabled="true"/>
+				</buildOutputProvider>
+				<scannerInfoProvider id="specsFile">
+					<runAction arguments="-E -P -v -dD ${plugin_state_location}/specs.c" command="gcc" useDefault="true"/>
+					<parser enabled="true"/>
+				</scannerInfoProvider>
+			</profile>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="com.freescale.arm.cdt.toolchain.config.arm.release.1738784430;com.freescale.arm.cdt.toolchain.config.arm.release.1738784430.;com.freescale.arm.cdt.toolchain.compiler.1453629299;com.freescale.arm.cdt.toolchain.armCpp.cSource.244528563">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="com.freescale.arm.cdt.toolchain.c.symbols.discoveryProfile"/>
+			<profile id="com.freescale.arm.cdt.toolchain.c.symbols.discoveryProfile">
+				<buildOutputProvider>
+					<openAction enabled="true" filePath=""/>
+					<parser enabled="false"/>
+				</buildOutputProvider>
+				<scannerInfoProvider id="specsFile">
+					<runAction arguments="" command="" useDefault="true"/>
+					<parser enabled="true"/>
+				</scannerInfoProvider>
+			</profile>
+			<profile id="org.eclipse.cdt.make.core.GCCStandardMakePerFileProfile">
+				<buildOutputProvider>
+					<openAction enabled="true" filePath=""/>
+					<parser enabled="true"/>
+				</buildOutputProvider>
+				<scannerInfoProvider id="makefileGenerator">
+					<runAction arguments="-f ${project_name}_scd.mk" command="make" useDefault="true"/>
+					<parser enabled="true"/>
+				</scannerInfoProvider>
+			</profile>
+			<profile id="org.eclipse.cdt.managedbuilder.core.GCCWinManagedMakePerProjectProfile">
+				<buildOutputProvider>
+					<openAction enabled="true" filePath=""/>
+					<parser enabled="true"/>
+				</buildOutputProvider>
+				<scannerInfoProvider id="specsFile">
+					<runAction arguments="-E -P -v -dD ${plugin_state_location}/${specs_file}" command="gcc" useDefault="true"/>
+					<parser enabled="true"/>
+				</scannerInfoProvider>
+			</profile>
+			<profile id="org.eclipse.cdt.managedbuilder.core.GCCWinManagedMakePerProjectProfileCPP">
+				<buildOutputProvider>
+					<openAction enabled="true" filePath=""/>
+					<parser enabled="true"/>
+				</buildOutputProvider>
+				<scannerInfoProvider id="specsFile">
+					<runAction arguments="-E -P -v -dD ${plugin_state_location}/specs.cpp" command="g++" useDefault="true"/>
+					<parser enabled="true"/>
+				</scannerInfoProvider>
+			</profile>
+			<profile id="org.eclipse.cdt.managedbuilder.core.GCCWinManagedMakePerProjectProfileC">
+				<buildOutputProvider>
+					<openAction enabled="true" filePath=""/>
+					<parser enabled="true"/>
+				</buildOutputProvider>
+				<scannerInfoProvider id="specsFile">
+					<runAction arguments="-E -P -v -dD ${plugin_state_location}/specs.c" command="gcc" useDefault="true"/>
+					<parser enabled="true"/>
+				</scannerInfoProvider>
+			</profile>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="com.freescale.arm.cdt.toolchain.config.arm.release.1738784431;com.freescale.arm.cdt.toolchain.config.arm.release.1738784431.;com.freescale.arm.cdt.toolchain.compiler.1453629298;com.freescale.arm.cdt.toolchain.armCpp.cSource.244528564">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="com.freescale.arm.cdt.toolchain.c.symbols.discoveryProfile"/>
+			<profile id="org.eclipse.cdt.make.core.GCCStandardMakePerFileProfile">
+				<buildOutputProvider>
+					<openAction enabled="true" filePath=""/>
+					<parser enabled="true"/>
+				</buildOutputProvider>
+				<scannerInfoProvider id="makefileGenerator">
+					<runAction arguments="-f ${project_name}_scd.mk" command="make" useDefault="true"/>
+					<parser enabled="true"/>
+				</scannerInfoProvider>
+			</profile>
+			<profile id="org.eclipse.cdt.managedbuilder.core.GCCWinManagedMakePerProjectProfile">
+				<buildOutputProvider>
+					<openAction enabled="true" filePath=""/>
+					<parser enabled="true"/>
+				</buildOutputProvider>
+				<scannerInfoProvider id="specsFile">
+					<runAction arguments="-E -P -v -dD ${plugin_state_location}/${specs_file}" command="gcc" useDefault="true"/>
+					<parser enabled="true"/>
+				</scannerInfoProvider>
+			</profile>
+			<profile id="org.eclipse.cdt.managedbuilder.core.GCCWinManagedMakePerProjectProfileCPP">
+				<buildOutputProvider>
+					<openAction enabled="true" filePath=""/>
+					<parser enabled="true"/>
+				</buildOutputProvider>
+				<scannerInfoProvider id="specsFile">
+					<runAction arguments="-E -P -v -dD ${plugin_state_location}/specs.cpp" command="g++" useDefault="true"/>
+					<parser enabled="true"/>
+				</scannerInfoProvider>
+			</profile>
+			<profile id="org.eclipse.cdt.managedbuilder.core.GCCWinManagedMakePerProjectProfileC">
+				<buildOutputProvider>
+					<openAction enabled="true" filePath=""/>
+					<parser enabled="true"/>
+				</buildOutputProvider>
+				<scannerInfoProvider id="specsFile">
+					<runAction arguments="-E -P -v -dD ${plugin_state_location}/specs.c" command="gcc" useDefault="true"/>
+					<parser enabled="true"/>
+				</scannerInfoProvider>
+			</profile>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="com.freescale.arm.cdt.toolchain.config.arm.release.231439194;com.freescale.arm.cdt.toolchain.config.arm.release.231439194.;com.freescale.arm.cdt.toolchain.compiler.660713046;com.freescale.arm.cdt.toolchain.armCpp.cSource.81323413">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="com.freescale.arm.cdt.toolchain.c.symbols.discoveryProfile"/>
+			<profile id="org.eclipse.cdt.make.core.GCCStandardMakePerFileProfile">
+				<buildOutputProvider>
+					<openAction enabled="true" filePath=""/>
+					<parser enabled="true"/>
+				</buildOutputProvider>
+				<scannerInfoProvider id="makefileGenerator">
+					<runAction arguments="-f ${project_name}_scd.mk" command="make" useDefault="true"/>
+					<parser enabled="true"/>
+				</scannerInfoProvider>
+			</profile>
+			<profile id="org.eclipse.cdt.managedbuilder.core.GCCWinManagedMakePerProjectProfile">
+				<buildOutputProvider>
+					<openAction enabled="true" filePath=""/>
+					<parser enabled="true"/>
+				</buildOutputProvider>
+				<scannerInfoProvider id="specsFile">
+					<runAction arguments="-E -P -v -dD ${plugin_state_location}/${specs_file}" command="gcc" useDefault="true"/>
+					<parser enabled="true"/>
+				</scannerInfoProvider>
+			</profile>
+			<profile id="org.eclipse.cdt.managedbuilder.core.GCCWinManagedMakePerProjectProfileCPP">
+				<buildOutputProvider>
+					<openAction enabled="true" filePath=""/>
+					<parser enabled="true"/>
+				</buildOutputProvider>
+				<scannerInfoProvider id="specsFile">
+					<runAction arguments="-E -P -v -dD ${plugin_state_location}/specs.cpp" command="g++" useDefault="true"/>
+					<parser enabled="true"/>
+				</scannerInfoProvider>
+			</profile>
+			<profile id="org.eclipse.cdt.managedbuilder.core.GCCWinManagedMakePerProjectProfileC">
+				<buildOutputProvider>
+					<openAction enabled="true" filePath=""/>
+					<parser enabled="true"/>
+				</buildOutputProvider>
+				<scannerInfoProvider id="specsFile">
+					<runAction arguments="-E -P -v -dD ${plugin_state_location}/specs.c" command="gcc" useDefault="true"/>
+					<parser enabled="true"/>
+				</scannerInfoProvider>
+			</profile>
+		</scannerConfigBuildInfo>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+</cproject>

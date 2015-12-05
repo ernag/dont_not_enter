@@ -1,0 +1,1719 @@
+                           Supplementary Notes for
+                 	    AR6003 (Venus) ART
+
+                             August 25, 2009
+
+Introduction
+
+        This is a supplementary document to the released ART
+        documentation (see References). 
+  
+References
+        AR6003 Family Atheros Radio Test Reference Guide
+        AR6003 Family Sample Manufacturing Test Flow
+        AR6003 Family EEPROM Device Configuration Guide
+      
+--------------------------------------------------------------------------
+
+Interoperating With Previous Releases
+
+    1.  <TBD>
+
+--------------------------------------------------------------------------
+
+--------------------------------------------------------------------------
+
+AR6003 Calibration Notes
+
+    The AR6003 calibration setup and command line options are identical to 
+    AR6002.
+
+    However, AR6003 does not have a physical EEPROM instead an OTP (One
+    Time Programmable),
+    and AR6003 only supports open loop power control. These two features
+    determine the new parameters required in calibrating the AR6003.
+
+    1. Parameters required for EEPROM data file
+
+    Instead of using an EEPROM to store the board data, an "EEPROM data
+    file" is stored on the host for all design specific information such
+    as antenna switch table, ob/db, frequency piers for power calibration,
+    and so on.
+
+    The chip specific data, such as power calibration, is stored in OTP. 
+    During chip power-up, EEPROM data file is read first and updated with 
+    the OTP data.
+
+    The following configuration parameters affect the EEPROM and OTP
+    operation.
+
+    WRITE_TO_EEPROM_FILE (in calsetup.txt): 1: write an EEPROM data file; 
+    0: not
+
+    WRITE_TO_OTP (in calsetup.txt): 1: write to OTP; 0: not. (This flag
+    is added mainly for lab testing to avoid wasting an OTP in the 
+    repeated calibration testing.)
+
+    OTP_MANUFCAL_OVER_EEPROM: 1: update EEPROM data with OTP dataa; 0: not.
+    (Like WRITE_TO_OTP, this is mainly for lab testing where OTP data
+    may not be available.)
+
+    2. Open loop power calibraton
+
+    The open loop power calibration requires a target power to establish
+    the relation between the transmit gain table and the actual output
+    power. 
+
+    To have the optimal power calibration results, it's desirable
+    to find a target power value so that the output power is between 
+    10 - 15dBm. The following parameters specify the target power values.
+
+    PCDAC_BASELINE in ar6003xxx.eep is for 2G with PAL off
+    
+    PCDAC_BASELINE_PALON in ar6003xxx.eep is for 2G with PAL on
+
+    5G_PCDAC_BASELINE in ar6003xxx.eep is for 5G 
+
+    Note: There is not PAL on gain table for 5G in AR6003.
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Release: Jul 28, 2011
+AR6003 Release: 0.2.35
+Platform: Linux, XP
+Customer: 
+Upgrade suggestion: 
+Olca Build: //depot/sw/releases/olca3.2.0
+ 
+Major new functionality 
+    
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Release: Nov 10, 2011
+AR6003 Release: 3.1.1.677
+Platform: XP
+Customer: 
+Upgrade suggestion: 
+Olca Build: //depot/sw/releases/olca3.1-RC
+ 
+Major new functionality 
+    1. CL 1040991  'Update Venus OTP version to VER3 for adding the CRC byte at the end of each OTP stream.' 
+Minor new functionality
+    1. CL 1032323  'Write nvram config to otp if PROGRAM_NVRAM_CONFIG = 1 is added in artsetup.txt. By default it is disabled.'
+    2. CL 1033102  'Add the default values in configSetup that were missed in CL1016748 "Add generate venus godlen units(ate zerocal) funtion in nart".'
+    3. CL 1033323  'add t-command load shell into ART linux release for tcmd test'
+Bugs fixed
+    1. CL 1029350 'Add PMU workaround in the new otp write interface. Otherwise otp write failed.'    
+Config changed
+
+Known problems
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Release: Oct 27, 2011
+AR6003 Release: 3.1.1.658
+Platform: XP
+Customer: 
+Upgrade suggestion: 
+Olca Build: //depot/sw/releases/olca3.1-RC
+ 
+Major new functionality 
+    1. CL 998186  'Follow CL#998146 add 5G zerocal in ART tools'
+    2. CL 1012397 'Move Nart otp logic to ART. Just try to write otp once. When otp write fail, the final screen show fail. ' 
+    3. CL 1025611 'Add erase_all in ART for the incomplete otp data. The sample of erased bytes is 0xff 0xff... 0xff 0x9f 0x9f. 
+                  Otp.bin and ART will skip the INVALID1 0xFF section. The ID section should be the first valid section after erased data.' 
+Minor new functionality
+    1. CL 998288  '1st check-in of a tool to average the fields in the board data file.'
+    2. CL 999222  'Update ART eeprom template generate part for new 2G/5G zerocal template .'
+    3. CL 999564  'Update ART calibrate zerocal default channel setting'
+Bugs fixed
+
+Config changed
+    1. CL 998187  'Add eeprom tmp for 5G zerocal' 
+    2. CL 999369  'Set the current meter's range to the default range 1 when it finished the measurement.'
+    3. CL 1012420 'Update AR6005's tx gain table per Po's request.'
+Known problems
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Release: Sept 26, 2011
+AR6003 Release: 3.1.1.592
+Platform: XP
+Customer: 
+Upgrade suggestion: 
+Olca Build: //depot/sw/releases/olca3.1-RC
+ 
+Major new functionality 
+    1. CL 971104, 971100, 963415  Add version match in both host and client sides.
+    2. CL 960858  1. Add otpstreamstartindex in otp reset. It is always 0 in read reset and it is the index of the last non-zero byte in write reset.
+                  2. Add otpstream write reset in programOTPCAL and readParseOTP to make sure otp is blank or not. It is for some bytes corrupted in the blank chip before any otp operation in Sonia.
+                  3. Add "get otpmac" interface to Nart.  
+Minor new functionality
+    1. CL 987511  Allow a flag to initialize SDIO for IOT devices that use NVMEM.
+    2. CL 986213  Implement the request from Jeff that the mac can be updated to OTP without calibration.
+Bugs fixed
+    1. CL 977535  Fix Nart PAPRD flag can't follow the boardflag in eeprom bin when eeprom is loaded. 
+    2. CL 971101  Fix Venus MDK XP DEBUG build.
+    3. CL 966085  Fix HT40 sensitivity drop in SG and Promiscous mode.
+Config changed
+    1. CL 963509  Update WB263 target power txts from David Quan.  
+Known problems
+   
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Release: Jul 28, 2011
+AR6003 Release: 0.2.35
+Platform: Linux, XP
+Customer: 
+Upgrade suggestion: 
+Olca Build: //depot/sw/releases/olca3.1-RC
+ 
+Major new functionality 
+    
+Minor new functionality
+    1. CL 951921 'Add 5G frac-n settings.'
+Bugs fixed
+    1. CL 942447,942613 'Integrate CL891445 to XP devdrv.dll.' 
+    2. CL 950130 'Intergrate win7 sdio raw driver from olca main.'
+Config changed
+    1. CL 945909 'Add configuration files for SD55(AR6005) and SD33(PMU). Add dual band 2048 sample bin.'
+Known problems
+            
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Release: Jul 13, 2011
+AR6003 Release: 0.2.34
+Platform: Linux, XP
+Customer: 
+Upgrade suggestion: 
+Olca Build: //depot/sw/releases/olca3.1-RC
+ 
+Major new functionality 
+    
+Minor new functionality
+
+Bugs fixed
+    1. CL 941451 'Fix LinkMenu RX mode. Fix SIGGEN mode can not run again after exited'
+Config changed
+    1. CL 940690 'Assign 0x6336 for SD46 and add the .eep and target power txt.'
+Known problems
+        
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Release: Jun 29, 2011
+AR6003 Release: 0.2.33
+Platform: Linux, XP
+Customer: 
+Upgrade suggestion: 
+Olca Build: //depot/sw/releases/olca3.1-RC
+ 
+Major new functionality 
+    
+Minor new functionality
+    1. CL 926742 'Add tx gain table max to eeprom bin and change 31 and 32 tx gain entry for Trojan. 
+                  Fix program OTP cal failure return.'
+    2. CL 926769 'Skip the usb and nvram config section in Venus ART and NART.'
+    3. CL 929273 'Add PRODUCTION_MODE in ART and NART.'
+    4. CL 931585 'Add sticky register table to Venus ART.'
+Bugs fixed
+
+Config changed
+    1. CL 923498 'Disable 2G HT40 for WB263 by default.'
+    2. CL 929902 'Fix carrier leakage.' 
+Known problems
+    
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Release: May 24, 2011
+AR6003 Release: 0.2.32
+Platform: Linux, XP
+Customer: 
+Upgrade suggestion: 
+Olca Build: //depot/sw/releases/olca3.1-RC
+ 
+Major new functionality 
+    
+Minor new functionality
+    1. CL 902132 'Add wb263 alphaTherm table. Support the request that the table 
+    can be selected in artsetup.txt with ALPHATHERM_FILE = ./alphaTherm_wb263.tbl.'
+Bugs fixed
+ 
+Config changed
+    1. CL 898936 'Update wb263 eep and target power files per Max's request.'
+    2. CL 901294 'Update Sonia configuration file per Jeff's request.' 
+Known problems
+    
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Release: May 14, 2011
+AR6003 Release: 0.2.31
+Platform: Linux, XP
+Customer: 
+Upgrade suggestion: 
+Olca Build: //depot/sw/releases/olca3.1-RC
+ 
+Major new functionality 
+    
+Minor new functionality
+    1. CL 889068 'Add nonmodal cfg support in otp.'
+    2. CL 889531 'Add Win7 art_driver.'
+Bugs fixed
+ 
+Config changed
+    1. CL 889530 'Merge WB263 target power txt from Max and David.'
+Known problems
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Release: Apr 22, 2011
+AR6003 Release: 0.2.30
+Platform: Linux, XP
+Customer: 
+Upgrade suggestion: 
+Olca Build: //depot/sw/releases/olca3.1-RC
+ 
+Major new functionality 
+    
+Minor new functionality
+    1. CL 868560,868853 'Add HTCapFlag in eeprom bin.'
+    2. CL 868891 'Add rtc_pmu_config_pareg_lvlctr to eeprom bin.'
+Bugs fixed
+
+Config changed
+    1. CL 864259 'Disable 5G PAPRD by default.'
+    1. CL 867338,869682 'Add WB263 target power txt.'
+Known problems
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Release: Apr 6, 2011
+AR6003 Release: 0.2.29
+Platform: Linux, XP
+Customer: 
+Upgrade suggestion: 
+Olca Build: //depot/sw/releases/olca3.1-RC
+ 
+Major new functionality 
+    
+Minor new functionality
+    1. CL 863391 'Add efuse write interface and stress test to ART.'
+Bugs fixed
+    1. CL 861636 'Update device.bin for OTP corrupted fix.'
+    2. CL 863388 'Fix computer and verify checksum error.'
+Config changed
+    1. CL 860433 'Revert CL854561 to enable PMU by default'
+Known problems
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Release: Mar 23, 2011
+AR6003 Release: 0.2.28
+Platform: Linux, XP
+Customer: 
+Upgrade suggestion: 
+Olca Build: //depot/sw/releases/olca3.1-RC
+ 
+Major new functionality 
+    1.CL 855815 'Venus spur mitigation enabled'
+Minor new functionality
+
+Bugs fixed
+    1. CL 839485 'Merge prog otpcal and eeprom2bin command.'
+    2. CL 835438 'Fix EepromTxt2Bin can't generate 1792 bin with 1792 txt.'
+    3. CL 837082,854673,854704,854822,854843 'zero cal fix'
+    4. CL 842642 'Fix RXTX2 will get stuck when toggling HT40/HT20 modes'
+Config changed
+    1.CL 854798 'Enable wbtimer per Sharma's request.'
+    2.CL 854561 'Remove PMU bypass and use the hardware default per Sharma's request.'
+    3.CL 853419,846320,855673 'Add WB263 support'. 
+Known problems
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Release: Jan 26, 2011
+AR6003 Release: 0.2.27
+Platform: Linux, XP
+Customer: 
+Upgrade suggestion: 
+Olca Build: //depot/sw/releases/olca3.1-RC
+ 
+Major new functionality 
+    1. Zero cal enable
+    2. Support 2048 eeprom size
+Minor new functionality
+
+Bugs fixed
+
+Config changed
+
+Known problems
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Release: Dec 30, 2010
+AR6003 Release: 0.2.26
+Platform: Linux, XP
+Customer: 
+Upgrade suggestion: 
+Olca Build: //depot/sw/releases/olca3.1-RC
+ 
+Major new functionality 
+
+Minor new functionality
+    1. Add 5G alphatherm table board flag
+Bugs fixed
+    1. 2.1.1 chip 1792 bin file can't download without otp written
+    2. Spectrum flatness improvement
+Config changed
+    1. "Standardize" 5G CAL channels.
+Known problems
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Release: Dec 2, 2010
+AR6003 Release: 0.2.25
+Platform: Linux, XP
+Customer: 
+Upgrade suggestion: 
+Olca Build: //depot/sw/releases/olca3.1-RC
+ 
+Major new functionality 
+    1. Add 2.1.1 chip support
+    2. alphatherm table enable
+    3. 2G xpa cfg enable
+    4. 5G WF improvement
+Minor new functionality
+    
+Bugs fixed
+
+Config changed
+
+Known problems
+
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Release: Nov 15, 2010
+AR6003 Release: 0.2.24
+Platform: Linux, XP
+Customer: 
+Upgrade suggestion: 
+Olca Build: //depot/sw/releases/olca3.1-RC
+ 
+Major new functionality 
+    1. Whal reset
+Minor new functionality
+    
+Bugs fixed
+    1.adcDesiredSize is a modal, and HT40 mode was not used.    
+    2.Fix LibDev paprd flag overrided after the second card reset.
+Config changed
+    1. Low SD32 high rate target power
+    2. SD37 subsystemID mapping
+    3. 2G xpa settings update, subsystemID 0x6329
+    4. PMU settings update, subsystemtID 0x6331
+Known problems
+
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Release: September 30, 2010
+AR6003 Release: 0.2.22
+Platform: Linux, XP
+Customer: 
+Upgrade suggestion: 
+Olca Build: //depot/sw/branches/olca
+ 
+Major new functionality 
+
+Minor new functionality
+    
+Bugs fixed
+    1. SG mode broken fixes.
+Known problems
+
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Release: September 10, 2010
+AR6003 Release: 0.2.21
+Platform: Linux, XP
+Customer: 
+Upgrade suggestion: 
+Olca Build: //depot/sw/branches/olca
+ 
+Major new functionality 
+
+Minor new functionality
+    1. PAPRD fixes.
+    2. OTP ID writing.
+    3. SG mode fixes.
+    4. DC offset CAL workaround.
+    5. Change 5G ob/db back to 1/1 from 0/3..
+
+Bugs fixed
+    1. Several problems are fixed. Refer to P4.
+
+Known problems
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+
+Release ART_REL_20090821, v0.0.1, August 21, 2009.
+AR6002 Release: 0.0.1
+Platform: Linux FC3, FC9
+Customer: General public
+Upgrade suggestion: User should upgrade given this is the first formal
+    release. 
+
+Major new functionality 
+
+    First release to support AR6003. 
+    Support continuous TX, RX, link test, partial throughput test.
+
+    Calibration and manufacturing test is not supported, yet.
+
+    The subsystem IDs are: 
+        0x6301 -- emulation and TB boards.
+        0x6302 -- SD32
+        0x6303 -- WB31 for Sony
+        0x6304 -- WB31 for all others
+        0x6305 -- WB31 WiFi standalone
+
+Minor new functionality 
+ 
+
+Bugs fixed 
+
+
+Known problems
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+
+Release ART_REL_20090825, August 25, 2009.
+AR6002 Release: 0.0.2
+Platform: Linux FC3, FC9
+Customer: General public
+Upgrade suggestion: Need to upgrade for locking on all 2G channels
+ 
+Major new functionality 
+    Changed analog parameters to lock on all 2G channels.
+
+
+Minor new functionality
+ 
+    Support ob/db changes.
+
+    Support antenna toggle.
+
+Bugs fixed 
+
+Known problems
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+
+Release ART_REL_20090827, August 27, 2009.
+AR6002 Release: 0.0.3
+Platform: Linux FC3, FC9
+Customer: General public
+Upgrade suggestion: Need to upgrade for locking on all 2G channels
+ 
+Major new functionality 
+
+Minor new functionality
+ 
+    Fixed rx gain to the true maximum value.
+ 
+    Some misc. changes in venus cfg files.
+
+    Work-in-progress in the calibration and manuf. testing.
+
+Bugs fixed 
+
+Known problems
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+
+Release ART_REL_20090828, August 28, 2009.
+AR6002 Release: 0.0.4
+Platform: Linux FC3, FC9
+Customer: General public
+Upgrade suggestion: 
+ 
+Major new functionality 
+
+    Updated analog parameters per venus_beta3_sys.cfg.
+
+    TX power calibration works now. User can choose to write to EEPROM file,
+    and OTP.
+    Relevant flags are:
+        OTP_MANUFCAL_OVER_EEPROM (artsetup.txt): 1 will read OTP manuf CAL
+            and overwrite the relevant section in EEPROM file.
+        OTP_ATECAL_OVER_EEPROM (artsetup): 1 will read OTP ATE CAL
+            and overwrite the corresponding section in EEPROM file.
+        WRITE_TO_EEPROM_FILE (calsetup.txt): 1 will write manuf. CAL
+            data to EEPROM file, provided the label scheme is enabled.
+            Again! Enable the label scheme when calibrating a board, so
+            the EEPROM file is created specifically for the board. The
+            created EEPROM file has the format: calData_<board label>.bin.
+            Use this EEPROM file in artsetup.txt EEPROM_FILE for further
+            testing.
+        WRITE_TO_OTP (calsetup): 1 will write manuf. CAL to OTP.
+        CAL_WITH_TGT_PWR: 1 enables the target power way of calibration.
+            This the preferred calibration mode. Value 0 is the forced 
+            gain approach of tx power calibration that ART is accustomed 
+            to (in other chips).
+        CAL_TGT_PWR (*.eep): the target power setting for manuf. CAL using
+            the target power way of calibration.
+        PCDAC_BASELINE (*.eep): the forced gain value for tx power calibration.
+            This gain should produce power between 10dBm - 15dBm. Again, this
+            is NOT the preferred way of calibration.
+        5G_PCDAC_BASELINE (*.eep): the 5G equivalent of PCDAC_BASELINE.
+    Note the rest of manuf. testing is still in progress.
+
+Minor new functionality
+
+Known problems
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+
+Release ART_REL_20090829, August 29, 2009.
+AR6002 Release: 0.0.5
+Platform: Linux FC9
+Customer: For Sony demo
+Upgrade suggestion: not necessary from 0.0.4
+ 
+Major new functionality 
+
+Minor new functionality
+ 
+    Made xtalcapin, xtalcapout into eep file so they can be
+    included in the calibration and written to eeprom file.
+    These two values should come from ATE CAL, but for Sony
+    demo (and Venus 1.0), they can be provided in eep file.
+
+Bugs fixed 
+
+Known problems
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+
+Release ART_REL_20090901, September 1, 2009.
+AR6002 Release: 0.0.6
+Platform: Linux FC3
+Customer: 
+Upgrade suggestion: good to upgrade
+ 
+Major new functionality 
+
+Minor new functionality
+ 
+    contTx frame mode HT40 MCS5, 6, 7 work now. The problem
+    was the framelength too long.
+
+    contRx access to RX baseband is provided.
+
+    Verified throughput test works both ways. A "uplink" problem
+    was reported earlier, but since has been addressed by adding
+    support to the tx stats command.
+
+    Reverted pmu_override_en bit (setting it), which caused problem
+    for sw (can't connect or scan).
+
+    Added RTC power reg to cfg/ini. This is for power consumption.
+
+Bugs fixed 
+
+Known problems
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+
+Release ART_REL_20090909, September 9, 2009.
+AR6002 Release: 0.0.7
+Platform: Linux FC3, FC9
+Customer: 
+Upgrade suggestion: good to upgrade
+ 
+Major new functionality 
+
+Minor new functionality
+ 
+    Fixed MCS0 rate receiving problem in linkTest. It was a register field
+    setting issue. CL588800
+
+    Implemented PAL DC offset calibration per Bercin's instructions. CL590115
+
+    Added sleep mode support, basically ported Mercury implementation 
+    over. CL590163
+
+    XPA_USED parameter in eep/eeprom file takes effect now. CL589768
+
+    Improved SENS by changing a value of register field. CL589783
+
+Bugs fixed 
+  
+    Exiting contRx mode caused problem for subsequent operations, e.g. 
+    contTx. CL589725
+
+    Corrected a number of cfg modal fields. CL588507
+
+Known problems
+
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+
+Release ART_REL_20090910, September 10, 2009.
+AR6002 Release: 0.0.8
+Platform: Linux FC3, FC9
+Customer: 
+Upgrade suggestion: Only sleep mode change, not necessary if you don't test
+    sleep mode
+ 
+Major new functionality 
+
+Minor new functionality
+ 
+    Implemented workaround for Venus1.0 sleep mode. Now the sleep current is
+    around 200uA. CL590743
+
+Bugs fixed 
+  
+Known problems
+
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+
+Release ART_REL_20090911, September 11, 2009.
+AR6002 Release: 0.0.9
+Platform: Linux FC3, FC9
+Customer: 
+Upgrade suggestion: yes
+ 
+Major new functionality 
+
+    Update cfg per venus_beta4_sys.cfg. CL590995, CL591003
+
+Minor new functionality
+ 
+    Temporary fix for 5G TX gain table. CL591011  
+  
+    By pass PAL DC offset CAL is subsystem ID is 0x6303. 
+    This is a temporary change to get TB411 testing going.
+    CL591010
+
+    Reverted workaround changes for ART sleep mode, given
+    the new beta4 settings meet the condition. CL590978
+
+Bugs fixed 
+  
+Known problems
+
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+
+Release: September 16, 2009
+AR6003 Release: 0.0.10
+Platform: Linux
+Customer: General public
+Upgrade suggestion: 
+Olca Build: 
+
+Major new functionality 
+  
+        Added Signal generator testing mode.
+     
+Minor new functionality
+
+	Disable ANI for better power consumption measurement. CL592477
+ 
+        Set an_rxtx3_loforcedon to 0 for better power number. CL592467
+
+        Set bt_ant_halt_wlan for co-ex. CL592460
+
+Bugs fixed
+
+        Reversed shared RX setting. CL592442 
+  
+        Modified WB31 eep file to have the shared RX off. CL592446
+
+Known problems
+
+
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+
+Release: September 17, 2009
+AR6003 Release: 0.0.11
+Platform: Linux
+Customer: General public
+Upgrade suggestion: 
+Olca Build: 
+
+Major new functionality 
+  
+     
+Minor new functionality
+
+    Modified analog test pads setting to allow only one pair for either 
+    I &Q at a time. Also, cleared the setting when exiting continued RX.
+    CL592913
+
+Bugs fixed
+  
+    Update antenna should only need to read from the s/w array which 
+    has the values from either cfg/eep or eeprom. The previous logic
+    ignores the case where EEPROM is loaded. CL592915
+
+Known problems
+
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+
+Release: September 22, 2009
+AR6003 Release: 0.0.12
+Platform: Linux
+Customer: General public
+Upgrade suggestion: 
+Olca Build: 
+
+Major new functionality 
+ 
+    Starting this release, FC10 is supported. CL594317 
+     
+Minor new functionality
+
+
+Bugs fixed
+  
+    CCK OFDM delta in output power by default should be 0. CL593546.
+
+    Recalculate checksum after OTP overwriting EEPROM data. CL593975
+
+Known problems
+
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+
+Release: September 28, 2009
+AR6003 Release: 0.0.13
+Platform: Linux
+Customer: General public
+Upgrade suggestion: 
+Olca Build: 
+
+Major new functionality 
+  
+    Manufacturing test is working now. CL595095, 594703,
+    594696, 594637.
+
+Minor new functionality
+
+    Added a toggle mode for forced PAL on and off. CL596384.
+
+    Enable PAL on during calibration. CL596318.
+
+    Add SD31 label. CL595877.
+
+Bugs fixed
+  
+    Corrected two typos in 5G tx gain table. CL596388.
+
+    Fixed a mac address problem where it incremented one. The bug
+    was fixed in mainline, which was pulled over. CL596155.
+
+Known problems
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+
+Release: September 29, 2009
+AR6003 Release: 0.0.14
+Platform: Linux
+Customer: General public
+Upgrade suggestion: 
+Olca Build: 
+
+Major new functionality 
+  
+Minor new functionality
+
+    Exit gracefully if eeprom file is not present. CL596590
+
+Bugs fixed
+  
+    Select the correct TX gain table when forcing gain. CL596589.
+
+Known problems
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+
+Release: September 30, 2009
+AR6003 Release: 0.0.15
+Platform: Linux
+Customer: General public
+Upgrade suggestion: 
+Olca Build: 
+
+Major new functionality 
+  
+Minor new functionality
+
+    Changed PMU settings for better mask, and tx gain table for 
+    better linearity at lower gains. CL597024
+
+    Added 11a target power to SD32 calTgrPwr file. CL597029
+
+Bugs fixed
+  
+Known problems
+
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+
+Release: October 7, 2009
+AR6003 Release: 0.0.16
+Platform: Linux
+Customer: General public
+Upgrade suggestion: 
+Olca Build: 
+
+Major new functionality 
+  
+    5G CAL is available, but manuf. testing is still in progress.
+
+Minor new functionality
+
+    Updated tx gain table based on the new data from algorithm/analog.
+    CL599382.
+
+    Modified board flags to accommodate AR6002 flags, per s/w request.
+    CL599258.
+
+    Misc. improvements on sweeping tx gain table, e.g. retain the double
+    tx power. CL598449, CL598457
+
+Bugs fixed
+
+    Fixed 5G CAL issue where XPA bias level was set to 0 and some misc
+    changes regarding 5G. CL597626, CL597633.
+  
+Known problems
+
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+
+Release: October 21, 2009
+AR6003 Release: 0.0.17
+Platform: Linux
+Customer: General public
+Upgrade suggestion: 
+Olca Build: 
+
+Major new functionality 
+  
+    Updated cfg file based on results from test and characterization.
+    CL605403.
+
+Minor new functionality
+
+    Make Linux source code release available.
+    CL599714
+
+    Misc. testing code and clean up. Various CLs.
+    CL603419, CL604204, etc.
+
+Bugs fixed
+
+    HT40 setup was incorrect, affecting RX. CL604844.
+  
+Known problems
+
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+
+Release: October 28, 2009
+AR6003 Release: 0.0.18
+Platform: Linux
+Customer: General public
+Upgrade suggestion: 
+Olca Build: 
+
+Major new functionality 
+  
+Minor new functionality
+
+    Change samples_cnt_coding to 16 samples for temperature
+    reading. With the old setting of 64 samples, the reading
+    sometimes got "stuck". CL605963.
+
+    Updated cfg file per vernus_beta5_sys.cfg. CL606128.
+
+    Added PCDAC_BASELINE_PALON for power calibration with
+    PAL ON tx table. One PCDAC_BASELINE can't server both
+    PAL ON and PAL OFF tx tables. CL607370.
+
+    Updated cfg for max input improvement. CL607554.
+
+    Enabled short GI for HT20 in cfg, only. CL607439.
+
+    Added new labels for Venus boards, WB31-0xx-yyyyy,
+    WB31-1xx-yyyyy, SD31-2xx-yyyy, SD32-3xx-yyyy.
+    CL607568.
+
+    Added OTP dump functions in utility menu. 
+    CL607867.
+
+    Modify power calibration to skip 5G PAL ON since
+    it's not applicable, and force pmu_man_override_en
+    to 0 before writing OTP.
+    CL608085, CL608091.
+
+    Changed the power rate table settings due to the 
+    register changes in Venus. CL608639.
+
+    Added a board flag for pmu_man_override_en setting
+    so s/w can set the bit accordingly. CL608118.
+
+Bugs fixed
+
+Known problems
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+
+Release: December 8, 2009
+AR6003 Release: 0.0.19
+Platform: Linux
+Customer: General public
+Upgrade suggestion: 
+Olca Build: 
+
+Major new functionality 
+  
+Minor new functionality
+
+Bugs fixed
+
+    Expand the register range CL627614.
+
+    Fixes for RX throughput test dips (waterfall) CL621383, etc.
+
+    Improvement of 5G spur, CL625932
+
+    Temperature reading fixes, CL619289, etc.
+
+    Modified interpolation in power control, CL616818
+
+    A number of cfg updates, CL618189, etc.
+
+Known problems
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+
+Release: January 6, 2010
+AR6003 Release: 0.0.20
+Platform: Linux
+Customer: General public
+Upgrade suggestion: 
+Olca Build: 
+
+Major new functionality 
+  
+Minor new functionality
+
+    Created an EEPROM utility, CL632549.
+
+    Made PAL offset CAL optional/configuration, CL633170.
+
+    Implemented DC offset CAL changes with LNA on, CL633486.
+
+    Checked in the LP test flow generation utility, CL633550, et al.
+
+    Implemented a mechanism for post cfg channel specific settings used
+    for channel 2484, for example. CL635538.
+
+    Implemented a channel dependent cfg for 5G multiple gain tables. CL636862.
+
+Bugs fixed
+
+    Changed xpaEnable bitmap to accommodate s/w. CL632157, 633158.
+   
+Known problems
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+
+Release: January 7, 2010
+AR6003 Release: 0.1.0
+Platform: Linux
+Customer: General public
+Upgrade suggestion: 
+Olca Build: 
+
+    The first build from olca main branch. In terms of functionality, it's
+    equivalent to release 0.0.20, the last build from release/olca3.0
+    branch.
+
+Major new functionality 
+  
+Minor new functionality
+
+Bugs fixed
+
+Known problems
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+
+Release: January 20, 2010
+AR6003 Release: 0.1.4
+Platform: Linux, XP
+Customer: General public
+Upgrade suggestion: 
+Olca Build: 
+
+Major new functionality 
+
+    Pulled in venus_beta7.cfg.
+
+    Tuned 2G, 5G tx gain tables.
+
+Minor new functionality
+
+Bugs fixed
+
+    Fixed channel 2484 stuck issue affecting other 2G channels.
+
+Known problems
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+
+Release: January 29, 2010
+AR6003 Release: 0.1.5
+Platform: Linux, XP
+Customer: General public
+Upgrade suggestion: 
+Olca Build: 
+
+Major new functionality 
+
+    Pulled in venus_beta8.cfg.
+
+    Implemented tx IQ CAL.
+
+    Added noise floor CAL.
+
+Minor new functionality
+
+    TX99 is the default mode in contTx.
+
+Bugs fixed
+
+    Fixed throughput test memory allocation failure when
+    all rates are selected.
+
+Known problems
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+
+Release: Feburary 2, 2010
+AR6003 Release: 0.1.6
+Platform: Linux, XP
+Customer: General public
+Upgrade suggestion: 
+Olca Build: 
+
+Major new functionality 
+
+
+Minor new functionality
+
+
+Bugs fixed
+
+    Correct: Last release 0.1.5 changed the linktest rates that 
+    only applicable ones are selected (1n1:1).
+    This release actually addressed the memory allocation failure
+    in throughput test.
+
+    Fixed the sw noise floor CAL in MDK.
+
+    Added a utility function to write partial eeprom bin data to OTP.
+
+Known problems
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+
+Release: Feburary 10, 2010
+AR6003 Release: 0.1.7
+Platform: Linux, XP
+Customer: General public
+Upgrade suggestion: 
+Olca Build: 
+
+Major new functionality 
+
+    Enabled 5G channel dependent temp compenstation through alpha_therm,
+    though it's a interim solution pending s/w sync -up.
+
+Minor new functionality
+
+
+Bugs fixed
+
+    Fixed a potential hang in TxIQCAL.
+
+Known problems
+
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+
+Release: Feburary 16, 2010
+AR6003 Release: 0.1.8
+Platform: Linux, XP
+Customer: General public
+Upgrade suggestion: 
+Olca Build: 
+
+    There is no new functionality in this build. We simply
+    tidy up the cfg file, and make a formal release based
+    on the test results from previous release, 0.1.7.
+
+Major new functionality 
+
+Minor new functionality
+
+Bugs fixed
+
+Known problems
+
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+
+Release: Feburary 22/25, 2010
+AR6003 Release: 0.1.9
+Platform: Linux
+Customer: Internal
+Upgrade suggestion: 
+Olca Build: 
+
+    An unofficial build for testing BB, and PAPRD.
+
+Major new functionality 
+
+Minor new functionality
+
+Bugs fixed
+
+Known problems
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+
+Release: Feburary 26, 2010
+AR6003 Release: 0.1.10
+Platform: Linux
+Customer: Internal
+Upgrade suggestion: 
+Olca Build: 
+
+Major new functionality 
+    Enabled PAPRD.
+
+
+Minor new functionality
+
+    Change desired_scale to modals pending characterization results.
+
+Bugs fixed
+
+Known problems
+
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Release: Feburary 27, 2010
+AR6003 Release: 0.1.11
+Platform: Linux
+Customer: Internal
+Upgrade suggestion: 
+Olca Build: 
+
+Major new functionality 
+    Test build for PAPRD.
+
+Minor new functionality
+
+Bugs fixed
+
+Known problems
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Release: March 1, 2010
+AR6003 Release: 0.1.12
+Platform: Linux
+Customer: Internal
+Upgrade suggestion: 
+Olca Build: 
+
+Major new functionality 
+    Previous test build (0.1.11) doesn't work for PAPRD.
+    This is the working version.
+
+Minor new functionality
+    Fixed the CAL problem.
+
+    Added a workaround for txIQCal hang at high power.
+
+Bugs fixed
+
+Known problems
+
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Release: March 2, 2010
+AR6003 Release: 0.1.13
+Platform: Linux
+Customer: Internal
+Upgrade suggestion: 
+Olca Build: 
+
+Major new functionality 
+
+Minor new functionality
+
+Bugs fixed
+
+Known problems
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Release: March 5, 2010
+AR6003 Release: 0.1.14
+Platform: Linux
+Customer: Internal
+Upgrade suggestion: 
+Olca Build: 
+
+Major new functionality 
+
+Minor new functionality
+
+Bugs fixed
+
+Known problems
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Release: March ?, 2010
+AR6003 Release: 0.1.15
+Platform: Linux
+Customer: Internal
+Upgrade suggestion: 
+Olca Build: 
+
+Major new functionality 
+
+Minor new functionality
+
+Bugs fixed
+
+Known problems
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Release: March ?, 2010
+AR6003 Release: 0.1.16
+Platform: Linux
+Customer: Internal
+Upgrade suggestion: 
+Olca Build: 
+
+Major new functionality 
+
+Minor new functionality
+
+Bugs fixed
+
+Known problems
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Release: March 11, 2010
+AR6003 Release: 0.1.17
+Platform: Linux
+Customer: Internal
+Upgrade suggestion: 
+Olca Build: 
+
+Major new functionality 
+
+Minor new functionality
+
+Bugs fixed
+
+Known problems
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Release: March 15, 2010
+AR6003 Release: 0.1.18
+Platform: Linux, XP
+Customer: 
+Upgrade suggestion: 
+Olca Build: 
+
+Major new functionality 
+    PAPRD is released.
+  
+    Cfg parameters for DVT are "locked down".
+
+Minor new functionality
+
+Bugs fixed
+
+Known problems
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Release: March 17, 2010
+AR6003 Release: 0.1.19
+Platform: Linux
+Customer: Internal
+Upgrade suggestion: 
+Olca Build: 
+
+Major new functionality 
+
+Minor new functionality
+
+Bugs fixed
+
+Known problems
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Release: March ?, 2010
+AR6003 Release: 0.1.20
+Platform: Linux
+Customer: Internal
+Upgrade suggestion: 
+Olca Build: 
+
+Major new functionality 
+
+Minor new functionality
+
+Bugs fixed
+
+Known problems
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Release: March 31, 2010
+AR6003 Release: 0.1.21
+Platform: Linux
+Customer: 
+Upgrade suggestion: 
+Olca Build: 
+
+Major new functionality 
+
+Minor new functionality
+    1. OTP robustnes measures, i.e. write then read 10 times.
+    2. OTP customer data section.
+    3. Write RTC therm_adc_scale to the same value as BB.
+
+Bugs fixed
+
+Known problems
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Release: April 6, 2010
+AR6003 Release: 0.1.22
+Platform: Linux
+Customer: 
+Upgrade suggestion: 
+Olca Build: 
+
+Major new functionality 
+
+Minor new functionality
+    1. Added "moving window" PAPRD similar to LP IQFact+, for
+       manual verification of EVM numbers.
+    2. Consolidated some diagnostic counters.
+
+Bugs fixed
+
+Known problems
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Release: April 16, 2010
+AR6003 Release: 0.1.23
+Platform: Linux
+Customer: 
+Upgrade suggestion: 
+Olca Build: 
+
+Major new functionality 
+
+Minor new functionality
+
+Bugs fixed
+    1. TX "hang" issue, i.e. timeout.
+
+Known problems
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Release: April 22, 2010
+AR6003 Release: 0.1.24
+Platform: Linux
+Customer: 
+Upgrade suggestion: 
+Olca Build: 
+
+Major new functionality 
+
+Minor new functionality
+
+Bugs fixed
+
+Known problems
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Release: April 26, 2010
+AR6003 Release: 0.1.25
+Platform: Linux
+Customer: 
+Upgrade suggestion: 
+Olca Build: 
+
+Major new functionality 
+
+Minor new functionality
+
+Bugs fixed
+
+Known problems
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Release: April 28, 2010
+AR6003 Release: 0.1.26
+Platform: Linux/XP
+Customer: 
+Upgrade suggestion: 
+Olca Build: 
+
+Major new functionality 
+
+Minor new functionality
+
+Bugs fixed
+
+Known problems
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Release: April 30, 2010
+AR6003 Release: 0.1.27
+Platform: Linux/XP
+Customer: 
+Upgrade suggestion: 
+Olca Build: 
+
+Major new functionality 
+
+Minor new functionality
+
+Bugs fixed
+    1. EEPROM version checking.
+
+Known problems
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Release: May 4, 2010
+AR6003 Release: 0.1.28
+Platform: Linux/XP
+Customer: 
+Upgrade suggestion: 
+Olca Build: 
+
+Major new functionality 
+
+Minor new functionality
+    1. Write eeprom to OTP.
+    2. Enable mac from macid.txt.
+
+Bugs fixed
+    1. Changes for cont Tx gain 0 issue (need more testing).
+
+Known problems
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Release: May 5, 2010
+AR6003 Release: 0.2.1
+Platform: Linux/XP
+Customer: 
+Upgrade suggestion: 
+Olca Build: 
+
+Major new functionality 
+    1. First build for Venus2.1
+    2. ADC workaround.
+    3. other cfg changes.
+    4. revert DC offset CAL workaround for CSP.
+    5. added TX IQ CAL debug dump
+
+Minor new functionality
+
+Bugs fixed
+
+Known problems
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Release: May 14, 2010
+AR6003 Release: 0.2.2
+Platform: Linux/XP
+Customer: 
+Upgrade suggestion: 
+Olca Build: 
+ 
+    One more build before the TPC changes with EEPROM layout change.
+
+Major new functionality 
+
+Minor new functionality
+    1. BT BD address can be selected from a file.
+    2. Change XPABIAS_EN to a modal.
+
+Bugs fixed
+
+Known problems
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Release: May 15, 2010
+AR6003 Release: 0.2.3
+Platform: XP
+Customer: 
+Upgrade suggestion: 
+Olca Build: 
+ 
+Major new functionality 
+
+Minor new functionality
+    1. Generate eeprom bin file when label is not enabled.
+
+Bugs fixed
+
+Known problems
+
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Release: June 30, 2010
+AR6003 Release: 0.2.11
+Platform: Linux
+Customer: 
+Upgrade suggestion: 
+Olca Build: 
+ 
+    There have been several features checked in since the last update.
+    During this period, we have internal organization changes which impacted
+    the release notes.
+
+Major new functionality 
+
+Minor new functionality
+    1. SG functionality.
+    2. Further changes to the new TPC.
+    3. More changes to zeroCAL.
+
+Bugs fixed
+    1. Several problems are fixed. Refer to P4.
+
+Known problems
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Release: July 29, 2010
+AR6003 Release: 0.2.15
+Platform: Linux
+Customer: 
+Upgrade suggestion: 
+Olca Build: 
+ 
+    There have been several features checked in since the last update.
+    During this period, we have internal organization changes which impacted
+    the release notes.
+
+Major new functionality 
+
+Minor new functionality
+    1. TX gain table
+    2. New TPC OTP write.
+    3. OBW for ch 14.
+    4. TX hang due to mac pcu txbuf.
+
+Bugs fixed
+    1. Several problems are fixed. Refer to P4.
+
+Known problems
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Release: August 19, 2010
+AR6003 Release: 0.2.18
+Platform: Linux, XP
+Customer: 
+Upgrade suggestion: 
+Olca Build: //depot/sw/branches/olca
+ 
+Major new functionality 
+
+Minor new functionality
+    1. Update ART firmware to add ram.
+    2. Fixed the broken of sg rx mode.
+    3. EEPROM checksum had been restructured.
+
+Bugs fixed
+    1. Several problems are fixed. Refer to P4.
+
+Known problems
+
+
+
+
+
+
+

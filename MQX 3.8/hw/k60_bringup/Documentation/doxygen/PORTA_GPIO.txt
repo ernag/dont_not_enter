@@ -1,0 +1,59 @@
+/*!
+\page PORTA_GPIO PORTA_GPIO (Init_GPIO)
+**          This file implements the GPIO (PTA) module initialization
+**          according to the Peripheral Initialization settings, and
+**          defines interrupt service routines prototypes.
+
+- \subpage PORTA_GPIO_settings
+- \subpage PORTA_GPIO_regs_overview  
+- \subpage PORTA_GPIO_regs_details
+- \ref PORTA_GPIO_module "Component documentation" 
+
+\page PORTA_GPIO_regs_overview Registers Initialization Overview
+This page initialization values for the registers of the peripheral(s) configured
+by the component. 
+<table>
+<tr><td colspan="4" class="ttitle1">PORTA_GPIO Initialization</td></tr>
+<tr><td class="ttitle2">Address</td><td class="ttitle2">Register</td><td class="ttitle2">Register Value</td><td class="ttitle2">Register Description</td></tr>
+</table>
+<br/>
+\page PORTA_GPIO_regs_details Register Initialization Details
+This page contains detailed description of initialization values for the 
+registers of the peripheral(s) configured by the component. 
+
+*/
+/*!
+\page PORTA_GPIO_settings Component Settings
+\code
+**          Component name                                 : PORTA_GPIO
+**          Device                                         : PTA
+**          Pins                                           : 
+**            Pin 0                                        : Disabled
+**            Pin 1                                        : Disabled
+**            Pin 2                                        : Disabled
+**            Pin 3                                        : Disabled
+**            Pin 4                                        : Disabled
+**            Pin 5                                        : Disabled
+**            Pin 10                                       : Disabled
+**            Pin 11                                       : Disabled
+**            Pin 12                                       : Disabled
+**            Pin 13                                       : Disabled
+**            Pin 14                                       : Disabled
+**            Pin 15                                       : Disabled
+**            Pin 16                                       : Disabled
+**            Pin 17                                       : Disabled
+**            Pin 18                                       : Disabled
+**            Pin 19                                       : Disabled
+**            Pin 29                                       : Disabled
+**            Digital filter clock source                  : Bus clock
+**            Digital filter width                         : 0
+**          Interrupts                                     : 
+**            Port interrupt                               : Enabled
+**              Interrupt                                  : INT_PORTA
+**              Interrupt request                          : Enabled
+**              Interrupt priority                         : 0 (Highest)
+**              ISR Name                                   : isr_Button
+**          Initialization                                 : 
+**            Call Init method                             : yes
+\endcode
+*/

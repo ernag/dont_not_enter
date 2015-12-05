@@ -1,0 +1,12 @@
+ClearCase CopyAreaDB|4
+MSGSW\MQX\src\tools\codewarrior_extensions\CW MCU v10.1
+2
+8
+19:uninstall_cw10_plugin.bat|1|135bcf6b578|3a7|4f7e354b|3181682c5dc04c0dbf409ee200be26e8|0
+11:mqx_p2_repository|2|0|0|0|5eca678ff0ab4f58b0a3881072e1f5a5|0
+4:test|2|0|0|0|7270036481c7417aad2b7535cfd8f48f|0
+10:mqx_rtos_adapter|2|0|0|0|2faeae77801e478a9ae37cd4a51a06f9|0
+a:readme.txt|1|135bcf6b549|3ce|139c2e82|c0b8f656c0014ceb8cb427c343516fde|0
+17:install_cw10_plugin.bat|1|135bcf6b568|a5d|8a4c6c94|e3ddf888fb7a4bcc81376f579227d1e9|0
+b:install.txt|1|135bcf6b529|470|90226da8|7b86f61aaacc488f91a58435e2250d97|0
+8:cw_patch|2|0|0|0|ffbc06832b7c47a296a1a9021604d2cf|0

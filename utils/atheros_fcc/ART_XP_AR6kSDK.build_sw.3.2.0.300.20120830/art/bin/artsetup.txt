@@ -1,0 +1,269 @@
+#initial configuration options
+
+5_CHANNEL_MHZ = 5220    #The initial channel for tests
+
+2_4_CHANNEL_MHZ = 2412    #The initial channel for tests
+
+#ALL_2G_CHANNELS = 1
+
+
+
+#eeprom configuration
+
+EEPROM_LOAD_OVERRIDE = 1   #set to 1 to override loading of eeprom calibration info
+
+TURBO = 0	  #set to 1 to enable turbo mode
+
+MODE = 0
+
+EEPROM_PRESENT = 0    # flag indicating eeprom on the board
+
+#EEPROM_FILE = ./calData_cb72_4Venus_golden.bin
+
+#EEPROM_FILE = ./venusEeprom_v1_0.bin
+
+#EEPROM_FILE = ./SD32-020-EEPROM.bin
+
+#EEPROM_FILE = ./SD31-250-EEPROM.bin
+
+#EEPROM_FILE = ./SD32-051-EEPROM_DVT.bin
+
+#EEPROM_FILE = ./SD32-063-EEPROM.bin
+
+#EEPROM_FILE = ./SD31-261-EEPROM.bin
+
+#EEPROM_FILE = ./SD31-070-EEPROM.bin #sample bin for zero cal
+
+#EEPROM_FILE = ./SD32-270-EEPROM.bin # dual band 2048 sample bin, didn't enable zero cal 
+
+#EEPROM_FILE = ./calData_WHISTLE_05132013.bin
+
+#EEPROM_FILE = ./calData_AR6103_A05_golden.bin
+EEPROM_FILE = ./calData_SD33-020-D0282.bin
+
+#STICKY_REG_FILE = ./stickyRegTbl_ar6005.txt #Enable the non-modal registers in stickyRegTbl_ar6005.txt
+
+#register configuration files, comment out line to use defaults
+
+#LOG_FILE = artout.log
+
+LOGGING = 0
+
+LOAD_EAR = 0
+
+
+
+#RATE_MASK = 0x7fff
+
+#RATE_MASK = 0x80
+
+#RATE_MASK = 0x4101
+
+RATE_MASK = 0x4181
+
+MCS20_RATE_MASK = 0
+
+MCS40_RATE_MASK = 0
+
+
+
+LINK_NUM_PACKETS = 10
+
+
+OTP_MANUFCAL_OVER_EEPROM      = 1
+
+OTP_ATECAL_OVER_EEPROM        = 0
+
+OTP_ATETHERM_OVER_EEPROM      = 0
+
+
+
+EEP_FILE_DIR = ..\..\config
+
+
+
+#BLANK_EEP_ID = 0x1071   #which subsytem ID to use for lookup if blank eeprom
+
+
+
+DUT_CARD_SSID = 0x6309
+
+
+
+DEVDRV_INTERFACE = 3	# 1 = SDIO; 2 = ETH; 3 = UART
+
+
+
+APPLY_CTL = 0		#set to 1 to enable power limiting by specified CTL
+
+CTL_VALUE = 0x10	#specify which CTL to apply when APPLY_CTL is set
+
+DEBUG_INFO = 0		#set to see additional debug info (used for engineering debug
+
+
+
+ENABLE_LABEL_SCHEME = 0 #enable the atheros specific label scheme
+
+                        # 0: Enable MAC ADD load from both MACID.txt and BTID.txt, Disable the atheros specific label scheme
+
+                        # 1: MACID and BTID load from label, Enable the atheros specific label scheme
+
+
+
+ART_INIT_MODE = 0   #set to 1 enable DRIVER_INIT_CODE use WHAL reset, set to 0 enable MDK_INIT_CODE use art normal reset
+
+#OVERRIDE_PLL = 1   #set 1 to enable Fractional Mode, set to 0 disable. By default it is disabled.
+
+#PRODUCTION_MODE = 1 #set 1 to enable production mode, otp is always written after calibration and is always read when verification
+
+#PROGRAM_OTP_VERSION = 3 #set the otp version that is used to program blank or erased OTP.Currently we just support 3(default) or 2.
+ 
+#		subsystemID, filename		
+
+CFG_TABLE =     0x1071  ar5008ng_cb71.eep
+
+CFG_TABLE =     0xa071  ar5008apng_ap71.eep
+
+CFG_TABLE =     0x2071  ar5008ng_mb71.eep
+
+CFG_TABLE =     0x3072  ar5008nx_xb72.eep
+
+CFG_TABLE =     0x2072  ar5008nx_mb72.eep
+
+CFG_TABLE =     0x1072  ar5008nx_cb72.eep
+
+CFG_TABLE =     0xa083  ar5008apnx_ap83.eep
+
+CFG_TABLE =     0xa081  ar5008apnx_ap81.eep
+
+CFG_TABLE =     0xa085  ar5008apng_cu97_3x3.eep
+
+CFG_TABLE =     0xa086  ar5008apng_cu97_2x2.eep
+
+CFG_TABLE =     0x2082  ar5008nx_mb82.eep
+
+CFG_TABLE =     0x2081  ar5008ng_mb81.eep
+
+
+
+CFG_TABLE =     0x3092  ar9280nx_hb92.eep      #Hitachi FEM
+
+CFG_TABLE =     0x309a  ar9280nx_hb92_0.eep    #SiGe FEM
+
+CFG_TABLE =     0x3096  ar9280nx_xb92.eep      #Hitachi FEM
+
+CFG_TABLE =     0x3099  ar9280nx_xb92_0.eep    #SiGe FEM
+
+CFG_TABLE =     0x3091  ar9280ng_hb91.eep
+
+CFG_TABLE =     0x3097  ar9280ng_xb91.eep
+
+CFG_TABLE =     0x2091  ar9280ng_mb91.eep
+
+CFG_TABLE =     0x2094  ar9280nx_mb92.eep      #Hitachi FEM 
+
+CFG_TABLE =     0x2098  ar9280nx_mb92_3.eep    #Hitachi FEM, xtalregulator 
+
+CFG_TABLE =     0x2092  ar9280nx_mb92_0.eep    #SiGe FEM 
+
+CFG_TABLE =     0x2096  ar9280nx_mb92_1.eep    #SiGe FEM, xtalregulator
+
+CFG_TABLE =     0x309b  ar9280nx_db92_0.eep    #SiGe FEM 
+
+CFG_TABLE =     0x30a1  ar9285nx_hb95.eep
+
+CFG_TABLE =     0x30a2  ar9285nx_xb95.eep
+
+CFG_TABLE =     0x6301  ar6003nx_1.eep         # venus emulation
+
+#CFG_TABLE =     0x6301  ar6003n_emul.eep
+
+CFG_TABLE =     0x6302  ar6003nx_2.eep         # SD32, 5G XPA only
+
+CFG_TABLE =     0x6303  ar6003nx_3.eep         # WB31DA
+
+CFG_TABLE =     0x6304  ar6003nx_4.eep         # WB31SA
+
+CFG_TABLE =     0x6305  ar6003nx_5.eep         # SD31, no XPA
+
+CFG_TABLE =     0x6306  ar6003nx_6.eep         # WB31, XPA
+
+CFG_TABLE =     0x6307  ar6003nx_7.eep         # SD31, XPA
+
+CFG_TABLE =     0x6308  ar6003nx_8.eep         # 
+
+CFG_TABLE =     0x6309  ar6003nx_9.eep         # SD33
+
+CFG_TABLE =     0x6310  ar6003nx_10.eep        # SD35
+
+CFG_TABLE =     0x6311  ar6003nx_11.eep        # SD37
+
+CFG_TABLE =     0x6312  ar6003nx_12.eep        # SD39
+
+CFG_TABLE =     0x6313  ar6003nx_13.eep        # SD41
+
+CFG_TABLE =     0x6314  ar6003nx_14.eep        # 
+
+CFG_TABLE =     0x6315  ar6003nx_15.eep        # SD43
+
+CFG_TABLE =     0x6316  ar6003nx_16.eep        # WB33
+
+CFG_TABLE =     0x6317  ar6003nx_17.eep        # 
+
+CFG_TABLE =     0x6318  ar6003nx_18.eep        # WB41
+
+CFG_TABLE =     0x6319  ar6003nx_19.eep        # WB42
+
+CFG_TABLE =     0x6320  ar6003nx_20.eep        # WB44
+
+CFG_TABLE =     0x6321  ar6003nx_21.eep        # WBG01
+
+CFG_TABLE =     0x6322  ar6003nx_22.eep        # WBG02
+
+CFG_TABLE =     0x6323  ar6003nx_23.eep        # WG10
+
+CFG_TABLE =     0x6324  ar6003nx_24.eep        # WG20
+
+CFG_TABLE =     0x6325  ar6003nx_25.eep        # WBGF01
+
+CFG_TABLE =     0x6326  ar6003nx_26.eep        # 
+
+CFG_TABLE =     0x6327  ar6003nx_27.eep        # 
+
+CFG_TABLE =     0x6328  ar6003nx_28.eep        # TB424
+
+CFG_TABLE =     0x6329  ar6003nx_29.eep        # SD32, XPA for both 2G & 5G 
+
+CFG_TABLE =     0x6330  ar6003nx_30.eep        # SD32, 5G XPA only, TCXO
+
+CFG_TABLE =     0x6331  ar6003nx_31.eep        # SD32, 5G XPA only, PMU
+
+CFG_TABLE =     0x6332  ar6003nx_32.eep        # WB263-0X0 : WiFi 2G and BT
+
+CFG_TABLE =     0x6333  ar6003nx_33.eep        # WB263-1X0 : WiFi 2/5G and BT
+
+CFG_TABLE =     0x6334  ar6003nx_34.eep        # WB263-2X0 : WiFi 2G only
+
+CFG_TABLE =     0x6335  ar6003nx_35.eep        # WB263-3X0 : WiFi 2/5G only
+
+CFG_TABLE =     0x6336  ar6003nx_36.eep        # SD46 : AR6003X+BT, FEM-SE5501L, XPA for both 2G & 5G
+
+CFG_TABLE =     0x6337  ar6003nx_37.eep        # SD33, PMU
+
+CFG_TABLE =     0x6338  ar6003nx_38.eep        # SD55, AR6005, external FEM
+
+CFG_TABLE =     0x6339  ar6003nx_39.eep        # N6533, AR6003 2/5G CCA for QCT MDM9x15
+
+CFG_TABLE =     0x6340  ar6003nx_40.eep        # SD57, AR6803 (Venus-QFN) SDIO finger board
+
+CFG_TABLE =     0x6341  ar6003nx_41.eep        # WB43, AR6233 2G only + BT carrier board
+
+CFG_TABLE =     0x6342  ar6003nx_42.eep        # WB51, AR6003+WCN2243, WiFi+BT, Epcos FEM for WiFi
+
+CFG_TABLE =     0x6343  ar6003nx_43.eep        # Y0096, AR6003 2/5G CCA with external switcher + LDO for QCT MDM9x15
+
+CFG_TABLE =     0x6344  ar6003nx_44.eep        # Y2346, AR6003 2G CCA with external switcher + LDO for QCT MDM9x15
+
+CFG_TABLE =     0x6345  ar6003nx_45.eep        # WB42, AR6003 2G low power CCK variant (ob2g_cck=db2g= 0x3) 
+
+CFG_TABLE =     0x6346  ar6003nx_46.eep        # SD48, AR6003 2G/5G 

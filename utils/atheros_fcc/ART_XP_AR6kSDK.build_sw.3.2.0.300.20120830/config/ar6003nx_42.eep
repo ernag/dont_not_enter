@@ -1,0 +1,119 @@
+#$Id: //depot/sw/releases/olca3.2/host/tools/systemtools/bringup/ar5k/config/ar6003nx_42.eep#1 $
+	
+#EEPROM file for Venus 802.11n 2GHz pci express adapter
+
+@cal_section_begin          		# begin @cal section
+
+TARGET_POWER_FILENAME      =  calTrgtPwr_ar6003n_38.txt ; # target power file for calibration
+SUBSYSTEM_ID	           =  0x6338;   # Subsystem ID in hex
+EEPROM_MAP_TYPE	   =  2;	# Flag indicating eeprom layout type BAA: used for legacy only, changed cal portion of eeprom
+EEPROM_SIZE        =  4   #  size in kbits of the eeprom
+5GHZ_HT40_DISABLE          =  0;        # Prevents software from using HT40 rates
+5GHZ_HT20_DISABLE          =  0;        # Prevents software from using HT20 rates
+2GHZ_HT40_DISABLE          =  0;        # Prevents software from using HT40 rates
+2GHZ_HT20_DISABLE          =  0;        # Prevents software from using HT20 rates
+RF_SILENT		   =  0;   	# Cards enabled with RFSilent can be easily silenced
+DEVICE_TYPE		   =  5;   	# 1=>Cardbus, 2=>PCI, 3=>miniPCI, 4=>AP, 5=>PCIe mini, 6=>pcie express, 7=>pcie desktop 
+A_MODE		           =  0;   	# Whether the adapter supports 802.11a functionality
+G_MODE		           =  1;   	# Whether the adapter supports 802.11g/b functionality
+#ANTENNA_GAIN_5G	           =  0;	# Antenna gain at 5.5GHz. 8-bit signed val in 0.5dB steps.
+#ANTENNA_GAIN_2p5G          =  0;	# Antenna gain at 2.5GHz. 8-bit signed val in 0.5dB steps.
+#NOISE_FLOOR_THRESHOLD	   = -54; 	# noise floor threshold value (per JHfmn 6/14/02)
+#11g_NOISE_FLOOR_THRESHOLD  = -1; 	# noise floor threshold value
+#HT40_POWER_INC_FOR_PDADC_5 =  2;        # Power difference between 5GHz HT40 and 20MHz target powers. 8-bit unsigned val in 0.5dB steps.
+HT40_POWER_INC_FOR_PDADC_2 =  0 ;       # Power difference between 2GHz HT40 and 20MHz target powers. 8-bit unsigned val in 0.5dB steps.
+PCDAC_BASELINE             = 60;        # target_power_cal in half dB step
+PCDAC_BASELINE_PALON       = 24;        # target_power_cal in half dB step
+5G_PCDAC_BASELINE          = 50;        # target_power_cal in half dB step
+CCK_OFDM_DELTA             = 0;
+
+
+#new capabilities bits
+LOs_BYPASS                  =  1;        # Set to 1 to bypass LOs programming
+ASPM_SUPPORT                =  3;         # ASPM support level: 0=L0, 1=L0s, 2= L1, 3=L0s/L1 (default)
+ENABLE_WAKE_ON_WLAN         =  1;         #
+MAIN_ANTENNA                =  1;         # 0 : RX main ANTENNA set to A; 1 : RX main ANTENNA set to B
+
+#FEM_BAND_SELECT_USED       =  0;        # switches the band select pin on the FEM to control the 5GHz/2GHz LNA
+#NOISE_CAL_5G_LIST          = -114, -116, -120, -114, -116, -120; #noise floor cal values: ch0,flo; ch0,fmi; ch0,fhi; ch1,flo; ch1,fmi; ch1,fhi;
+#NOISE_CAL_2G_LIST          = -110, 0, 0, -110, 0, 0; #noise floor cal values: ch0,flo; ch0,fmi; ch0,fhi; ch1,flo; ch1,fmi; ch1,fhi;
+
+#Chains
+TX_CHAIN_MASK               =  1;
+RX_CHAIN_MASK               =  1;
+
+#Regulatory domain flags
+#ENABLE_FCC_MIDBAND         =  1;
+#ENABLE_JAPAN_MIDBAND       =  1;
+#ENABLE_FCC_DFS_HT40	    =  1;
+#ENABLE_JAPAN_HT40	    =  1;
+#ENABLE_JAPAN_DFS_HT40	    =  1;
+
+#TEMP_THRESHOLD             = 48;
+
+#SHARED_RX_ENABLED          =  1;
+#BT_SIGNAL_PRESENT          =  0;
+#XPA_USED                   =  0;
+#USE_OTP_XTALCAPS           =  1;
+PAPRD_EN_2G                 =  1;
+#PAPRD_EN_5G                =  0;
+ALPHATHERMTBL_EN_2G         =  1;
+#ALPHATHERMTBL_EN_5G         =  1;   #5G alphatherm table is enabled by default.
+TXGAIN_TBL_ENABLED          =  1;
+
+CHIP_TO_ANTENNA_PATH_LOSS_2G = 2.0;
+CHIP_TO_ANTENNA_PATH_LOSS_5G = 0.0;
+
+@cal_section_end            		# end @cal section	
+
+@config_section_begin       		# begin @config section
+
+an_xtal_xtal_capoutdac                             0x3a    
+an_xtal_xtal_capindac                              0x3a
+bb_paprd_trainer_cntl3_cf_paprd_quick_drop         0x3a
+
+rtc_pmu_bypass_pareg                                0x1
+rtc_pmu_bypass_swreg                                0x1
+
+
+#----------------------------------------------------------------------------------
+@MODE: MODE_SPECIFIC             11a   11a_20_40   11g_20_40        11g    11g_tubo
+#----------------------------------------------------------------------------------
+bb_iqcorr_ctrl_cck_cf_clc_init_rfgain	0x1f	0x1f	0x7	0x7	0x7
+bb_tpc_7_tx_gain_table_max		0x19	0x19	0x1f	0x1f	0x1f
+
+bb_tx_gain_tab_1_tg_table1                        0x00000000           0x00000000          0x00000001          0x00000001          0x00000001
+bb_tx_gain_tab_2_tg_table2                        0x06000003           0x06000003          0x04000003          0x04000003          0x04000003
+bb_tx_gain_tab_3_tg_table3                        0x0a000020           0x0a000020          0x08000005          0x08000005          0x08000005
+bb_tx_gain_tab_4_tg_table4                        0x10000023           0x10000023          0x0c000201          0x0c000201          0x0c000201
+bb_tx_gain_tab_5_tg_table5                        0x16000220           0x15000220          0x10000024          0x10000024          0x10000024
+bb_tx_gain_tab_6_tg_table6                        0x1c000223           0x1c000223          0x12000025          0x12000025          0x12000025
+bb_tx_gain_tab_7_tg_table7                        0x21002220           0x21002220          0x14000220          0x14000220          0x14000220
+bb_tx_gain_tab_8_tg_table8                        0x27002223           0x27002223          0x19000404          0x19000404          0x19000404
+bb_tx_gain_tab_9_tg_table9                        0x2b022220           0x2b022220          0x1b000405          0x1b000405          0x1b000405
+bb_tx_gain_tab_10_tg_table10                      0x2f022222           0x2f022222          0x1d000406          0x1d000406          0x1d000406
+bb_tx_gain_tab_11_tg_table11                      0x34022225           0x34022225          0x22000440          0x22000440          0x22000440
+bb_tx_gain_tab_12_tg_table12                      0x3a02222a           0x3a02222a          0x24000441          0x24000441          0x24000441
+bb_tx_gain_tab_13_tg_table13                      0x3e02222c           0x3e02222c          0x27000426          0x27000426          0x27000426          
+bb_tx_gain_tab_14_tg_table14                      0x4102242a           0x4102242a          0x290004a0          0x290004a0          0x290004a0
+bb_tx_gain_tab_15_tg_table15                      0x4602244a           0x4602244a          0x2c001602          0x2c001602          0x2c001602
+bb_tx_gain_tab_16_tg_table16                      0x4a02244c           0x4a02244c          0x2e001a02          0x2e001a02          0x2e001a02
+bb_tx_gain_tab_17_tg_table17                      0x4d02246c           0x4d02246c          0x30001a03          0x30001a03          0x30001a03
+bb_tx_gain_tab_18_tg_table18                      0x5202266c           0x5202266c          0x33001023          0x33001023          0x33001023
+bb_tx_gain_tab_19_tg_table19                      0x5602286c           0x5602286c          0x34001c20          0x34001c20          0x34001c20          
+bb_tx_gain_tab_20_tg_table20                      0x5b02486b           0x5b02486b          0x36001c21          0x36001c21          0x36001c21          
+bb_tx_gain_tab_21_tg_table21                      0x60024a6c           0x60024a6c          0x39001641          0x39001641          0x39001641
+bb_tx_gain_tab_22_tg_table22                      0x65026a6c           0x65026a6c          0x3b001642          0x3b001642          0x3b001642
+bb_tx_gain_tab_23_tg_table23                      0x6a026e6c           0x6a026e6c          0x3d001628          0x3d001628          0x3d001628
+bb_tx_gain_tab_24_tg_table24                      0x6f02708c           0x6f02708c          0x40001463          0x40001463          0x40001463          
+bb_tx_gain_tab_25_tg_table25                      0x7202b08a           0x7202b08a          0x41001e62          0x41001e62          0x41001e62          
+bb_tx_gain_tab_26_tg_table26                      0x7602b08c           0x7602b08c          0x42001c45          0x42001c45          0x42001c45          
+bb_tx_gain_tab_27_tg_table27                      0x7602b08c           0x7602b08c          0x46001c2c          0x46001c2c          0x46001c2c          
+bb_tx_gain_tab_28_tg_table28                      0x7602b08c           0x7602b08c          0x4c001c4c          0x4c001c4c          0x4c001c4c          
+bb_tx_gain_tab_29_tg_table29                      0x7602b08c           0x7602b08c          0x530018ea          0x530018ea          0x530018ea          
+bb_tx_gain_tab_30_tg_table30                      0x7602b08c           0x7602b08c          0x53001a6e          0x53001a6e          0x53001a6e          
+bb_tx_gain_tab_31_tg_table31                      0x7602b08c           0x7602b08c          0x5b001cb1          0x5b001cb1          0x5b001cb1
+bb_tx_gain_tab_32_tg_table32                      0x7602b08c           0x7602b08c          0x60001cbc          0x60001cbc          0x60001cbc          
+
+@config_section_end         # end @config section
+

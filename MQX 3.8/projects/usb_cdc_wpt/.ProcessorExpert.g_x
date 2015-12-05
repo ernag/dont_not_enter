@@ -1,0 +1,35 @@
+<CodeGenerationInfo>
+  <ToolchainSettings>
+    <option>
+      <name>PE_G_4PEx_ToolChain_Compiler_SearchUserPaths</name>
+      <values lines_count="4">
+        <Line>"${ProcessorExpertPath}/lib/Kinetis/iofiles"</Line>
+        <Line>"${ProcessorExpertPath}/lib/Kinetis/pdd/inc"</Line>
+        <Line>"${ProjDirPath}/Sources"</Line>
+        <Line>"${ProjDirPath}/Generated_Code"</Line>
+      </values>
+    </option>
+  </ToolchainSettings>
+  <GeneratedFilesList>
+    <GeneratedByPE>
+      <File Name="Documentation\ProcessorExpert_SIGNALS.txt" FileDate="2013-01-27, 11:57:44" FileAge="1359316664169" FileType="3072" />
+      <File Name="Generated_Code\Cpu.c" FileDate="2013-01-27, 11:57:44" FileAge="1359316664140" FileType="4411" CompNumb="2" />
+      <File Name="Generated_Code\Vectors.c" FileDate="2013-01-27, 11:57:44" FileAge="1359316664113" FileType="4411" CompNumb="2" />
+      <File Name="Generated_Code\PE_Const.h" FileDate="2013-01-24, 18:51:52" FileAge="1359082312359" FileType="4411" />
+      <File Name="Sources\ProcessorExpert.c" FileDate="2013-01-26, 19:29:07" FileAge="1359257347906" FileType="128" />
+      <File Name="Generated_Code\PE_Error.h" FileDate="2013-01-24, 18:51:52" FileAge="1359082312364" FileType="4411" />
+      <File Name="Generated_Code\PE_LDD.h" FileDate="2013-01-27, 11:57:44" FileAge="1359316664148" FileType="4411" CompNumb="2" />
+      <File Name="Project_Settings\Linker_Files\ProcessorExpert.lcf" FileDate="2013-01-27, 11:57:44" FileAge="1359316664153" FileType="4" CompNumb="2" />
+      <File Name="Generated_Code\PE_Types.h" FileDate="2013-01-24, 18:51:52" FileAge="1359082312368" FileType="4411" />
+      <File Name="Project_Settings\Debugger\MK22DN512.mem" FileDate="2013-01-24, 18:51:52" FileAge="1359082312332" FileType="4411" CompNumb="2" />
+      <File Name="Generated_Code\IO_Map.h" FileDate="2013-01-25, 13:12:08" FileAge="1359148328511" FileType="4411" />
+      <File Name="Sources\Events.h" FileDate="2013-01-24, 18:51:52" FileAge="1359082312311" FileType="16896" />
+      <File Name="Generated_Code\PE_LDD.c" FileDate="2013-01-27, 11:57:44" FileAge="1359316664144" FileType="4411" CompNumb="2" />
+      <File Name="Documentation\ProcessorExpert_Settings.xml" FileDate="2013-01-24, 22:28:49" FileAge="1359095329978" FileType="3072" />
+      <File Name="Generated_Code\Cpu.h" FileDate="2013-01-27, 11:57:44" FileAge="1359316664136" FileType="4411" CompNumb="2" />
+      <File Name="Documentation\ProcessorExpert.txt" FileDate="2013-01-24, 18:51:52" FileAge="1359082312407" FileType="3072" />
+      <File Name="Sources\Events.c" FileDate="2013-01-24, 18:51:52" FileAge="1359082312299" FileType="16896" />
+    </GeneratedByPE>
+  </GeneratedFilesList>
+  <CodeGenReference>5</CodeGenReference>
+</CodeGenerationInfo>

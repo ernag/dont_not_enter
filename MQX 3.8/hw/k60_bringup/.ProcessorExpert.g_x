@@ -1,0 +1,108 @@
+<CodeGenerationInfo>
+  <ToolchainSettings>
+    <option>
+      <name>PE_G_4PEx_ToolChain_Compiler_SearchUserPaths</name>
+      <values lines_count="4">
+        <Line>"${ProcessorExpertPath}/lib/Kinetis/iofiles"</Line>
+        <Line>"${ProcessorExpertPath}/lib/Kinetis/pdd/inc"</Line>
+        <Line>"${ProjDirPath}/Sources"</Line>
+        <Line>"${ProjDirPath}/Generated_Code"</Line>
+      </values>
+    </option>
+  </ToolchainSettings>
+  <GeneratedFilesList>
+    <GeneratedByPE>
+      <File Name="Documentation/ProcessorExpert_SIGNALS.txt" FileDate="2013-11-11, 14:37:46" FileAge="1384209466642" FileType="3072" />
+      <File Name="Generated_Code/PE_Error.h" FileDate="2013-10-31, 17:35:16" FileAge="1383266116310" FileType="45637" />
+      <File Name="Generated_Code/USB_CORONA.h" FileDate="2013-11-11, 14:04:55" FileAge="1384207495843" FileType="45637" CompNumb="46" />
+      <File Name="Project_Settings/Debugger/MK60DN512.mem" FileDate="2013-10-31, 13:58:28" FileAge="1383253108135" FileType="45637" CompNumb="9" />
+      <File Name="Generated_Code/USB_CORONA.c" FileDate="2013-11-11, 14:37:46" FileAge="1384209466564" FileType="45637" CompNumb="46" />
+      <File Name="Generated_Code/UART3_WIFI.h" FileDate="2013-10-31, 17:35:16" FileAge="1383266116648" FileType="45637" CompNumb="26" />
+      <File Name="Documentation/doxygen/UART3_WIFI.txt" FileDate="2013-10-31, 13:58:27" FileAge="1383253107840" FileType="45637" CompNumb="26" />
+      <File Name="Generated_Code/UART3_WIFI.c" FileDate="2013-11-11, 14:04:56" FileAge="1384207496235" FileType="45637" CompNumb="26" />
+      <File Name="Documentation/doxygen/Sleep_Timer_LDD.txt" FileDate="2013-11-11, 14:04:56" FileAge="1384207496320" FileType="45637" CompNumb="35" />
+      <File Name="Documentation/doxygen/TU2.txt" FileDate="2013-11-11, 14:04:56" FileAge="1384207496311" FileType="45637" CompNumb="36" />
+      <File Name="Generated_Code/ADC0_Vsense.h" FileDate="2013-11-11, 14:37:46" FileAge="1384209466410" FileType="45637" CompNumb="37" />
+      <File Name="Generated_Code/Cpu.h" FileDate="2013-11-11, 14:04:56" FileAge="1384207496404" FileType="45637" CompNumb="9" />
+      <File Name="Generated_Code/ADC0_Vsense.c" FileDate="2013-11-11, 14:37:46" FileAge="1384209466391" FileType="45637" CompNumb="37" />
+      <File Name="Generated_Code/SPI0_WIFI.h" FileDate="2013-11-11, 14:04:56" FileAge="1384207496029" FileType="45637" CompNumb="13" />
+      <File Name="Generated_Code/PORTB_GPIO_LDD.h" FileDate="2013-10-31, 17:35:16" FileAge="1383266116396" FileType="45637" CompNumb="41" />
+      <File Name="Generated_Code/Cpu.c" FileDate="2013-11-11, 14:37:46" FileAge="1384209466575" FileType="45637" CompNumb="9" />
+      <File Name="Generated_Code/TU2.h" FileDate="2013-11-11, 14:04:56" FileAge="1384207496288" FileType="45637" CompNumb="36" />
+      <File Name="Generated_Code/SPI0_WIFI.c" FileDate="2013-11-11, 14:04:56" FileAge="1384207496037" FileType="45637" CompNumb="13" />
+      <File Name="Documentation/doxygen/RoutingReport.txt" FileDate="2013-10-31, 13:58:27" FileAge="1383253107822" FileType="45637" CompNumb="9" />
+      <File Name="Generated_Code/PORTB_GPIO_LDD.c" FileDate="2013-10-31, 17:35:16" FileAge="1383266116386" FileType="45637" CompNumb="41" />
+      <File Name="Documentation/doxygen/SPI1_Accel.txt" FileDate="2013-11-11, 14:04:56" FileAge="1384207496091" FileType="45637" CompNumb="19" />
+      <File Name="Sources/ProcessorExpert.c" FileDate="2013-10-31, 17:32:53" FileAge="1383265973366" FileType="128" />
+      <File Name="Generated_Code/TU2.c" FileDate="2013-11-11, 14:04:56" FileAge="1384207496299" FileType="45637" CompNumb="36" />
+      <File Name="Generated_Code/TU1.h" FileDate="2013-11-11, 14:04:56" FileAge="1384207496102" FileType="45637" CompNumb="21" />
+      <File Name="Documentation/doxygen/UART5_DBG.txt" FileDate="2013-10-31, 13:58:27" FileAge="1383253107843" FileType="45637" CompNumb="30" />
+      <File Name="Documentation/doxygen/PORTB_GPIO.txt" FileDate="2013-10-31, 13:58:27" FileAge="1383253107803" FileType="45637" CompNumb="15" />
+      <File Name="Documentation/doxygen/ADC0_Vsense.txt" FileDate="2013-11-11, 14:37:46" FileAge="1384209466522" FileType="45637" CompNumb="37" />
+      <File Name="Generated_Code/TU1.c" FileDate="2013-11-11, 14:04:56" FileAge="1384207496112" FileType="45637" CompNumb="21" />
+      <File Name="Documentation/doxygen/I2C1.txt" FileDate="2013-11-11, 14:04:56" FileAge="1384207496185" FileType="45637" CompNumb="23" />
+      <File Name="Generated_Code/PE_LDD.h" FileDate="2013-10-31, 17:35:16" FileAge="1383266116330" FileType="45637" CompNumb="9" />
+      <File Name="Documentation/doxygen/PORTD_GPIO.txt" FileDate="2013-10-31, 13:58:27" FileAge="1383253107811" FileType="45637" CompNumb="27" />
+      <File Name="Generated_Code/PE_LDD.c" FileDate="2013-10-31, 17:35:16" FileAge="1383266116319" FileType="45637" CompNumb="9" />
+      <File Name="Generated_Code/SPI2_Flash.h" FileDate="2013-11-11, 14:04:55" FileAge="1384207495979" FileType="45637" CompNumb="24" />
+      <File Name="Documentation/doxygen/pex.doxyfile" FileDate="2013-10-31, 13:58:27" FileAge="1383253107850" FileType="45637" CompNumb="9" />
+      <File Name="Documentation/doxygen/TU1.txt" FileDate="2013-11-11, 14:04:56" FileAge="1384207496128" FileType="45637" CompNumb="21" />
+      <File Name="Generated_Code/SPI2_Flash.c" FileDate="2013-11-11, 14:04:56" FileAge="1384207496208" FileType="45637" CompNumb="24" />
+      <File Name="Documentation/doxygen/RNG1.txt" FileDate="2013-10-31, 13:58:27" FileAge="1383253107821" FileType="45637" CompNumb="100" />
+      <File Name="Generated_Code/PORTD_GPIO.h" FileDate="2013-10-31, 17:35:16" FileAge="1383266116450" FileType="45637" CompNumb="27" />
+      <File Name="Generated_Code/PORTC_GPIO_LDD.h" FileDate="2013-11-11, 14:06:31" FileAge="1384207591869" FileType="45637" CompNumb="42" />
+      <File Name="Documentation/doxygen/PORTE_GPIO_LDD.txt" FileDate="2013-10-31, 13:58:27" FileAge="1383253107817" FileType="45637" CompNumb="44" />
+      <File Name="Generated_Code/PORTD_GPIO.c" FileDate="2013-10-31, 17:35:16" FileAge="1383266116442" FileType="45637" CompNumb="27" />
+      <File Name="Generated_Code/PORTC_GPIO_LDD.c" FileDate="2013-11-11, 14:06:31" FileAge="1384207591879" FileType="45637" CompNumb="42" />
+      <File Name="Project_Settings/Linker_Files/ProcessorExpert.lcf" FileDate="2013-10-31, 13:58:28" FileAge="1383253108139" FileType="8" CompNumb="9" />
+      <File Name="Generated_Code/IO_Map.h" FileDate="2013-10-31, 17:32:53" FileAge="1383265973401" FileType="45637" />
+      <File Name="Documentation/doxygen/SPI2_Flash.txt" FileDate="2013-11-11, 14:04:56" FileAge="1384207496224" FileType="45637" CompNumb="24" />
+      <File Name="Generated_Code/SPI1_Accel.h" FileDate="2013-10-31, 17:35:16" FileAge="1383266116559" FileType="45637" CompNumb="19" />
+      <File Name="Documentation/doxygen/pex.css" FileDate="2013-10-31, 13:58:27" FileAge="1383253107848" FileType="16384" CompNumb="9" />
+      <File Name="Generated_Code/PORTB_GPIO.h" FileDate="2013-10-31, 17:35:16" FileAge="1383266116377" FileType="45637" CompNumb="15" />
+      <File Name="Generated_Code/SPI1_Accel.c" FileDate="2013-11-11, 14:04:56" FileAge="1384207496079" FileType="45637" CompNumb="19" />
+      <File Name="Generated_Code/PORTB_GPIO.c" FileDate="2013-10-31, 17:35:16" FileAge="1383266116368" FileType="45637" CompNumb="15" />
+      <File Name="Generated_Code/PE_Types.h" FileDate="2013-10-31, 17:39:17" FileAge="1383266357290" FileType="45637" />
+      <File Name="Documentation/doxygen/ProcessorExpert.txt" FileDate="2013-10-31, 13:58:27" FileAge="1383253107819" FileType="45637" CompNumb="9" />
+      <File Name="Sources/Events.h" FileDate="2013-10-31, 17:32:52" FileAge="1383265972292" FileType="131328" />
+      <File Name="Documentation/doxygen/USB_CORONA.txt" FileDate="2013-11-11, 14:04:56" FileAge="1384207496392" FileType="45637" CompNumb="46" />
+      <File Name="Documentation/doxygen/PORTD_GPIO_LDD.txt" FileDate="2013-10-31, 13:58:27" FileAge="1383253107813" FileType="45637" CompNumb="43" />
+      <File Name="Documentation/doxygen/DISPLAY_SYNC_PWM0.txt" FileDate="2013-11-11, 14:04:56" FileAge="1384207496157" FileType="45637" CompNumb="20" />
+      <File Name="Sources/Events.c" FileDate="2013-10-31, 17:32:52" FileAge="1383265972269" FileType="131328" />
+      <File Name="Generated_Code/PORTD_GPIO_LDD.h" FileDate="2013-10-31, 17:35:16" FileAge="1383266116468" FileType="45637" CompNumb="43" />
+      <File Name="Documentation/ProcessorExpert_Settings.xml" FileDate="2013-11-11, 14:37:46" FileAge="1384209466683" FileType="3072" />
+      <File Name="Generated_Code/PORTD_GPIO_LDD.c" FileDate="2013-10-31, 17:35:16" FileAge="1383266116459" FileType="45637" CompNumb="43" />
+      <File Name="Generated_Code/Vectors.c" FileDate="2013-10-31, 17:35:16" FileAge="1383266116692" FileType="45637" CompNumb="9" />
+      <File Name="Generated_Code/UART5_DBG.h" FileDate="2013-10-31, 17:35:16" FileAge="1383266116665" FileType="45637" CompNumb="30" />
+      <File Name="Documentation/doxygen/PORTA_GPIO.txt" FileDate="2013-10-31, 13:58:27" FileAge="1383253107801" FileType="45637" CompNumb="14" />
+      <File Name="Documentation/doxygen/PORTC_GPIO_LDD.txt" FileDate="2013-11-11, 14:06:31" FileAge="1384207591890" FileType="45637" CompNumb="42" />
+      <File Name="Documentation/doxygen/SPI0_WIFI.txt" FileDate="2013-11-11, 14:04:56" FileAge="1384207496047" FileType="45637" CompNumb="13" />
+      <File Name="Generated_Code/PE_Const.h" FileDate="2013-10-31, 17:35:16" FileAge="1383266116302" FileType="45637" />
+      <File Name="Generated_Code/UART5_DBG.c" FileDate="2013-11-11, 14:04:56" FileAge="1384207496279" FileType="45637" CompNumb="30" />
+      <File Name="Documentation/doxygen/UART0_BT.txt" FileDate="2013-11-11, 14:37:46" FileAge="1384209466512" FileType="45637" CompNumb="29" />
+      <File Name="Documentation/doxygen/PORTC_GPIO.txt" FileDate="2013-11-11, 14:06:31" FileAge="1384207591854" FileType="45637" CompNumb="25" />
+      <File Name="Documentation/doxygen/PORTE_GPIO.txt" FileDate="2013-10-31, 13:58:27" FileAge="1383253107815" FileType="45637" CompNumb="28" />
+      <File Name="Generated_Code/I2C1.h" FileDate="2013-11-11, 14:04:55" FileAge="1384207495993" FileType="45637" CompNumb="23" />
+      <File Name="Generated_Code/I2C1.c" FileDate="2013-11-11, 14:04:56" FileAge="1384207496170" FileType="45637" CompNumb="23" />
+      <File Name="Generated_Code/DISPLAY_SYNC_PWM0.h" FileDate="2013-10-31, 17:35:16" FileAge="1383266116275" FileType="45637" CompNumb="20" />
+      <File Name="Generated_Code/DISPLAY_SYNC_PWM0.c" FileDate="2013-11-11, 14:04:56" FileAge="1384207496145" FileType="45637" CompNumb="20" />
+      <File Name="Generated_Code/PORTE_GPIO.h" FileDate="2013-10-31, 17:35:16" FileAge="1383266116484" FileType="45637" CompNumb="28" />
+      <File Name="Generated_Code/UART0_BT.h" FileDate="2013-11-11, 14:37:46" FileAge="1384209466476" FileType="45637" CompNumb="29" />
+      <File Name="Generated_Code/Sleep_Timer_LDD.h" FileDate="2013-10-31, 17:35:16" FileAge="1383266116593" FileType="45637" CompNumb="35" />
+      <File Name="Documentation/ProcessorExpert.txt" FileDate="2013-11-11, 14:06:32" FileAge="1384207592053" FileType="3072" />
+      <File Name="Generated_Code/PORTE_GPIO.c" FileDate="2013-10-31, 17:35:16" FileAge="1383266116476" FileType="45637" CompNumb="28" />
+      <File Name="Generated_Code/RNG1.h" FileDate="2013-10-31, 17:35:16" FileAge="1383266116521" FileType="45637" CompNumb="100" />
+      <File Name="Generated_Code/UART0_BT.c" FileDate="2013-11-11, 14:37:46" FileAge="1384209466500" FileType="45637" CompNumb="29" />
+      <File Name="Generated_Code/Sleep_Timer_LDD.c" FileDate="2013-10-31, 17:35:16" FileAge="1383266116587" FileType="45637" CompNumb="35" />
+      <File Name="Generated_Code/PORTE_GPIO_LDD.h" FileDate="2013-10-31, 17:35:16" FileAge="1383266116502" FileType="45637" CompNumb="44" />
+      <File Name="Generated_Code/RNG1.c" FileDate="2013-10-31, 17:35:16" FileAge="1383266116511" FileType="45637" CompNumb="100" />
+      <File Name="Documentation/doxygen/PORTB_GPIO_LDD.txt" FileDate="2013-10-31, 13:58:27" FileAge="1383253107805" FileType="45637" CompNumb="41" />
+      <File Name="Generated_Code/PORTE_GPIO_LDD.c" FileDate="2013-10-31, 17:35:16" FileAge="1383266116493" FileType="45637" CompNumb="44" />
+      <File Name="Generated_Code/PORTA_GPIO.h" FileDate="2013-10-31, 17:35:16" FileAge="1383266116358" FileType="45637" CompNumb="14" />
+      <File Name="Generated_Code/PORTC_GPIO.h" FileDate="2013-11-11, 14:06:31" FileAge="1384207591814" FileType="45637" CompNumb="25" />
+      <File Name="Generated_Code/PORTA_GPIO.c" FileDate="2013-10-31, 17:35:16" FileAge="1383266116349" FileType="45637" CompNumb="14" />
+      <File Name="Generated_Code/PORTC_GPIO.c" FileDate="2013-11-11, 14:06:31" FileAge="1384207591840" FileType="45637" CompNumb="25" />
+    </GeneratedByPE>
+  </GeneratedFilesList>
+  <CodeGenReference>111</CodeGenReference>
+</CodeGenerationInfo>

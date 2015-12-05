@@ -1,0 +1,633 @@
+/*!
+\page UART5_DBG UART5_DBG (Serial_LDD)
+**         This component "Serial_LDD" implements an asynchronous serial
+**         communication. The component supports different settings of
+**         parity, word width, stop-bit and communication speed,
+**         user can select interrupt or polling handler.
+**         Communication speed can be changed also in runtime.
+**         The component requires one on-chip asynchronous serial communication channel.
+
+- \subpage UART5_DBG_settings
+- \subpage UART5_DBG_regs_overview  
+- \subpage UART5_DBG_regs_details
+- \ref UART5_DBG_module "Component documentation" 
+
+\page UART5_DBG_regs_overview Registers Initialization Overview
+This page initialization values for the registers of the peripheral(s) configured
+by the component. 
+<table>
+<tr><td colspan="4" class="ttitle1">UART5_DBG Initialization</td></tr>
+<tr><td class="ttitle2">Address</td><td class="ttitle2">Register</td><td class="ttitle2">Register Value</td><td class="ttitle2">Register Description</td></tr>
+<tr><td>0x40048028</td><td>SIM_SCGC1</td><td>
+    0x00000800
+ </td><td>SIM_SCGC1 register, peripheral UART5_DBG.</td></tr>
+<tr><td>0x4004C020</td><td>PORTD_PCR8</td><td>
+    0x00000300
+ </td><td>PORTD_PCR8 register, peripheral UART5_DBG.</td></tr>
+<tr><td>0x4004C024</td><td>PORTD_PCR9</td><td>
+    0x00000300
+ </td><td>PORTD_PCR9 register, peripheral UART5_DBG.</td></tr>
+<tr><td>0x4004C02C</td><td>PORTD_PCR11</td><td>
+    0x00000300
+ </td><td>PORTD_PCR11 register, peripheral UART5_DBG.</td></tr>
+<tr><td>0x4004C028</td><td>PORTD_PCR10</td><td>
+    0x00000300
+ </td><td>PORTD_PCR10 register, peripheral UART5_DBG.</td></tr>
+<tr><td>0xE000E437</td><td>NVICIP55</td><td>
+    0x00000080
+ </td><td>NVICIP55 register, peripheral UART5_DBG.</td></tr>
+<tr><td>0xE000E104</td><td>NVICISER1</td><td>
+    0x01986000
+ </td><td>NVICISER1 register, peripheral UART5_DBG.</td></tr>
+<tr><td>0xE000E438</td><td>NVICIP56</td><td>
+    0x00000080
+ </td><td>NVICIP56 register, peripheral UART5_DBG.</td></tr>
+<tr><td>0x400EB002</td><td>UART5_C1</td><td>
+    0x00000000
+ </td><td>UART5_C1 register, peripheral UART5_DBG.</td></tr>
+<tr><td>0x400EB006</td><td>UART5_C3</td><td>
+    0x00000000
+ </td><td>UART5_C3 register, peripheral UART5_DBG.</td></tr>
+<tr><td>0x400EB005</td><td>UART5_S2</td><td>
+    0x00000000
+ </td><td>UART5_S2 register, peripheral UART5_DBG.</td></tr>
+<tr><td>0x400EB00D</td><td>UART5_MODEM</td><td>
+    0x00000009
+ </td><td>UART5_MODEM register, peripheral UART5_DBG.</td></tr>
+</table>
+<br/>
+\page UART5_DBG_regs_details Register Initialization Details
+This page contains detailed description of initialization values for the 
+registers of the peripheral(s) configured by the component. 
+
+<div class="reghdr1">SIM_SCGC1</div>
+<div class="regdiag">
+<table class="regtbl">
+<tr class="trd1r">
+<td class="trd1c">Bit</td><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td>
+<td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td>
+</tr>
+<tr>
+<td class="trd1c">R</td><td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td>
+<td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td>
+<td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td>
+<td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td>
+<td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td>
+<td colspan="1" rowspan="2">-</td>
+</tr>
+<tr>
+<td class="trd1c">W</td>
+</tr>
+<tr class="trd1r">
+<td class="trd1c">Reset</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+<td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+</tr>
+</table>
+<table class="regtbl">
+<tr class="trd1r">
+<td class="trd1c">Bit</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td>
+<td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td>
+</tr>
+<tr>
+<td class="trd1c">R</td><td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td>
+<td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">UART5</td><td colspan="1" rowspan="2">UART4</td>
+<td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td>
+<td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td>
+<td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td>
+<td colspan="1" rowspan="2">-</td>
+</tr>
+<tr>
+<td class="trd1c">W</td>
+</tr>
+<tr class="trd1r">
+<td class="trd1c">Reset</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+<td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+</tr>
+</table>
+
+</div>
+<table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x40048028</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00000800</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000000</td></tr>
+<tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
+<tr><td>11 </td><td>UART5</td><td>TBD</td><td>UART5 Clock Gate Control</td>
+<tr><td>10 </td><td>UART4</td><td>TBD</td><td>UART4 Clock Gate Control</td>
+</tr></table>
+<div class="reghdr1">PORTD_PCR8</div>
+<div class="regdiag">
+<table class="regtbl">
+<tr class="trd1r">
+<td class="trd1c">Bit</td><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td>
+<td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td>
+</tr>
+<tr>
+<td class="trd1c">R</td><td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td>
+<td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td>
+<td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">ISF</td><td colspan="1" rowspan="2">-</td>
+<td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td>
+<td colspan="4" rowspan="2">IRQC</td>
+</tr>
+<tr>
+<td class="trd1c">W</td>
+</tr>
+<tr class="trd1r">
+<td class="trd1c">Reset</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+<td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+</tr>
+</table>
+<table class="regtbl">
+<tr class="trd1r">
+<td class="trd1c">Bit</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td>
+<td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td>
+</tr>
+<tr>
+<td class="trd1c">R</td><td colspan="1" rowspan="2">LK</td><td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td>
+<td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td><td colspan="3" rowspan="2">MUX</td>
+<td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">DSE</td><td colspan="1" rowspan="2">ODE</td>
+<td colspan="1" rowspan="2">PFE</td><td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">SRE</td>
+<td colspan="1" rowspan="2">PE</td><td colspan="1" rowspan="2">PS</td>
+</tr>
+<tr>
+<td class="trd1c">W</td>
+</tr>
+<tr class="trd1r">
+<td class="trd1c">Reset</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+<td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+</tr>
+</table>
+
+</div>
+<table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x4004C020</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00000300</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000000</td></tr>
+<tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
+<tr><td>24 </td><td>ISF</td><td>TBD</td><td>Interrupt Status Flag</td>
+<tr><td>16 - 19</td><td>IRQC</td><td>TBD</td><td>Interrupt Configuration</td>
+<tr><td>15 </td><td>LK</td><td>TBD</td><td>Lock Register</td>
+<tr><td>8 - 10</td><td>MUX</td><td>TBD</td><td>Pin Mux Control</td>
+<tr><td>6 </td><td>DSE</td><td>TBD</td><td>Drive Strength Enable</td>
+<tr><td>5 </td><td>ODE</td><td>TBD</td><td>Open Drain Enable</td>
+<tr><td>4 </td><td>PFE</td><td>TBD</td><td>Passive Filter Enable</td>
+<tr><td>2 </td><td>SRE</td><td>TBD</td><td>Slew Rate Enable</td>
+<tr><td>1 </td><td>PE</td><td>TBD</td><td>Pull Enable</td>
+<tr><td>0 </td><td>PS</td><td>TBD</td><td>Pull Select</td>
+</tr></table>
+<div class="reghdr1">PORTD_PCR9</div>
+<div class="regdiag">
+<table class="regtbl">
+<tr class="trd1r">
+<td class="trd1c">Bit</td><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td>
+<td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td>
+</tr>
+<tr>
+<td class="trd1c">R</td><td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td>
+<td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td>
+<td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">ISF</td><td colspan="1" rowspan="2">-</td>
+<td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td>
+<td colspan="4" rowspan="2">IRQC</td>
+</tr>
+<tr>
+<td class="trd1c">W</td>
+</tr>
+<tr class="trd1r">
+<td class="trd1c">Reset</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+<td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+</tr>
+</table>
+<table class="regtbl">
+<tr class="trd1r">
+<td class="trd1c">Bit</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td>
+<td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td>
+</tr>
+<tr>
+<td class="trd1c">R</td><td colspan="1" rowspan="2">LK</td><td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td>
+<td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td><td colspan="3" rowspan="2">MUX</td>
+<td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">DSE</td><td colspan="1" rowspan="2">ODE</td>
+<td colspan="1" rowspan="2">PFE</td><td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">SRE</td>
+<td colspan="1" rowspan="2">PE</td><td colspan="1" rowspan="2">PS</td>
+</tr>
+<tr>
+<td class="trd1c">W</td>
+</tr>
+<tr class="trd1r">
+<td class="trd1c">Reset</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+<td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+</tr>
+</table>
+
+</div>
+<table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x4004C024</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00000300</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000000</td></tr>
+<tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
+<tr><td>24 </td><td>ISF</td><td>TBD</td><td>Interrupt Status Flag</td>
+<tr><td>16 - 19</td><td>IRQC</td><td>TBD</td><td>Interrupt Configuration</td>
+<tr><td>15 </td><td>LK</td><td>TBD</td><td>Lock Register</td>
+<tr><td>8 - 10</td><td>MUX</td><td>TBD</td><td>Pin Mux Control</td>
+<tr><td>6 </td><td>DSE</td><td>TBD</td><td>Drive Strength Enable</td>
+<tr><td>5 </td><td>ODE</td><td>TBD</td><td>Open Drain Enable</td>
+<tr><td>4 </td><td>PFE</td><td>TBD</td><td>Passive Filter Enable</td>
+<tr><td>2 </td><td>SRE</td><td>TBD</td><td>Slew Rate Enable</td>
+<tr><td>1 </td><td>PE</td><td>TBD</td><td>Pull Enable</td>
+<tr><td>0 </td><td>PS</td><td>TBD</td><td>Pull Select</td>
+</tr></table>
+<div class="reghdr1">PORTD_PCR11</div>
+<div class="regdiag">
+<table class="regtbl">
+<tr class="trd1r">
+<td class="trd1c">Bit</td><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td>
+<td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td>
+</tr>
+<tr>
+<td class="trd1c">R</td><td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td>
+<td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td>
+<td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">ISF</td><td colspan="1" rowspan="2">-</td>
+<td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td>
+<td colspan="4" rowspan="2">IRQC</td>
+</tr>
+<tr>
+<td class="trd1c">W</td>
+</tr>
+<tr class="trd1r">
+<td class="trd1c">Reset</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+<td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+</tr>
+</table>
+<table class="regtbl">
+<tr class="trd1r">
+<td class="trd1c">Bit</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td>
+<td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td>
+</tr>
+<tr>
+<td class="trd1c">R</td><td colspan="1" rowspan="2">LK</td><td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td>
+<td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td><td colspan="3" rowspan="2">MUX</td>
+<td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">DSE</td><td colspan="1" rowspan="2">ODE</td>
+<td colspan="1" rowspan="2">PFE</td><td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">SRE</td>
+<td colspan="1" rowspan="2">PE</td><td colspan="1" rowspan="2">PS</td>
+</tr>
+<tr>
+<td class="trd1c">W</td>
+</tr>
+<tr class="trd1r">
+<td class="trd1c">Reset</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+<td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+</tr>
+</table>
+
+</div>
+<table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x4004C02C</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00000300</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000000</td></tr>
+<tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
+<tr><td>24 </td><td>ISF</td><td>TBD</td><td>Interrupt Status Flag</td>
+<tr><td>16 - 19</td><td>IRQC</td><td>TBD</td><td>Interrupt Configuration</td>
+<tr><td>15 </td><td>LK</td><td>TBD</td><td>Lock Register</td>
+<tr><td>8 - 10</td><td>MUX</td><td>TBD</td><td>Pin Mux Control</td>
+<tr><td>6 </td><td>DSE</td><td>TBD</td><td>Drive Strength Enable</td>
+<tr><td>5 </td><td>ODE</td><td>TBD</td><td>Open Drain Enable</td>
+<tr><td>4 </td><td>PFE</td><td>TBD</td><td>Passive Filter Enable</td>
+<tr><td>2 </td><td>SRE</td><td>TBD</td><td>Slew Rate Enable</td>
+<tr><td>1 </td><td>PE</td><td>TBD</td><td>Pull Enable</td>
+<tr><td>0 </td><td>PS</td><td>TBD</td><td>Pull Select</td>
+</tr></table>
+<div class="reghdr1">PORTD_PCR10</div>
+<div class="regdiag">
+<table class="regtbl">
+<tr class="trd1r">
+<td class="trd1c">Bit</td><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td>
+<td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td>
+</tr>
+<tr>
+<td class="trd1c">R</td><td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td>
+<td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td>
+<td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">ISF</td><td colspan="1" rowspan="2">-</td>
+<td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td>
+<td colspan="4" rowspan="2">IRQC</td>
+</tr>
+<tr>
+<td class="trd1c">W</td>
+</tr>
+<tr class="trd1r">
+<td class="trd1c">Reset</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+<td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+</tr>
+</table>
+<table class="regtbl">
+<tr class="trd1r">
+<td class="trd1c">Bit</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td>
+<td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td>
+</tr>
+<tr>
+<td class="trd1c">R</td><td colspan="1" rowspan="2">LK</td><td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td>
+<td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td><td colspan="3" rowspan="2">MUX</td>
+<td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">DSE</td><td colspan="1" rowspan="2">ODE</td>
+<td colspan="1" rowspan="2">PFE</td><td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">SRE</td>
+<td colspan="1" rowspan="2">PE</td><td colspan="1" rowspan="2">PS</td>
+</tr>
+<tr>
+<td class="trd1c">W</td>
+</tr>
+<tr class="trd1r">
+<td class="trd1c">Reset</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+<td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+</tr>
+</table>
+
+</div>
+<table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x4004C028</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00000300</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000000</td></tr>
+<tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
+<tr><td>24 </td><td>ISF</td><td>TBD</td><td>Interrupt Status Flag</td>
+<tr><td>16 - 19</td><td>IRQC</td><td>TBD</td><td>Interrupt Configuration</td>
+<tr><td>15 </td><td>LK</td><td>TBD</td><td>Lock Register</td>
+<tr><td>8 - 10</td><td>MUX</td><td>TBD</td><td>Pin Mux Control</td>
+<tr><td>6 </td><td>DSE</td><td>TBD</td><td>Drive Strength Enable</td>
+<tr><td>5 </td><td>ODE</td><td>TBD</td><td>Open Drain Enable</td>
+<tr><td>4 </td><td>PFE</td><td>TBD</td><td>Passive Filter Enable</td>
+<tr><td>2 </td><td>SRE</td><td>TBD</td><td>Slew Rate Enable</td>
+<tr><td>1 </td><td>PE</td><td>TBD</td><td>Pull Enable</td>
+<tr><td>0 </td><td>PS</td><td>TBD</td><td>Pull Select</td>
+</tr></table>
+<div class="reghdr1">NVICIP55</div>
+<div class="regdiag">
+<table class="regtbl">
+<tr class="trd1r">
+<td class="trd1c">Bit</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td>
+</tr>
+<tr>
+<td class="trd1c">R</td><td colspan="8" rowspan="2">PRI55</td>
+</tr>
+<tr>
+<td class="trd1c">W</td>
+</tr>
+<tr class="trd1r">
+<td class="trd1c">Reset</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+</tr>
+</table>
+
+</div>
+<table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0xE000E437</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00000080</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000000</td></tr>
+<tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
+<tr><td>0 - 7</td><td>PRI55</td><td>TBD</td><td>Priority of interrupt 55</td>
+</tr></table>
+<div class="reghdr1">NVICISER1</div>
+<div class="regdiag">
+<table class="regtbl">
+<tr class="trd1r">
+<td class="trd1c">Bit</td><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td>
+<td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td>
+</tr>
+<tr>
+<td class="trd1c">R</td><td colspan="16" rowspan="2">SETENA</td>
+</tr>
+<tr>
+<td class="trd1c">W</td>
+</tr>
+<tr class="trd1r">
+<td class="trd1c">Reset</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+<td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+</tr>
+</table>
+<table class="regtbl">
+<tr class="trd1r">
+<td class="trd1c">Bit</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td>
+<td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td>
+</tr>
+<tr>
+<td class="trd1c">R</td><td colspan="32" rowspan="2">SETENA</td>
+</tr>
+<tr>
+<td class="trd1c">W</td>
+</tr>
+<tr class="trd1r">
+<td class="trd1c">Reset</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+<td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+</tr>
+</table>
+
+</div>
+<table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0xE000E104</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x01986000</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000000</td></tr>
+<tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
+<tr><td>16 - 31</td><td>SETENA</td><td>TBD</td><td></td>
+<tr><td>0 - 31</td><td>SETENA</td><td>TBD</td><td>Interrupt set enable bits</td>
+</tr></table>
+<div class="reghdr1">NVICIP56</div>
+<div class="regdiag">
+<table class="regtbl">
+<tr class="trd1r">
+<td class="trd1c">Bit</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td>
+</tr>
+<tr>
+<td class="trd1c">R</td><td colspan="8" rowspan="2">PRI56</td>
+</tr>
+<tr>
+<td class="trd1c">W</td>
+</tr>
+<tr class="trd1r">
+<td class="trd1c">Reset</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+</tr>
+</table>
+
+</div>
+<table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0xE000E438</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00000080</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000000</td></tr>
+<tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
+<tr><td>0 - 7</td><td>PRI56</td><td>TBD</td><td>Priority of interrupt 56</td>
+</tr></table>
+<div class="reghdr1">UART5_C1</div>
+<div class="regdiag">
+<table class="regtbl">
+<tr class="trd1r">
+<td class="trd1c">Bit</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td>
+</tr>
+<tr>
+<td class="trd1c">R</td><td colspan="1" rowspan="2">LOOPS</td><td colspan="1" rowspan="2">UARTSWAI</td>
+<td colspan="1" rowspan="2">RSRC</td><td colspan="1" rowspan="2">M</td><td colspan="1" rowspan="2">WAKE</td>
+<td colspan="1" rowspan="2">ILT</td><td colspan="1" rowspan="2">PE</td><td colspan="1" rowspan="2">PT</td>
+</tr>
+<tr>
+<td class="trd1c">W</td>
+</tr>
+<tr class="trd1r">
+<td class="trd1c">Reset</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+</tr>
+</table>
+
+</div>
+<table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x400EB002</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00000000</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000000</td></tr>
+<tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
+<tr><td>7 </td><td>LOOPS</td><td>TBD</td><td>Loop Mode Select</td>
+<tr><td>6 </td><td>UARTSWAI</td><td>TBD</td><td>UART Stops in Wait Mode</td>
+<tr><td>5 </td><td>RSRC</td><td>TBD</td><td>Receiver Source Select</td>
+<tr><td>4 </td><td>M</td><td>TBD</td><td>9-bit or 8-bit Mode Select</td>
+<tr><td>3 </td><td>WAKE</td><td>TBD</td><td>Receiver Wakeup Method Select</td>
+<tr><td>2 </td><td>ILT</td><td>TBD</td><td>Idle Line Type Select</td>
+<tr><td>1 </td><td>PE</td><td>TBD</td><td>Parity Enable</td>
+<tr><td>0 </td><td>PT</td><td>TBD</td><td>Parity Type</td>
+</tr></table>
+<div class="reghdr1">UART5_C3</div>
+<div class="regdiag">
+<table class="regtbl">
+<tr class="trd1r">
+<td class="trd1c">Bit</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td>
+</tr>
+<tr>
+<td class="trd1c">R</td><td colspan="1" rowspan="1">R8</td><td colspan="1" rowspan="2">T8</td>
+<td colspan="1" rowspan="2">TXDIR</td><td colspan="1" rowspan="2">TXINV</td><td colspan="1" rowspan="2">ORIE</td>
+<td colspan="1" rowspan="2">NEIE</td><td colspan="1" rowspan="2">FEIE</td><td colspan="1" rowspan="2">PEIE</td>
+</tr>
+<tr>
+<td class="trd1c">W</td>
+<td colspan="1"></td>
+</tr>
+<tr class="trd1r">
+<td class="trd1c">Reset</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+</tr>
+</table>
+
+</div>
+<table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x400EB006</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00000000</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000000</td></tr>
+<tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
+<tr><td>7 </td><td>R8</td><td>TBD</td><td>Received Bit 8</td>
+<tr><td>6 </td><td>T8</td><td>TBD</td><td>Transmit Bit 8</td>
+<tr><td>5 </td><td>TXDIR</td><td>TBD</td><td>Transmitter Pin Data Direction in Single-Wire mode</td>
+<tr><td>4 </td><td>TXINV</td><td>TBD</td><td>Transmit Data Inversion</td>
+<tr><td>3 </td><td>ORIE</td><td>TBD</td><td>Overrun Error Interrupt Enable</td>
+<tr><td>2 </td><td>NEIE</td><td>TBD</td><td>Noise Error Interrupt Enable</td>
+<tr><td>1 </td><td>FEIE</td><td>TBD</td><td>Framing Error Interrupt Enable</td>
+<tr><td>0 </td><td>PEIE</td><td>TBD</td><td>Parity Error Interrupt Enable</td>
+</tr></table>
+<div class="reghdr1">UART5_S2</div>
+<div class="regdiag">
+<table class="regtbl">
+<tr class="trd1r">
+<td class="trd1c">Bit</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td>
+</tr>
+<tr>
+<td class="trd1c">R</td><td colspan="1" rowspan="2">LBKDIF</td><td colspan="1" rowspan="2">RXEDGIF</td>
+<td colspan="1" rowspan="2">MSBF</td><td colspan="1" rowspan="2">RXINV</td><td colspan="1" rowspan="2">RWUID</td>
+<td colspan="1" rowspan="2">BRK13</td><td colspan="1" rowspan="2">LBKDE</td><td colspan="1" rowspan="1">RAF</td>
+</tr>
+<tr>
+<td class="trd1c">W</td>
+<td colspan="1"></td>
+</tr>
+<tr class="trd1r">
+<td class="trd1c">Reset</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+</tr>
+</table>
+
+</div>
+<table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x400EB005</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00000000</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000000</td></tr>
+<tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
+<tr><td>7 </td><td>LBKDIF</td><td>TBD</td><td>LIN Break Detect Interrupt Flag</td>
+<tr><td>6 </td><td>RXEDGIF</td><td>TBD</td><td>RxD Pin Active Edge Interrupt Flag</td>
+<tr><td>5 </td><td>MSBF</td><td>TBD</td><td>Most Significant Bit First</td>
+<tr><td>4 </td><td>RXINV</td><td>TBD</td><td>Receive Data Inversion</td>
+<tr><td>3 </td><td>RWUID</td><td>TBD</td><td>Receive Wakeup Idle Detect</td>
+<tr><td>2 </td><td>BRK13</td><td>TBD</td><td>Break Transmit Character Length</td>
+<tr><td>1 </td><td>LBKDE</td><td>TBD</td><td>LIN Break Detection Enable</td>
+<tr><td>0 </td><td>RAF</td><td>TBD</td><td>Receiver Active Flag</td>
+</tr></table>
+<div class="reghdr1">UART5_MODEM</div>
+<div class="regdiag">
+<table class="regtbl">
+<tr class="trd1r">
+<td class="trd1c">Bit</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td>
+</tr>
+<tr>
+<td class="trd1c">R</td><td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td>
+<td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">RXRTSE</td><td colspan="1" rowspan="2">TXRTSPOL</td>
+<td colspan="1" rowspan="2">TXRTSE</td><td colspan="1" rowspan="2">TXCTSE</td>
+</tr>
+<tr>
+<td class="trd1c">W</td>
+</tr>
+<tr class="trd1r">
+<td class="trd1c">Reset</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+</tr>
+</table>
+
+</div>
+<table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x400EB00D</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00000009</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000000</td></tr>
+<tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
+<tr><td>3 </td><td>RXRTSE</td><td>TBD</td><td>Receiver request-to-send enable</td>
+<tr><td>2 </td><td>TXRTSPOL</td><td>TBD</td><td>Transmitter request-to-send polarity</td>
+<tr><td>1 </td><td>TXRTSE</td><td>TBD</td><td>Transmitter request-to-send enable</td>
+<tr><td>0 </td><td>TXCTSE</td><td>TBD</td><td>Transmitter clear-to-send enable</td>
+</tr></table>
+*/
+/*!
+\page UART5_DBG_settings Component Settings
+\code
+**          Component name                                 : UART5_DBG
+**          Device                                         : UART5
+**          Interrupt service/event                        : Enabled
+**            Interrupt RxD                                : INT_UART5_RX_TX
+**            Interrupt RxD priority                       : medium priority
+**            Interrupt TxD                                : INT_UART5_RX_TX
+**            Interrupt TxD priority                       : medium priority
+**            Interrupt Error                              : INT_UART5_ERR
+**            Interrupt Error priority                     : medium priority
+**          Settings                                       : 
+**            Data width                                   : 8 bits
+**            Parity                                       : None
+**            Stop bits                                    : 1
+**            Loop mode                                    : Normal
+**            Baud rate                                    : 115200 baud
+**            Wakeup condition                             : Idle line wakeup
+**            Stop in wait mode                            : no
+**            Idle line mode                               : Starts after start bit
+**            Transmitter output                           : Not inverted
+**            Receiver input                               : Not inverted
+**            Break generation length                      : 10/11 bits
+**            Receiver                                     : Enabled
+**              RxD                                        : PTD8/I2C0_SCL/UART5_RX/FB_A16
+**              RxD pin signal                             : MCU_DBG_RXD
+**            Transmitter                                  : Enabled
+**              TxD                                        : PTD9/I2C0_SDA/UART5_TX/FB_A17
+**              TxD pin signal                             : MCU_DBG_TXD
+**            Flow control                                 : Hardware (RTS/CTS)
+**              CTS                                        : Enabled
+**                CTS Pin                                  : PTD11/SPI2_PCS0/UART5_CTS_b/SDHC0_CLKIN/FB_AD8/FB_A19
+**                CTS pin signal                           : MCU_DBG_CTS
+**                Interrupt CTS                            : INT_PORTD
+**                Interrupt CTS priority                   : medium priority
+**              RTS                                        : Enabled
+**                RTS Pin                                  : PTD10/UART5_RTS_b/FB_AD9/FB_A18
+**                RTS pin signal                           : MCU_DBG_RTS
+**                RTS enabled                              : 1
+**          Initialization                                 : 
+**            Enabled in init. code                        : yes
+**            Auto initialization                          : no
+**            Event mask                                   : 
+**              OnBlockSent                                : Enabled
+**              OnBlockReceived                            : Enabled
+**              OnTxComplete                               : Enabled
+**              OnError                                    : Disabled
+**              OnBreak                                    : Disabled
+**          CPU clock/configuration selection              : 
+**            Clock configuration 0                        : This component enabled
+**            Clock configuration 1                        : This component disabled
+**            Clock configuration 2                        : This component disabled
+**            Clock configuration 3                        : This component disabled
+**            Clock configuration 4                        : This component disabled
+**            Clock configuration 5                        : This component disabled
+**            Clock configuration 6                        : This component disabled
+**            Clock configuration 7                        : This component disabled
+\endcode
+*/

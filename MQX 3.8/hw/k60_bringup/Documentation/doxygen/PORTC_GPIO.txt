@@ -1,0 +1,213 @@
+/*!
+\page PORTC_GPIO PORTC_GPIO (Init_GPIO)
+**          This file implements the GPIO (PTC) module initialization
+**          according to the Peripheral Initialization settings, and
+**          defines interrupt service routines prototypes.
+
+- \subpage PORTC_GPIO_settings
+- \subpage PORTC_GPIO_regs_overview  
+- \subpage PORTC_GPIO_regs_details
+- \ref PORTC_GPIO_module "Component documentation" 
+
+\page PORTC_GPIO_regs_overview Registers Initialization Overview
+This page initialization values for the registers of the peripheral(s) configured
+by the component. 
+<table>
+<tr><td colspan="4" class="ttitle1">PORTC_GPIO Initialization</td></tr>
+<tr><td class="ttitle2">Address</td><td class="ttitle2">Register</td><td class="ttitle2">Register Value</td><td class="ttitle2">Register Description</td></tr>
+<tr><td>0x400FF084</td><td>GPIOC_PSOR</td><td>
+    0x00080000
+ </td><td>GPIOC_PSOR register, peripheral PORTC_GPIO.</td></tr>
+<tr><td>0x400FF088</td><td>GPIOC_PCOR</td><td>
+    0x00000000
+ </td><td>GPIOC_PCOR register, peripheral PORTC_GPIO.</td></tr>
+<tr><td>0x400FF094</td><td>GPIOC_PDDR</td><td>
+    0x00080000
+ </td><td>GPIOC_PDDR register, peripheral PORTC_GPIO.</td></tr>
+</table>
+<br/>
+\page PORTC_GPIO_regs_details Register Initialization Details
+This page contains detailed description of initialization values for the 
+registers of the peripheral(s) configured by the component. 
+
+<div class="reghdr1">GPIOC_PSOR</div>
+<div class="regdiag">
+<table class="regtbl">
+<tr class="trd1r">
+<td class="trd1c">Bit</td><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td>
+<td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td>
+</tr>
+<tr>
+<td class="trd1c">R</td><td colspan="16"></td>
+</tr>
+<tr>
+<td class="trd1c">W</td>
+<td colspan="16">PTSO</td>
+</tr>
+<tr class="trd1r">
+<td class="trd1c">Reset</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+<td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+</tr>
+</table>
+<table class="regtbl">
+<tr class="trd1r">
+<td class="trd1c">Bit</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td>
+<td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td>
+</tr>
+<tr>
+<td class="trd1c">R</td><td colspan="32"></td>
+</tr>
+<tr>
+<td class="trd1c">W</td>
+<td colspan="32">PTSO</td>
+</tr>
+<tr class="trd1r">
+<td class="trd1c">Reset</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+<td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+</tr>
+</table>
+
+</div>
+<table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x400FF084</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00080000</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000000</td></tr>
+<tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
+<tr><td>16 - 31</td><td>PTSO</td><td>TBD</td><td></td>
+<tr><td>0 - 31</td><td>PTSO</td><td>TBD</td><td>Port Set Output</td>
+</tr></table>
+<div class="reghdr1">GPIOC_PCOR</div>
+<div class="regdiag">
+<table class="regtbl">
+<tr class="trd1r">
+<td class="trd1c">Bit</td><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td>
+<td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td>
+</tr>
+<tr>
+<td class="trd1c">R</td><td colspan="16"></td>
+</tr>
+<tr>
+<td class="trd1c">W</td>
+<td colspan="16">PTCO</td>
+</tr>
+<tr class="trd1r">
+<td class="trd1c">Reset</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+<td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+</tr>
+</table>
+<table class="regtbl">
+<tr class="trd1r">
+<td class="trd1c">Bit</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td>
+<td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td>
+</tr>
+<tr>
+<td class="trd1c">R</td><td colspan="32"></td>
+</tr>
+<tr>
+<td class="trd1c">W</td>
+<td colspan="32">PTCO</td>
+</tr>
+<tr class="trd1r">
+<td class="trd1c">Reset</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+<td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+</tr>
+</table>
+
+</div>
+<table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x400FF088</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00000000</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000000</td></tr>
+<tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
+<tr><td>16 - 31</td><td>PTCO</td><td>TBD</td><td></td>
+<tr><td>0 - 31</td><td>PTCO</td><td>TBD</td><td>Port Clear Output</td>
+</tr></table>
+<div class="reghdr1">GPIOC_PDDR</div>
+<div class="regdiag">
+<table class="regtbl">
+<tr class="trd1r">
+<td class="trd1c">Bit</td><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td>
+<td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td>
+</tr>
+<tr>
+<td class="trd1c">R</td><td colspan="16" rowspan="2">PDD</td>
+</tr>
+<tr>
+<td class="trd1c">W</td>
+</tr>
+<tr class="trd1r">
+<td class="trd1c">Reset</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+<td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+</tr>
+</table>
+<table class="regtbl">
+<tr class="trd1r">
+<td class="trd1c">Bit</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td>
+<td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td>
+</tr>
+<tr>
+<td class="trd1c">R</td><td colspan="32" rowspan="2">PDD</td>
+</tr>
+<tr>
+<td class="trd1c">W</td>
+</tr>
+<tr class="trd1r">
+<td class="trd1c">Reset</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+<td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+</tr>
+</table>
+
+</div>
+<table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x400FF094</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00080000</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000000</td></tr>
+<tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
+<tr><td>16 - 31</td><td>PDD</td><td>TBD</td><td></td>
+<tr><td>0 - 31</td><td>PDD</td><td>TBD</td><td>Port Data Direction</td>
+</tr></table>
+*/
+/*!
+\page PORTC_GPIO_settings Component Settings
+\code
+**          Component name                                 : PORTC_GPIO
+**          Device                                         : PTC
+**          Pins                                           : 
+**            Pin 0                                        : Disabled
+**            Pin 1                                        : Disabled
+**            Pin 2                                        : Disabled
+**            Pin 3                                        : Disabled
+**            Pin 4                                        : Disabled
+**            Pin 5                                        : Disabled
+**            Pin 6                                        : Disabled
+**            Pin 7                                        : Disabled
+**            Pin 8                                        : Disabled
+**            Pin 9                                        : Disabled
+**            Pin 10                                       : Disabled
+**            Pin 11                                       : Disabled
+**            Pin 12                                       : Disabled
+**            Pin 13                                       : Disabled
+**            Pin 14                                       : Disabled
+**            Pin 15                                       : Disabled
+**            Pin 16                                       : Disabled
+**            Pin 17                                       : Disabled
+**            Pin 18                                       : Disabled
+**            Pin 19                                       : Enabled
+**              Pin                                        : PTC19/UART3_CTS_b/ENET0_1588_TMR3/FB_CS3_b/FB_BE7_0_b/FB_TA_b
+**              Pin signal                                 : MCU_26MHz_EN
+**              Pin output                                 : Enabled
+**              Output value                               : 1
+**              Open drain enable                          : No initialization
+**              Pull enable                                : No initialization
+**              Pull select                                : No initialization
+**              Slew rate                                  : No initialization
+**              Drive strength                             : No initialization
+**              Interrupt configuration                    : No initialization
+**              Digital filter enable                      : No initialization
+**              Passive filter enable                      : No initialization
+**              Lock                                       : No initialization
+**            Digital filter clock source                  : Bus clock
+**            Digital filter width                         : 0
+**          Interrupts                                     : 
+**            Port interrupt                               : Disabled
+**          Initialization                                 : 
+**            Call Init method                             : yes
+\endcode
+*/

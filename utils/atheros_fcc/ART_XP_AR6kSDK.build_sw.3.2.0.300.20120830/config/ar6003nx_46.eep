@@ -1,0 +1,117 @@
+#$Id: //depot/sw/releases/olca3.2/host/tools/systemtools/bringup/ar5k/config/ar6003nx_46.eep#1 $
+	
+#EEPROM file for Venus 802.11n 2G/5GHz pci express adapter
+
+@cal_section_begin          		# begin @cal section
+
+TARGET_POWER_FILENAME      =  calTrgtPwr_ar6003n_20.txt ; # target power file for calibration
+SUBSYSTEM_ID	           =  0x6320;   # Subsystem ID in hex
+EEPROM_MAP_TYPE	   =  2;	# Flag indicating eeprom layout type BAA: used for legacy only, changed cal portion of eeprom
+EEPROM_SIZE        =  4   #  size in kbits of the eeprom
+5GHZ_HT40_DISABLE          =  0;        # Prevents software from using HT40 rates
+5GHZ_HT20_DISABLE          =  0;        # Prevents software from using HT20 rates
+2GHZ_HT40_DISABLE          =  0;        # Prevents software from using HT40 rates
+2GHZ_HT20_DISABLE          =  0;        # Prevents software from using HT20 rates
+RF_SILENT		   =  0;   	# Cards enabled with RFSilent can be easily silenced
+DEVICE_TYPE		   =  5;   	# 1=>Cardbus, 2=>PCI, 3=>miniPCI, 4=>AP, 5=>PCIe mini, 6=>pcie express, 7=>pcie desktop 
+A_MODE		           =  1;   	# Whether the adapter supports 802.11a functionality
+G_MODE		           =  1;   	# Whether the adapter supports 802.11g/b functionality
+#ANTENNA_GAIN_5G	           =  0;	# Antenna gain at 5.5GHz. 8-bit signed val in 0.5dB steps.
+#ANTENNA_GAIN_2p5G          =  0;	# Antenna gain at 2.5GHz. 8-bit signed val in 0.5dB steps.
+#NOISE_FLOOR_THRESHOLD	   = -80; 	# noise floor threshold value 
+#11g_NOISE_FLOOR_THRESHOLD  = -80; 	# noise floor threshold value
+#HT40_POWER_INC_FOR_PDADC_5 =  2;        # Power difference between 5GHz HT40 and 20MHz target powers. 8-bit unsigned val in 0.5dB steps.
+HT40_POWER_INC_FOR_PDADC_2 =  0 ;       # Power difference between 2GHz HT40 and 20MHz target powers. 8-bit unsigned val in 0.5dB steps.
+PCDAC_BASELINE             = 62;         # pcDac way
+#PCDAC_BASELINE             = 50;         # pcDac way
+PCDAC_BASELINE_PALON       = 0;        # target_power_cal in half dB step
+5G_PCDAC_BASELINE          = 45;        # target_power_cal in half dB step
+#5G_PCDAC_BASELINE          = 50;        # target_power_cal in half dB step
+
+
+#new capabilities bits
+LOs_BYPASS                 =  1;        # Set to 1 to bypass LOs programming
+ASPM_SUPPORT               =  3;         # ASPM support level: 0=L0, 1=L0s, 2= L1, 3=L0s/L1 (default)
+ENABLE_WAKE_ON_WLAN        =  1;         #
+MAIN_ANTENNA               =  1;         # 0 : RX main ANTENNA set to A; 1 : RX main ANTENNA set to B
+
+#FEM_BAND_SELECT_USED       =  0;        # switches the band select pin on the FEM to control the 5GHz/2GHz LNA
+#NOISE_CAL_5G_LIST          = -114, -116, -120, -114, -116, -120; #noise floor cal values: ch0,flo; ch0,fmi; ch0,fhi; ch1,flo; ch1,fmi; ch1,fhi;
+#NOISE_CAL_2G_LIST          = -110, 0, 0, -110, 0, 0; #noise floor cal values: ch0,flo; ch0,fmi; ch0,fhi; ch1,flo; ch1,fmi; ch1,fhi;
+
+#Chains
+TX_CHAIN_MASK              =  1;
+RX_CHAIN_MASK              =  1;
+
+#Regulatory domain flags
+#ENABLE_FCC_MIDBAND         =  1;
+#ENABLE_JAPAN_MIDBAND       =  1;
+#ENABLE_FCC_DFS_HT40	   =  1;
+#ENABLE_JAPAN_HT40	   =  1;
+#ENABLE_JAPAN_DFS_HT40	   =  1;
+
+#TEMP_THRESHOLD             = 48;
+
+#SHARED_RX_ENABLED          =  1;
+#BT_SIGNAL_PRESENT          =  0;
+#USE_OTP_XTALCAPS           =  1;
+PAPRD_EN_2G                =  0;
+PAPRD_EN_5G                =  0;
+ALPHATHERMTBL_EN_2G         =  1;
+#ALPHATHERMTBL_EN_5G         =  1;   #5G alphatherm table is enabled by default.
+
+CHIP_TO_ANTENNA_PATH_LOSS_2G = 0.0;
+CHIP_TO_ANTENNA_PATH_LOSS_5G = 0.0;
+
+@cal_section_end            		# end @cal section	
+
+@config_section_begin       		# begin @config section
+
+
+an_xtal_xtal_capoutdac                                0x30
+an_xtal_xtal_capindac                                 0x30
+
+#an_txrf2_ob2g_qam                                     0x3
+
+an_txrf3_ob5g					      0x1
+an_txrf2_d4b5g   				      0x2
+an_txrf2_d3b5g    				      0x2
+an_txrf3_d2b5g					      0x2
+
+rtc_pmu_bypass_pareg                                  0x0
+rtc_pmu_bypass_swreg                                  0x1
+rtc_pmu_config_pareg_lvlctr			      0x7
+
+an_rxrf_bias1_pwd_ic25vga5g                           0x0
+
+#----------------------------------------------------------------------------------
+@MODE: MODE_SPECIFIC             11a   11a_20_40   11g_20_40        11g    11g_tubo
+#----------------------------------------------------------------------------------
+#ANTA-ANTD
+bb_switch_table_chn_b0_switch_table_t_0              0x1 0x1 0x1 0x1 0x1  #ANTE setting (bit 0) during Tx mode 
+bb_switch_table_com1_switch_table_com_t1             0x1 0x1 0x1 0x1 0x1  #ANTD - ANTA setting (bit 3 - 0) during Tx mode 
+
+bb_switch_table_chn_b0_switch_table_r_0              0x0 0x0 0x0 0x0 0x0  #ANTE setting (bit 0) during Rx mode 
+bb_switch_table_com2_switch_table_com_ra1nxal1       0x6 0x6 0x6 0x6 0x6  #ANTD - ANTA setting (bit 3 - 0) during Rx mode 
+
+bb_switch_table_chn_b0_switch_table_rx1_0           0x1 0x1 0x0 0x0 0x0  #ANTE setting (bit 0) during Rx mode with 1 stage of switch attenuation.
+bb_switch_table_com2_switch_table_com_ra1xal1       0x8 0x8 0x2 0x2 0x2  #ANTD - ANTA setting (bit 3 - 0) during Rx mode with 1 stage of switch attenuation.
+
+bb_switch_table_chn_b0_switch_table_b_0              0x1 0x1 0x1 0x1 0x1  #ANTE setting (bit 0) when Bluetooth wins the antenna. 
+bb_switch_table_com1_switch_table_com_b              0x0 0x0 0x0 0x0 0x0  #ANTD - ANTA setting (bit 3 - 0) when Bluetooth wins the antenna. 
+ 
+
+
+#bb_tpc_9_desired_scale_7                           0xe 0xe 0xd 0xd 0xd
+
+bb_tpc_19_alpha_therm                          0x25        0x25       0x25       0x25        0x25
+
+bb_desired_sigsize_adc_desired_size            -40         -40        -40        -45         -40
+
+bb_ext_atten_switch_ctl_b0_xatten2_db_0        0xe        0xe       0x19       0x19        0x19
+
+an_top_xpabias_en 0x1 0x1 0x1 0x1 0x1
+an_top_xpabiaslvl 0xf 0xf 0xf 0xf 0xf
+
+@config_section_end         # end @config section
+

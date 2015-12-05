@@ -1,0 +1,51 @@
+platforms:
+  frdmk64f:
+    property: *propertyInstaller
+#  kwikstikk40x256:
+#    property: *propertyInstaller
+#  twrk20d50m:
+#    property: *propertyInstaller
+#  twrk20d72m:
+#    property: *propertyInstaller
+#  twrk21d50m:
+#    property: *propertyInstaller
+#  twrk21f120m:
+#    property: *propertyInstaller
+#  twrk40d100m:
+#    property: *propertyInstaller
+#  twrk40x256:
+#    property: *propertyInstaller
+#  twrk53n512:
+#    property: *propertyInstaller
+#  twrk60d100m:
+#    property: *propertyInstaller
+#  twrk60f120m:
+#    property: *propertyInstaller
+#  twrk60n512:
+#    property: *propertyInstaller
+#  twrk70f120m:
+#    property: *propertyInstaller
+#  twrk70f120m_nio:
+#    property: *propertyInstaller
+#  twrmcf51jf:
+#    property: *propertyInstaller
+#  twrmcf52259:
+#    property: *propertyInstaller
+#  twrmcf54418:
+#    property: *propertyInstaller
+#  twrpxd10:
+#    property: *propertyInstaller
+#  twrpxn20:
+#    property: *propertyInstaller
+#  twrpxs20:
+#    property: *propertyInstaller
+#  twrpxs30:
+#    property: *propertyInstaller
+#  twrvf65gs10_a5:
+#    property: *propertyInstaller
+#  twrvf65gs10_m4:
+#    property: *propertyInstaller
+#  vybrid_autoevb_a5:
+#    property: *propertyInstaller
+#  vybrid_autoevb_m4 :
+#    property: *propertyInstaller

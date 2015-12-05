@@ -1,0 +1,238 @@
+# target power file for AR9280nx 802.11n sd31 Reference Design card
+
+
+
+
+
+# 11b Target Power table : 
+
+#	 Rules:
+
+#		1. Need to define exactly 2 test frequencies in 2.412 - 2.484 G range. 
+
+#		2. test frequencies DO NOT need to cover the entire range of 2412-2484. It
+
+#		   is allowed to provide data for a smaller range. for all channels
+
+#		   outside of test frequencies range, target power will be assumed 0dB.
+
+#		3. specify mask/PER limited target power for various rates
+
+#
+
+#BEGIN_11b_TARGET_POWER_TABLE  
+
+#  test_frequencies   1L_target  2M_target 5.5M_target   11M_target  
+
+							       
+
+   2412		 17		17		17		17      
+
+   2484		 17		17		17		17      
+
+
+
+#END_11b_TARGET_POWER_TABLE
+
+
+
+# ofdm@2p4 Target Power table : 
+
+#	 Rules:
+
+#		1. up to a maximum of 3 test frequencies in 2.412 - 2.484 G range
+
+#		2. test frequencies DO NOT need to cover the entire range of 2412-2484. It
+
+#		   is allowed to provide data for a smaller range. for all channels
+
+#		   outside of test frequencies range, target power will be assumed 0dB.
+
+#		3. specify mask/PER limited target power for various rates
+
+#
+
+#BEGIN_11g_TARGET_POWER_TABLE  
+
+#  test_frequencies   6-24_target  36_target 48_target   54_target  
+
+								    
+
+   2412			17		17		15		15  
+
+   2437			17		17		15		15
+
+   2472			17		17		15		15  
+
+
+
+#END_11g_TARGET_POWER_TABLE
+
+
+
+# HT 2GHz Target Power table : 
+
+#	 Rules:
+
+#		1. up to a maximum of 4 test frequencies in 2.412 - 2.484 G and 4900 - 5900 G range
+
+#		2. test frequencies DO NOT need to cover the entire range of frequency. It
+
+#		   is allowed to provide data for a smaller range. for all channels
+
+#		   outside of test frequencies range, target power will be assumed 0dB.
+
+#		3. specify mask/PER limited target power for various rates
+
+#BEGIN_2GHZ_HT20_TARGET_POWER_TABLE  
+
+#  test_frequencies     MCS 0/8  MCS 1/9  MCS 2/10  MCS 3/11  MCS 4/12  MCS 5/13  MCS 6/14  MCS 7/15     
+
+								    
+
+       2412             17	17	17	17	15	15	 15	 8		
+
+       2437             17	17	17	17	15	15	 15	 8		
+
+       2472             17	17	17	17	15	15	 15	 8		
+
+       
+
+
+
+#END_2GHZ_HT20_TARGET_POWER_TABLE
+
+
+
+#BEGIN_2GHZ_HT40_TARGET_POWER_TABLE  
+
+#  test_frequencies     MCS 0/8  MCS 1/9  MCS 2/10  MCS 3/11  MCS 4/12  MCS 5/13  MCS 6/14  MCS 7/15     
+
+								    
+
+       2412             17	17	17	17	15	15	 15	 8	
+
+       2437             17	17	17	17	15	15	 15	 8	
+
+       2472             17	17	17	17	15	15	 15	 8	
+
+
+
+#END_2GHZ_HT40_TARGET_POWER_TABLE
+
+
+
+
+
+
+
+
+
+# Test Groups :
+
+#      Rules:
+
+#		1. Specify up to 8 band edges for each test group.
+
+#		2. If no backoff desired at a band edge, give a large number (e.g, 30) so
+
+#		   that the driver determined limit becomes the target power.
+
+#
+
+
+
+#BEGIN_TEST_GROUPS
+
+
+
+
+
+# Test Group 4: US and CANADA (FCC) 802.11b mode CTL
+
+# test_group_code	BE1   	BE2	BE3	
+
+	0x11	    	2412    2417    2462		
+
+        			30	30	30	# Band Edge Max Power
+
+			0	0	0	# in-band flag
+
+
+
+# Test Group 5: US and CANADA (FCC) 802.11g mode CTL
+
+# test_group_code	BE1	BE2	BE3		
+
+	0x12		2412	2417	2462		
+
+			30	30	30		# Band Edge Max Power
+
+			0	0	0		# in-band flag
+
+
+
+# Test Group 6: US and CANADA (FCC) 802.11n HT20 2GHz mode CTL
+
+# test_group_code   	BE1	BE2	BE3	
+
+        0x15           	2412    2417    2462		
+
+                    	30      30      30     	# Band Edge Max Power
+
+                    	0       0       0	 	# in-band flag
+
+
+
+# Test Group 7: US and CANADA (FCC) 802.11n HT40 2GHz mode CTL
+
+# test_group_code   	BE1	BE2	BE3     BE4     
+
+        0x17           	2422    2427    2447    2452
+
+                    	30      30      30      30  	# Band Edge Max Power
+
+                    	0       0       0       0   	# in-band flag#END_TEST_GROUPS
+
+
+
+# Test Group 10: Japan (MKK) 802.11b mode CTL
+
+# test_group_code	BE1   	BE2	BE3	BE4	
+
+	0x41	    	2412    2417    2472	2484		
+
+        			30	30	30	30	# Band Edge Max Power
+
+			0	0	0	0	# in-band flag
+
+
+
+# Test Group 11: Japan (MKK) 802.11g mode CTL
+
+# test_group_code	BE1	BE2	BE3		
+
+	0x42		2412	2417	2472		
+
+			30	30	30		# Band Edge Max Power
+
+			0	0	0		# in-band flag
+
+
+
+# Test Group 12: Japan (MKK) 802.11n HT20 2GHz mode CTL
+
+# test_group_code   	BE1	BE2	BE3	
+
+        0x45           	2412    2417    2452		
+
+                    	30      30      30      	# Band Edge Max Power
+
+                    	0       0       0	 	# in-band flag
+
+
+
+#END_TEST_GROUPS
+
+
+

@@ -1,0 +1,9 @@
+@echo OFF
+SET CWD=%CD%
+
+setlocal
+[%  FOREACH command IN commands -%]
+[%      command %]
+[%  END -%]
+
+if not "%1" == "nopause" (pause)

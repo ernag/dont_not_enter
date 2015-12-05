@@ -1,0 +1,60 @@
+/*!
+\page PORTB_GPIO PORTB_GPIO (Init_GPIO)
+**          This file implements the GPIO (PTB) module initialization
+**          according to the Peripheral Initialization settings, and
+**          defines interrupt service routines prototypes.
+
+- \subpage PORTB_GPIO_settings
+- \subpage PORTB_GPIO_regs_overview  
+- \subpage PORTB_GPIO_regs_details
+- \ref PORTB_GPIO_module "Component documentation" 
+
+\page PORTB_GPIO_regs_overview Registers Initialization Overview
+This page initialization values for the registers of the peripheral(s) configured
+by the component. 
+<table>
+<tr><td colspan="4" class="ttitle1">PORTB_GPIO Initialization</td></tr>
+<tr><td class="ttitle2">Address</td><td class="ttitle2">Register</td><td class="ttitle2">Register Value</td><td class="ttitle2">Register Description</td></tr>
+</table>
+<br/>
+\page PORTB_GPIO_regs_details Register Initialization Details
+This page contains detailed description of initialization values for the 
+registers of the peripheral(s) configured by the component. 
+
+*/
+/*!
+\page PORTB_GPIO_settings Component Settings
+\code
+**          Component name                                 : PORTB_GPIO
+**          Device                                         : PTB
+**          Pins                                           : 
+**            Pin 0                                        : Disabled
+**            Pin 1                                        : Disabled
+**            Pin 2                                        : Disabled
+**            Pin 3                                        : Disabled
+**            Pin 6                                        : Disabled
+**            Pin 7                                        : Disabled
+**            Pin 8                                        : Disabled
+**            Pin 9                                        : Disabled
+**            Pin 10                                       : Disabled
+**            Pin 11                                       : Disabled
+**            Pin 16                                       : Disabled
+**            Pin 17                                       : Disabled
+**            Pin 18                                       : Disabled
+**            Pin 19                                       : Disabled
+**            Pin 20                                       : Disabled
+**            Pin 21                                       : Disabled
+**            Pin 22                                       : Disabled
+**            Pin 23                                       : Disabled
+**            Digital filter clock source                  : Bus clock
+**            Digital filter width                         : 0
+**          Interrupts                                     : 
+**            Port interrupt                               : Enabled
+**              Interrupt                                  : INT_PORTB
+**              Interrupt request                          : Disabled
+**              Interrupt priority                         : 0 (Highest)
+**              ISR Name                                   : 
+**          Initialization                                 : 
+**            Call Init method                             : yes
+\endcode
+*/

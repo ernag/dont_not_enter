@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>utf_agent_twrk60n512</name>
+	<comment>MQX project</comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.cdt.managedbuilder.core.genmakebuilder</name>
+			<triggers>clean,full,incremental,</triggers>
+			<arguments>
+				<dictionary>
+					<key>?name?</key>
+					<value></value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.append_environment</key>
+					<value>true</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.buildArguments</key>
+					<value>-j8</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.buildCommand</key>
+					<value>${system:ECLIPSE_HOME}/../gnu/bin/mingw32-make</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.buildLocation</key>
+					<value>${ProjDirPath}/Int Flash Debug</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.contents</key>
+					<value>org.eclipse.cdt.make.core.activeConfigSettings</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.enableAutoBuild</key>
+					<value>false</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.enableCleanBuild</key>
+					<value>true</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.enableFullBuild</key>
+					<value>true</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.stopOnError</key>
+					<value>true</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.useDefaultBuildCmd</key>
+					<value>true</value>
+				</dictionary>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.cdt.managedbuilder.core.ScannerConfigBuilder</name>
+			<triggers>full,incremental,</triggers>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.cdt.managedbuilder.core.ScannerConfigNature</nature>
+		<nature>org.eclipse.cdt.managedbuilder.core.managedBuildNature</nature>
+		<nature>org.eclipse.cdt.core.cnature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>Linker Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>MFS Libraries</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>MQX Libraries</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>RTCS Libraries</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>Shell Libraries</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>Source</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>USB Host Libraries</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>Linker Files/intflash.lcf</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/lib/twrk60n512.cw10/bsp/intflash.lcf</locationURI>
+		</link>
+		<link>
+			<name>Linker Files/intram.lcf</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/lib/twrk60n512.cw10/bsp/intram.lcf</locationURI>
+		</link>
+		<link>
+			<name>MFS Libraries/mfs_twrk60n512_d.a</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/lib/twrk60n512.cw10/mfs/mfs_twrk60n512_d.a</locationURI>
+		</link>
+		<link>
+			<name>MQX Libraries/bsp_twrk60n512_ATHEROS_WIFI.a</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/lib/twrk60n512.cw10/bsp/bsp_twrk60n512_ATHEROS_WIFI.a</locationURI>
+		</link>
+		<link>
+			<name>MQX Libraries/bsp_twrk60n512_ATHEROS_WIFI_d.a</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/lib/twrk60n512.cw10/bsp/bsp_twrk60n512_ATHEROS_WIFI_d.a</locationURI>
+		</link>
+		<link>
+			<name>MQX Libraries/psp_twrk60n512_ATHEROS_WIFI_d.a</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/lib/twrk60n512.cw10/psp/psp_twrk60n512_ATHEROS_WIFI_d.a</locationURI>
+		</link>
+		<link>
+			<name>MQX Libraries/twrk60n512_lib.txt</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/lib/twrk60n512.cw10/twrk60n512_lib.txt</locationURI>
+		</link>
+		<link>
+			<name>RTCS Libraries/rtcs_twrk60n512_d.a</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/lib/twrk60n512.cw10/rtcs/rtcs_twrk60n512_d.a</locationURI>
+		</link>
+		<link>
+			<name>Shell Libraries/shell_twrk60n512_d.a</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/lib/twrk60n512.cw10/shell/shell_twrk60n512_d.a</locationURI>
+		</link>
+		<link>
+			<name>Source/driver_plugin</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>Source/main.c</name>
+			<type>1</type>
+			<locationURI>PROJDIRPATH/main.c</locationURI>
+		</link>
+		<link>
+			<name>Source/main.h</name>
+			<type>1</type>
+			<locationURI>PROJDIRPATH/main.h</locationURI>
+		</link>
+		<link>
+			<name>USB Host Libraries/usb_hdk_twrk60n512.a</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/lib/twrk60n512.cw10/usb/host/usb_hdk_twrk60n512.a</locationURI>
+		</link>
+		<link>
+			<name>USB Host Libraries/usb_hdk_twrk60n512_d.a</name>
+			<type>1</type>
+			<locationURI>MQX_ROOT_DIR/lib/twrk60n512.cw10/usb/host/usb_hdk_twrk60n512_d.a</locationURI>
+		</link>
+		<link>
+			<name>Source/driver_plugin/atheros_driver_plugin.h</name>
+			<type>1</type>
+			<locationURI>PROJDIRPATH/driver_plugin/atheros_driver_plugin.h</locationURI>
+		</link>
+		<link>
+			<name>Source/driver_plugin/atheros_wifi_init.c</name>
+			<type>1</type>
+			<locationURI>PROJDIRPATH/driver_plugin/atheros_wifi_init.c</locationURI>
+		</link>
+		<link>
+			<name>Source/driver_plugin/atheros_wifi_mediactl_ext.c</name>
+			<type>1</type>
+			<locationURI>PROJDIRPATH/driver_plugin/atheros_wifi_mediactl_ext.c</locationURI>
+		</link>
+		<link>
+			<name>Source/driver_plugin/atheros_wifi_raw_if.c</name>
+			<type>1</type>
+			<locationURI>PROJDIRPATH/driver_plugin/atheros_wifi_raw_if.c</locationURI>
+		</link>
+	</linkedResources>
+	<variableList>
+		<variable>
+			<name>C</name>
+			<value>${PARENT-8-PROJECT_LOC}</value>
+		</variable>
+		<variable>
+			<name>C1</name>
+			<value>${PARENT-9-PROJECT_LOC}</value>
+		</variable>
+		<variable>
+			<name>MQX_ROOT_DIR</name>
+			<value>${PARENT-4-PROJECT_LOC}</value>
+		</variable>
+		<variable>
+			<name>PROJDIRPATH</name>
+			<value>${PARENT-2-PROJECT_LOC}</value>
+		</variable>
+	</variableList>
+</projectDescription>
